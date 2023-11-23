@@ -1,0 +1,98 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 45px;
+  max-width: 1728px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  color: #17355d;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Add responsive styles below */
+/* Hamburger menu icon - initially hidden on desktop */
+.hamburger {
+  display: none;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1728px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .menu.is-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #17355d;
+    padding: 0;
+    margin-top: 0;
+    align-items: center;
+    z-index: 9;
+  }
+
+  .menu.is-active ul {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu.is-active li {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .menu.is-active a {
+    width: 100%;
+    display: block;
+    color: #fff;
+  }
+}

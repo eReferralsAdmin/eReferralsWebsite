@@ -1,0 +1,77 @@
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 24px;
+}
+
+.single-post {
+  max-width: 1654px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.featured-image-container {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Full viewport height */
+  overflow: hidden; /* Ensure the image doesn't overflow its container */
+}
+
+.featured-image {
+  border-radius: 38px;
+  overflow: hidden;
+}
+
+.featured-image-overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  border-radius: 38px;
+  pointer-events: none; /* Allows clicks to pass through to the image */
+}
+
+.single-post-container {
+  margin: 60px;
+}
+
+.single-post-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.single-post-body {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.article-meta {
+  display: flex;
+  color: #17355d;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .single-post {
+    padding: 0 15px;
+  }
+
+  .single-post-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-post-title {
+    font-size: 1.5rem;
+  }
+}
