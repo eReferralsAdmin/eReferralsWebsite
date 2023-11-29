@@ -1,0 +1,73 @@
+#desktop-collaboration {
+  background: linear-gradient(
+    270deg,
+    rgba(103, 222, 127, 0.2) 0%,
+    rgba(62, 137, 217, 0.2) 100%
+  );
+  border-radius: 19px;
+  position: relative;
+  padding: 50px 0;
+}
+
+#desktop-collaboration h4 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30px;
+}
+
+#desktop-collaboration .collaboration-section {
+  height: 554px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#desktop-collaboration .brand-description-wrapper {
+  padding-left: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 40px;
+}
+
+#desktop-collaboration .brand-product-wrapper {
+  margin-bottom: -60px;
+  margin-right: -100px;
+}
+
+#desktop-collaboration .arrow {
+  top: 50%;
+  cursor: pointer;
+  position: absolute;
+}
+
+#desktop-collaboration .arrow:first-child {
+  left: -50px;
+}
+#desktop-collaboration .arrow:last-child {
+  right: -50px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  #collaboration-mobile{
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #collaboration-mobile .collaboration-content{
+    display: flex;
+  }
+}

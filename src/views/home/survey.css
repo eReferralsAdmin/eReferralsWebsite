@@ -1,0 +1,50 @@
+.survey-section {
+  text-align: center;
+  margin: auto;
+  padding: 200px 0;
+}
+
+.survey-section p.description {
+  width: 60%;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.survey-section  button{
+    margin-top: 30px;
+}
+
+.survey-section img {
+  width: 100%;
+  height: auto;
+}
+
+.mobile-heading {
+  display: none;
+}
+
+.mobile-survey {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .mobile-survey {
+    display: block;
+  }
+
+  .survey-section {
+    padding: 50px 0;
+  }
+
+  .desktop-heading {
+    display: none;
+  }
+
+  .mobile-heading {
+    display: block;
+  }
+
+  .survey-section button {
+    margin-top: 20px;
+  }
+}

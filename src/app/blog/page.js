@@ -5,7 +5,9 @@ import FeaturedPost from "../../components/FeaturedPost";
 import "../../styles/PostGrid.css";
 import NewsletterSignup from "../../components/NewsletterSignup";
 
-export const getPostsData = async () => {
+export const revalidate = 10; // revalidate at most every hour
+
+async function getPostsData() {
   const res = await client.fetch(`*[_type=='post']{
     title,
     slug,
@@ -14,9 +16,9 @@ export const getPostsData = async () => {
     _createdAt
   }`);
   return res;
-};
+}
 
-const Blog = async () => {
+export default async function Blog() {
   const posts = await getPostsData();
   return (
     <main>
@@ -24,11 +26,12 @@ const Blog = async () => {
       <section className="post-grid-container">
         <div className="recent-posts-container">
           <h2 className="recent-blog-title">Recent blog posts</h2>
-          <div class="posts-grid">
-            {posts.map((post) => (
+          <div className="posts-grid">
+            {posts.map((post, index) => (
               <Link
+                key={index}
                 href={`/blog/${post.slug.current}`}
-                class="no-default-style"
+                className="no-default-style"
               >
                 <PostCard {...post} />
               </Link>
@@ -39,6 +42,4 @@ const Blog = async () => {
       <NewsletterSignup />
     </main>
   );
-};
-
-export default Blog;
+}
