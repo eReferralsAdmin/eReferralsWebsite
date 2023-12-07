@@ -1,0 +1,160 @@
+.footer-container {
+  max-width: 1728px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 45px;
+}
+
+.footer {
+  border-radius: 38px;
+  background: #17355d;
+  color: #edf6fd;
+  padding: 50px 80px;
+  margin: 80px 0;
+  text-align: center;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 70%;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.footer-text h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-text p {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.chat-button {
+  padding: 20px 100px;
+  border-radius: 38px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 20px;
+  display: inline-block; /* Ensures the hover effect applies to the entire button */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.chat-button:hover {
+  background-color: white;
+  color: #17355d;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.footer-rights {
+  font-size: 14px;
+  /* margin-top: 50px; */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 50px 40px; /* Reduced padding */
+  }
+
+  .footer-content {
+    max-width: 80%; /* Increased max-width for better use of space */
+  }
+
+  .footer-text h2 {
+    font-size: 32px; /* Slightly reduced font size */
+  }
+
+  .footer-text p {
+    font-size: 18px; /* Reduced font size for better readability */
+    line-height: 30px; /* Adjust line height accordingly */
+  }
+
+  .chat-button {
+    padding: 15px 50px; /* Reduced padding */
+    font-size: 16px; /* Slightly reduced font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px; /* Further reduced padding */
+    margin: 50px 0; /* Reduced margin */
+  }
+
+  .footer-content {
+    max-width: 90%; /* Further increased max-width */
+  }
+
+  .footer-text h2 {
+    font-size: 28px; /* Further reduced font size */
+  }
+
+  .footer-text p {
+    font-size: 16px; /* Further reduced font size */
+    line-height: 26px; /* Adjust line height accordingly */
+  }
+
+  .chat-button {
+    padding: 10px 30px; /* Further reduced padding */
+    font-size: 14px; /* Further reduced font size */
+  }
+
+  .footer-rights {
+    margin-top: 30px; /* Reduced spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer {
+    border-radius: 0;
+    background: #17355d;
+    color: #edf6fd;
+    padding: 0;
+    margin: 80px 0;
+    text-align: center;
+  }
+
+  .footer-text h2 {
+    font-size: 24px; /* Adjusted for small screens */
+  }
+
+  .footer-text p {
+    font-size: 14px; /* Adjusted for small screens */
+    line-height: 22px; /* Adjust line height accordingly */
+  }
+
+  .chat-button {
+    padding: 10px 20px; /* Adjusted for small screens */
+    font-size: 12px; /* Adjusted for small screens */
+    border-radius: 19px; /* Adjusted for small screens */
+  }
+
+  .footer-bottom{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    padding: 20px 0;
+}
+}
