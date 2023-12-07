@@ -1,0 +1,190 @@
+.eReferralsSection {
+  padding: 150px 30px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.eReferralsSection img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  max-width: 348px;
+}
+
+.eReferralsSection h2 {
+  color: #17355d;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.toggleButtons {
+  border-radius: 60px;
+  border: 3px solid #204972;
+  display: flex;
+  margin-bottom: 100px;
+  padding: 4px;
+  max-width: 568px;
+  margin: 0 auto;
+}
+
+.toggleBtn {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: #204972;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-flex;
+  height: 51px;
+  padding: 10px 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.active {
+  border-radius: 60px;
+  background: linear-gradient(273deg, #173658 -9.62%, #418fd2 53.9%);
+  color: #fff;
+}
+
+.advancedSearch h3 {
+  color: #17355d;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.advancedSearch p {
+  color: #17355d;
+  font-family: Albert Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.advancedSearch a {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .toggleButtons {
+    border-radius: 60px;
+    border: 3px solid #204972;
+    display: flex;
+    margin-bottom: 100px;
+    padding: 4px;
+    max-width: 468px;
+    margin: 0 auto;
+  }
+
+  .eReferralsSection img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 70%;
+  }
+
+  .advancedSearch a {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .eReferralsSection {
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: transparent;
+  }
+
+  .ereferralInfo {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    text-align: left;
+  }
+
+  .ereferralInfo h3,
+  .ereferralInfo p {
+    text-align: left;
+  }
+
+  .ereferralInfo h3 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  .ereferralInfo p {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .eReferralsSection img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 516px;
+  }
+
+  .advancedSearch a {
+    display: inline-block;
+  }
+}
+
+/*
+
+@media screen and (min-width: 768px) {
+  .eReferralsSection {
+    padding: 150px 30px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ereferralInfo {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 100px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .advancedSearch .action {
+    width: 100%;
+    max-width: fit-content;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .eReferralsSection {
+    padding: 150px 30px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ereferralInfo {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .advancedSearch .action {
+    width: 100%;
+    max-width: fit-content;
+  }
+} */

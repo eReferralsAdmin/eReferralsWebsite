@@ -1,0 +1,40 @@
+/* CollaborationFeature.module.css */
+.collaborationFeature {
+  padding: 100px 0;
+}
+
+.collaborationFeatureH2 {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.collaborationContainer {
+  background: linear-gradient(
+    270deg,
+    rgba(62, 137, 217, 0.2) 0%,
+    rgba(103, 222, 127, 0.2) 100%
+  );
+}
+
+.collaborationContent {
+  padding: 30px;
+  width: 70%;
+  position: relative;
+  overflow: visible;
+}
+
+.collaboratorLogo img {
+  width: 170px;
+}
+
+.productImage {
+  position: absolute;
+  right: -30%;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}

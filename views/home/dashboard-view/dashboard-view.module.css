@@ -1,0 +1,28 @@
+/* DashboardView.module.css */
+.dashboardViews {
+  overflow: hidden;
+}
+
+.dashboardViews img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .dashboardViews {
+    margin: 150px auto;
+  }
+  .dashboardViews img {
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dashboardViews {
+    margin: 200px auto;
+    overflow: hidden;
+  }
+}

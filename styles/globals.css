@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700&family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #17355d;
+  --background-linear-gradient-start: rgba(98, 211, 146, 0.1);
+  --background-linear-gradient-end: rgba(70, 153, 248, 0.1);
+  --background-color: #fff;
+  --font-family-inter: "Inter", sans-serif;
+  --font-family-albert: "Albert Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-albert);
+  color: var(--primary-color);
+  font-size: 16px;
+  background: linear-gradient(
+      196deg,
+      rgba(98, 211, 146, 0.1) 0%,
+      rgba(70, 153, 248, 0.1) 100%
+    ),
+    #fff;
+}
+
+button {
+  border: none;
+}
+
+.wrapper {
+  height: 100%;
+  max-width: 1728px;
+  margin: auto;
+}
+
+.container {
+  max-width: 1628px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gradient-bg {
+  background: linear-gradient(
+    270deg,
+    rgba(103, 222, 127, 0.2) 0%,
+    rgba(62, 137, 217, 0.2) 100%
+  );
+}
+
+.btn-primary {
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+  text-decoration: none;
+  padding: 10px 25px;
+  color: #fff;
+  font-family: Albert Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: min-content;
+  gap: 6px;
+}
+
+.btn-icon {
+  width: 20px;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+}

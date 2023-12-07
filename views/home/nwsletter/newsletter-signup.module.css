@@ -1,0 +1,120 @@
+.newsletterSignup {
+  padding: 40px 30px;
+  color: #000;
+}
+
+.newsletterContent {
+  text-align: center;
+  color: #000;
+}
+
+.newsletterContent h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.newsletterContent p {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.links {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.links a {
+  color: #000;
+  text-decoration: none;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+.inputContainer input[type="email"] {
+  width: 100%;
+  padding: 0 44px;
+  border-radius: 74px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  line-height: 46px;
+}
+
+.emailIcon {
+  position: absolute;
+  width: 18px;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: rgba(51, 54, 63, 1);
+}
+
+.formFooter {
+}
+
+.consent {
+  text-align: left;
+  padding: 20px 0;
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.consent label {
+  color: #000;
+  font-family: Albert Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.formFooter .submitButton {
+  border: none;
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .newsletterSignup {
+    padding: 140px 130px;
+    color: #000;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .newsletterSignup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 19px;
+    padding: 70px 175px;
+    gap: 80px;
+  }
+
+  .newsletterContent,
+  .newsletterForm {
+    text-align: left;
+    flex: 1;
+  }
+  
+  .formFooter{
+    display: flex;
+  }
+
+  .formFooter .submitButton{
+    width: max-content;
+  }
+}

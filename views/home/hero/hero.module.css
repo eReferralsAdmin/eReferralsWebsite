@@ -1,0 +1,110 @@
+.heroSection {
+  position: relative;
+  text-align: center;
+  display: block;
+  min-height: 900px;
+}
+
+.imageContainer {
+  background-image: url("/images/mobile-hero.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to top, transparent, black 100%);
+  mask-image: linear-gradient(to top, transparent, black 100%);
+  height: 492px;
+}
+
+.contentContainer {
+  padding: 0 30px;
+  position: absolute;
+  bottom: 15%;
+}
+
+.contentContainer h1 {
+  color: #17355d;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+.contentContainer p {
+  color: #17355d;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buttonLearnMore {
+  text-decoration: none;
+  border-radius: 60px;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px 25px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.buttonLearnMore {
+  border: 2px solid #17355d;
+  color: #17355d;
+}
+
+@media screen and (min-width: 768px) {
+  .imageContainer {
+    background-image: url("/images/desktop-hero.png");
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to top, transparent, black 100%);
+    mask-image: linear-gradient(to top, transparent, black 100%);
+    height: 592px;
+  }
+
+  .buttonsContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .imageContainer {
+    -webkit-mask-image: none;
+    mask-image: none;
+    height: 916px;
+    padding: 0 50px;
+    border-radius: 22px;
+    background-color: lightgray 50% / cover no-repeat;
+  }
+
+  .contentContainer {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    /* max-width: 90%; */
+    margin: 0 auto;
+    transform: translateX(-50%);
+    border-radius: 19px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 60px 90px;
+    width: 90%;
+    max-width: 1048px;
+  }
+}
