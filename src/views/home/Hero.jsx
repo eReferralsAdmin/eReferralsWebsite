@@ -49,15 +49,15 @@ const Hero = () => {
           around Australia.
         </h1>
         <p className="description">
-          eReferrals' vision is to revolutionise healthcare in Australia by
+          eReferrals&apos; vision is to revolutionise healthcare in Australia by
           seamlessly connecting doctors and patients with premier pathology and
           radiology providers. Our aim is to provide a software solution that is
-          reliable, efficient, and secure to optimise doctors' time and simplify
-          the referral process for patients.
+          reliable, efficient, and secure to optimise doctors&apos; time and
+          simplify the referral process for patients.
         </p>
         <div class="button-container">
           <button class="button-interested">
-            I'm interested! <i class="ri-arrow-right-s-line"></i>
+            I&apos;m interested! <i class="ri-arrow-right-s-line"></i>
           </button>
           <button class="button-learn-more">
             Learn more <i class="ri-search-line"></i>
