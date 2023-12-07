@@ -19,7 +19,12 @@ const Footer = () => {
           <div className={styles.copy}>
             <p>© 2024 eReferrals. All rights reserved.</p>
           </div>
-          <Image src="/logo-light.svg" width={198} height={42} />
+          <Image
+            src="/logo-light.svg"
+            alt="logo-light"
+            width={198}
+            height={42}
+          />
         </div>
       </div>
     </footer>

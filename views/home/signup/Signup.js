@@ -10,6 +10,7 @@ import {
   UserIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import Image from "next/image";
 
 const Signup = () => {
   return (
@@ -18,7 +19,12 @@ const Signup = () => {
         <div className={styles.header}>
           <div className={styles.branding}>
             {/* <img src="/images/ereferrals-icon.svg" alt="eReferrals Icon" /> */}
-            <img src="/logo.svg" alt="eReferrals Logo" />
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src="/logo.svg"
+              alt="eReferrals Logo"
+            />
           </div>
           <span className={styles.divider}>|</span>
           <div className={styles.signupSection}>
