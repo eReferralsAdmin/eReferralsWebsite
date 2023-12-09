@@ -9,7 +9,7 @@ import { calculateReadingTime } from "../../../../sanity/lib/readingTime";
 import styles from "../../../../styles/PostPage.module.css";
 import PortableText from "react-portable-text";
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 const PostPage = async ({ params: { slug } }) => {
   const query = groq`*[_type == 'post' && slug.current == $slug][0]`;

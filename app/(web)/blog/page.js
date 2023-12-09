@@ -5,7 +5,7 @@ import styles from "./blog.module.css";
 import FeaturedPost from "../../../components/FeaturedPost";
 import { fetchPosts } from "../../../lib/fetchData";
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 export default async function BlogPage() {
   const posts = await fetchPosts();

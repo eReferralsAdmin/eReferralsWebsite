@@ -8,7 +8,7 @@ import { ChevronRightIcon, ClockIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { formatDate } from "../lib/formatDate";
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 const FeaturedPost = async () => {
   const featuredPost = await fetchFeaturedPost();
