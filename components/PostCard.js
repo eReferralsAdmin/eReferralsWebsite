@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { formatDate } from "../lib/formatDate";
 
+export const revalidate = 10;
+
 const PostCard = ({ title, slug, date, readTime, imageUrl }) => {
   return (
     <Link href={`/blog/${slug.current}`}>

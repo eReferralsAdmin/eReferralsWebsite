@@ -4,6 +4,8 @@ import styles from "../../styles/BlogList.module.css";
 import { urlForImage } from "../../sanity/lib/image";
 import { calculateReadingTime } from "../../sanity/lib/readingTime";
 
+export const revalidate = 10;
+
 const BlogGrid = ({ posts }) => {
   return (
     <div className={styles.grid}>
