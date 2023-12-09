@@ -1,0 +1,31 @@
+/* RichTextComponents.module.css */
+.heading1 {
+  font-size: 2em;
+  /* Aur bhi heading 1 styles yaha par */
+}
+
+.heading2 {
+  font-size: 1.5em;
+  /* Aur bhi heading 2 styles yaha par */
+}
+
+.paragraph {
+  margin: 1em 0;
+  /* Aur bhi paragraph styles yaha par */
+}
+
+.list {
+  /* List styles yaha par */
+}
+
+.listItem {
+  /* List item styles yaha par */
+}
+
+.imageContainer img {
+  max-width: 1500px;
+}
+
+.heading1 {
+  background-color: red;
+}

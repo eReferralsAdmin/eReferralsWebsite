@@ -1,0 +1,147 @@
+.imageContainer {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.imageContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.46) 47.4%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.imageContainer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  object-fit: cover;
+  object-position: center;
+}
+
+.postContent {
+  padding: 35px;
+}
+
+.postTitle {
+  color: #000;
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.dateAndTimeContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  color: #17355d;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.readingTimeContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.clockIcon {
+  width: 16px;
+}
+
+.postImageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 21px;
+}
+
+.alternativeText {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  padding: 16px;
+}
+
+.mediaWrapper {
+  margin: 30px auto;
+}
+
+.postImageWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+
+  z-index: 1;
+}
+
+.postImageWrapper img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.h1 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.p {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media (min-width: 1024px) {
+  .articleContainer {
+    max-width: 1654px;
+  }
+
+  .imageContainer {
+    max-height: 794px;
+    border-radius: 38px;
+    overflow: hidden;
+  }
+
+  .postImageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    height: 494px;
+    overflow: hidden;
+    border-radius: 21px;
+  }
+
+  .postContent {
+    padding: 35px 70px;
+  }
+
+  .postContent img {
+    width: 100%;
+  }
+}

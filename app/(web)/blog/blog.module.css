@@ -1,0 +1,12 @@
+.blogPosts {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.blogTitle {
+  color: #000;
+  font-size: 34px;
+  font-weight: 700;
+}

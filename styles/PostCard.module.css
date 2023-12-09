@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  position: relative;
+  border-radius: 21px;
+  overflow: hidden;
+}
+
+.image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.image img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content {
+  padding: 22px;
+}
+
+.title {
+  color: #000;
+  font-family: Inter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.readTime {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #0075d5;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.clockIcon {
+  width: 18px;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  .card {
+    /* Adjustments for larger screens */
+  }
+}

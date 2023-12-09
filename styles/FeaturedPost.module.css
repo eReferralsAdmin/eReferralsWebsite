@@ -1,0 +1,125 @@
+.featuredPostCard {
+  color: #fff;
+  width: 100%;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.featuredPostImageContainer img {
+  height: calc(100vh - 82px);
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.featuredPostImageContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.46) 47.4%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0.7;
+}
+
+.featuredContent {
+  position: absolute;
+  bottom: 0;
+  padding: 30px;
+}
+
+.readingTime {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clockIcon {
+  width: 18px;
+}
+
+.postDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.readMoreIcon {
+  width: 44px;
+  background-color: black;
+  color: #fff;
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.postInfo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.postTitle {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.postDescription {
+  font-size: 18px;
+  line-height: 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 768px) {
+  .readMoreIcon {
+    width: 74px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .readMoreIcon {
+    width: 94px;
+  }
+
+  .featuredPostCard {
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .postTitle {
+    font-size: 65px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .postDescription {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 30px;
+    text-overflow: ellipsis;
+  }
+
+  .readMoreBtn {
+    font-size: 66px;
+    height: 95px;
+    min-width: 95px;
+  }
+
+  .postDetails {
+    margin-bottom: 50px;
+  }
+}
