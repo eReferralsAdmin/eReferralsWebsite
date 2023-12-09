@@ -8,6 +8,8 @@ import { ChevronRightIcon, ClockIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { formatDate } from "../lib/formatDate";
 
+export const revalidate = 1;
+
 const FeaturedPost = async () => {
   const featuredPost = await fetchFeaturedPost();
   return (
@@ -33,9 +35,7 @@ const FeaturedPost = async () => {
         </div>
         <h1 className={styles.postTitle}>{featuredPost.title}</h1>
         <div className={styles.postDetails}>
-          <p className={styles.postDescription}>
-            {featuredPost.overview}
-          </p>
+          <p className={styles.postDescription}>{featuredPost.overview}</p>
           <Link
             href={`blog/${featuredPost.slug.current}`}
             className={styles.readMoreBtn}
