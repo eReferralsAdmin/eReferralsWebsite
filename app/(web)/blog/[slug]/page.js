@@ -11,6 +11,8 @@ import styles from "../../../../styles/PostPage.module.css";
 import RichTextComponents from "../../../../components/RichTextComponents";
 import PortableText from "react-portable-text";
 
+export const revalidate = 1;
+
 const PostPage = async ({ params: { slug } }) => {
   const query = groq`*[_type == 'post' && slug.current == $slug][0]`;
   const post = await client.fetch(query, { slug });
