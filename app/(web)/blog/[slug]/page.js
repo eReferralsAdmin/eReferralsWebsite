@@ -3,12 +3,10 @@ import React from "react";
 import { client } from "../../../../sanity/lib/client";
 import Image from "next/image";
 import { urlForImage } from "../../../../sanity/lib/image";
-// import { PortableText } from "@portabletext/react";
 import { formatDate } from "../../../../lib/formatDate";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { calculateReadingTime } from "../../../../sanity/lib/readingTime";
 import styles from "../../../../styles/PostPage.module.css";
-import RichTextComponents from "../../../../components/RichTextComponents";
 import PortableText from "react-portable-text";
 
 export const revalidate = 1;
