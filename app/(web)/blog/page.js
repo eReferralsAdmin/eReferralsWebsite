@@ -5,16 +5,16 @@ import NewsletterSignup from "../../../components/NewsletterSignup";
 
 export const revalidate = 10;
 
-async function getPosts() {
-  const res = await fetch(`${process.env.API_URL}/api/posts`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-}
+// async function getPosts() {
+//   const res = await fetch(`${process.env.API_URL}/api/posts`);
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
+//   return res.json();
+// }
 
 export default async function BlogPage() {
-  const posts = await getPosts();
+  // const posts = await getPosts();
   return (
     <main className={styles.blogContainer}>
       {/* <FeaturedPost />
