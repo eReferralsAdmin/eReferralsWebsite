@@ -14,7 +14,7 @@ const BlogGrid = ({ posts }) => {
     setIsLoading(true);
     try {
       const res = await fetch(
-        `${process.env.API_URL}/api/posts?startIndex=${startIndex}&limit=2`
+        `${process.env.API_URL}/api/posts?startIndex=${startIndex}&endIndex=2`
       );
       if (!res.ok) {
         throw new Error("Failed to fetch data");
