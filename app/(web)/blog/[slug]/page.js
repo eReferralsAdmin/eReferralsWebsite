@@ -8,6 +8,7 @@ import { ClockIcon } from "@heroicons/react/24/outline";
 import { calculateReadingTime } from "../../../../sanity/lib/readingTime";
 import styles from "../../../../styles/PostPage.module.css";
 import PortableText from "react-portable-text";
+import NewsletterSignup from "../../../../components/NewsletterSignup";
 
 export const revalidate = 10;
 
@@ -68,6 +69,8 @@ const PostPage = async ({ params: { slug } }) => {
           />
         </div>
       </section>
+
+      <NewsletterSignup />
     </article>
   );
 };

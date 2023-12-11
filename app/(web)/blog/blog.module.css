@@ -1,3 +1,8 @@
+.blogContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .blogPosts {
   max-width: 1500px;
   width: 100%;

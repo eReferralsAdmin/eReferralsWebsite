@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { formatDate } from "../lib/formatDate";
+import { urlForImage } from "../sanity/lib/image";
 
 export const revalidate = 10;
 
@@ -12,7 +13,12 @@ const PostCard = ({ title, slug, date, readTime, imageUrl }) => {
     <Link href={`/blog/${slug.current}`}>
       <div className={styles.card}>
         <div className={styles.image}>
-          <Image src={imageUrl} width={442} height={320} alt="Blog Post" />
+          <Image
+            src={imageUrl}
+            width={442}
+            height={320}
+            alt="Blog Post"
+          />
         </div>
 
         <div className={styles.content}>

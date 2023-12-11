@@ -2,19 +2,43 @@
   display: grid;
   grid-template-columns: 1fr;
   column-gap: 88px;
-  row-gap: 60px;
-  /* padding: 16px; */
+  row-gap: 65px;
   padding: 50px 0;
+}
+
+.loadMore {
+  color: #17355d;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 32px;
+  border: 2px solid #17355d;
+  padding: 8px 16px;
+  background-color: transparent;
+  margin: 80px auto;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: 160px;
 }
 
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 80px;
+    row-gap: 65px;
   }
 }

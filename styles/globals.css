@@ -19,12 +19,7 @@ body {
   font-family: var(--font-family-albert);
   color: var(--primary-color);
   font-size: 16px;
-  background: linear-gradient(
-      196deg,
-      rgba(98, 211, 146, 0.1) 0%,
-      rgba(70, 153, 248, 0.1) 100%
-    ),
-    #fff;
+  background: #fff;
 }
 
 a {
@@ -84,5 +79,13 @@ button {
 @media screen and (min-width: 768px) {
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
+  body {
+    background: linear-gradient(
+        196deg,
+        rgba(98, 211, 146, 0.1) 0%,
+        rgba(70, 153, 248, 0.1) 100%
+      ),
+      #fff;
+  }
 }
