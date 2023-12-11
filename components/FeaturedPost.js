@@ -14,7 +14,7 @@ const FeaturedPost = async () => {
   const featuredPost = await fetchFeaturedPost();
   return (
     <div className={styles.featuredPostCard}>
-      {/* <div className={styles.featuredPostImageContainer}>
+      <div className={styles.featuredPostImageContainer}>
         <Image
           src={urlForImage(featuredPost.mainImage)}
           alt="Featured Post Image"
@@ -43,7 +43,7 @@ const FeaturedPost = async () => {
             <ChevronRightIcon className={styles.readMoreIcon} />
           </Link>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
