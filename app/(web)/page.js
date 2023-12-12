@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/* <DashboardView /> */}
+      <DashboardView />
       {/* <EReferrals /> */}
       {/* <NewsletterSignup /> */}
       {/* <SurveyInvitationCard /> */}

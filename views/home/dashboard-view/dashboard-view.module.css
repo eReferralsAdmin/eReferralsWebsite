@@ -1,28 +1,42 @@
-/* DashboardView.module.css */
 .dashboardViews {
-  overflow: hidden;
+  margin: 100px auto;
+  padding: 0;
 }
 
-.dashboardViews img {
+.appView {
+  background: url("/images/dashboard-view-mobile.svg") no-repeat center center /
+    contain;
+  height: 400px;
   width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {
   .dashboardViews {
-    margin: 150px auto;
+    padding: 0 30px;
   }
-  .dashboardViews img {
-    transform: scale(1);
+  .appView {
+    background-image: url("/images/dashboard-view-desktop.svg");
+    height: 450px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .dashboardViews {
-    margin: 200px auto;
-    overflow: hidden;
+    padding: 0 30px;
+  }
+  .appView {
+    background-image: url("/images/dashboard-view-desktop.svg");
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .dashboardViews {
+    margin: 100px auto;
+    padding: 0;
+  }
+  .appView {
+    background-image: url("/images/dashboard-view-desktop.svg");
+    height: 888px;
   }
 }
