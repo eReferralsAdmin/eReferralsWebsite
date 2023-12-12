@@ -36,8 +36,13 @@ const Header = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logoContainer}>
-          <Link href="/" passHref>
-            <Image src="/logo.svg" alt="Logo" width={198} height={42} />
+          <Link href="/">
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              width={198}
+              height={42}
+            />
           </Link>
         </div>
         <div className={styles.menuIcon} onClick={toggleMenu}>

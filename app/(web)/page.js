@@ -11,12 +11,12 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <DashboardView />
-      <EReferrals />
-      <NewsletterSignup />
-      <SurveyInvitationCard />
+      {/* <DashboardView /> */}
+      {/* <EReferrals /> */}
+      {/* <NewsletterSignup /> */}
+      {/* <SurveyInvitationCard /> */}
       {/* <CollaborationFeature /> */}
-      <Signup />
+      {/* <Signup /> */}
       {/* <Faq /> */}
     </main>
   );

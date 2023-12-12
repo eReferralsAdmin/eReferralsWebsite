@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./hero.module.css";
 import Link from "next/link";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronRightIcon,
+  MagnifyingGlassCircleIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 
 const Hero = () => {
   return (
@@ -21,11 +25,11 @@ const Hero = () => {
             and simplify the referral process for patients.
           </p>
           <div className={styles.buttonsContainer}>
-            <Link href="/" className={`btn-primary`}>
+            <Link href="/" className={styles.buttonInterested}>
               I'm interested! <ChevronRightIcon className="btn-icon" />
             </Link>
             <Link href="/" className={styles.buttonLearnMore}>
-              Learn more <i className="ri-search-line"></i>
+              Learn more <MagnifyingGlassIcon className="btn-icon" />
             </Link>
           </div>
         </div>
