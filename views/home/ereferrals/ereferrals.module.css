@@ -1,63 +1,60 @@
 .eReferralsSection {
-  padding: 150px 30px;
-  text-align: center;
-  background-color: #fff;
-}
-
-.eReferralsSection img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  max-width: 348px;
+  padding: 0 30px;
 }
 
 .eReferralsSection h2 {
+  text-align: center;
   color: #17355d;
+  text-align: center;
+  font-family: Albert Sans;
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 35px;
-  text-align: center;
 }
 
 .toggleButtons {
   border-radius: 60px;
   border: 3px solid #204972;
-  display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   padding: 4px;
-  max-width: 568px;
-  margin: 0 auto;
+  display: flex;
 }
 
 .toggleBtn {
   flex: 1;
-  background-color: transparent;
-  border: none;
-  color: #204972;
+  color: #000;
   text-align: center;
   font-family: Inter;
-  font-size: 1.125rem;
-  font-style: normal;
+  font-size: 18px;
   font-weight: 600;
   line-height: 24px;
-  display: inline-flex;
-  height: 51px;
   padding: 10px 25px;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  border-radius: 60px;
+  background-color: transparent;
+  min-width: max-content;
 }
 
 .active {
-  border-radius: 60px;
-  background: linear-gradient(273deg, #173658 -9.62%, #418fd2 53.9%);
   color: #fff;
+  background: linear-gradient(273deg, #173658 -9.62%, #418fd2 53.9%);
+}
+
+.imageContainer {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.advancedSearch {
+  text-align: center;
 }
 
 .advancedSearch h3 {
   color: #17355d;
   text-align: center;
+  font-family: Albert Sans;
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 20px;
@@ -67,124 +64,92 @@
   color: #17355d;
   font-family: Albert Sans;
   font-size: 20px;
-  font-style: normal;
   font-weight: 400;
+  line-height: 26px;
+  margin-bottom: 48px;
+}
+
+.buttonInterested {
+  color: #fff;
+  font-family: Albert Sans;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 24px;
-  margin-bottom: 20px;
-}
+  padding: 10px 25px;
+  height: 50px;
 
-.advancedSearch a {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+
+  margin-bottom: 100px;
 }
 
 @media screen and (min-width: 768px) {
+  .eReferralsSection {
+    padding: 100px 30px;
+  }
+
   .toggleButtons {
-    border-radius: 60px;
-    border: 3px solid #204972;
-    display: flex;
-    margin-bottom: 100px;
-    padding: 4px;
-    max-width: 468px;
+    max-width: 568px;
     margin: 0 auto;
   }
 
-  .eReferralsSection img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    max-width: 70%;
-  }
-
-  .advancedSearch a {
-    display: inline-block;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .eReferralsSection {
-    max-width: 1250px;
-    margin: 0 auto;
-    background-color: transparent;
-  }
-
-  .ereferralInfo {
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    gap: 100px;
-    text-align: left;
-  }
-
-  .ereferralInfo h3,
-  .ereferralInfo p {
-    text-align: left;
-  }
-
-  .ereferralInfo h3 {
-    font-size: 36px;
-    font-weight: 600;
-  }
-
-  .ereferralInfo p {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 30px;
-  }
-
-  .eReferralsSection img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    max-width: 516px;
-  }
-
-  .advancedSearch a {
-    display: inline-block;
-  }
-}
-
-/*
-
-@media screen and (min-width: 768px) {
-  .eReferralsSection {
-    padding: 150px 30px;
-    text-align: left;
-    max-width: 1200px;
+  .buttonInterested {
+    max-width: max-content;
     margin: 0 auto;
   }
 
-  .ereferralInfo {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 100px;
-    flex-direction: column;
+  .imageContainer {
     text-align: center;
+    padding-top: 50px;
   }
-
-  .advancedSearch .action {
+  .imageContainer img {
     width: 100%;
-    max-width: fit-content;
+    margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .eReferralsSection {
-    padding: 150px 30px;
-    text-align: left;
+  .advancedSearch {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ereferralInfo {
+    display: flex;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .ereferralInfo {
-    flex-direction: row;
+  .imageContainer img {
+    width: 100%;
+  }
+
+  .imageContainer,
+  .advancedSearch {
+    flex: 1;
+  }
+
+  .advancedSearch h3,
+  .advancedSearch p {
     text-align: left;
   }
 
-  .advancedSearch .action {
-    width: 100%;
-    max-width: fit-content;
+  .buttonInterested {
+    max-width: max-content;
+    margin: 0;
   }
-} */
+}

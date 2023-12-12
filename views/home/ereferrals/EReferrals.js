@@ -21,10 +21,20 @@ const EReferrals = () => {
           </button>
         </div>
         <div className={styles.ereferralInfo}>
-          <img
-            src="/images/ereferrals.png"
-            alt="eReferrals information graphic"
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              src="/images/ereferrals-for-practioers.svg"
+              alt="eReferrals information graphic"
+              width={348}
+              height={335}
+              style={{
+                maxWidth: "516px",
+                height: "auto",
+                objectFit: "cover",
+                margin: "auto",
+              }}
+            />
+          </div>
           <div className={styles.advancedSearch}>
             <h3>Advanced Provider Search</h3>
             <p>
@@ -33,9 +43,8 @@ const EReferrals = () => {
               to readily identify the most suitable provider for your patient's
               needs.
             </p>
-            <Link href={"/"} className={`btn-primary`}>
-              I'm interested!
-              <ChevronRightIcon className="btn-icon" />
+            <Link href="/" className={styles.buttonInterested}>
+              I'm interested! <ChevronRightIcon className="btn-icon" />
             </Link>
           </div>
         </div>
