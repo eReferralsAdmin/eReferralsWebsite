@@ -13,8 +13,8 @@ export default function Home() {
       {/* <Hero /> */}
       {/* <DashboardView /> */}
       {/* <EReferrals /> */}
-      <NewsletterSignup />
-      {/* <SurveyInvitationCard /> */}
+      {/* <NewsletterSignup /> */}
+      <SurveyInvitationCard />
       {/* <CollaborationFeature /> */}
       {/* <Signup /> */}
       {/* <Faq /> */}
