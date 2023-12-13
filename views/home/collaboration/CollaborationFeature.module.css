@@ -1,40 +1,165 @@
-/* CollaborationFeature.module.css */
-.collaborationFeature {
-  padding: 100px 0;
-}
-
-.collaborationFeatureH2 {
-  margin-bottom: 80px;
+.collaborationFeatureTitle {
+  color: #17355d;
   text-align: center;
+  font-family: Albert Sans;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 80px;
 }
 
-.collaborationContainer {
-  background: linear-gradient(
-    270deg,
-    rgba(62, 137, 217, 0.2) 0%,
-    rgba(103, 222, 127, 0.2) 100%
-  );
+.brandLogo {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.brandLogo img {
+  width: 138px;
+  height: 159px;
+  margin-bottom: -50px;
+  margin-top: -50px;
 }
 
 .collaborationContent {
-  padding: 30px;
-  width: 70%;
-  position: relative;
-  overflow: visible;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    270deg,
+    rgba(103, 222, 127, 0.2) 0%,
+    rgba(62, 137, 217, 0.2) 100%
+  );
 }
 
-.collaboratorLogo img {
-  width: 170px;
+.collaborationText {
+  color: #17355d;
+  font-family: Albert Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 30px;
 }
 
-.productImage {
-  position: absolute;
-  right: -30%;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100%;
+.carouselControls {
+  display: flex;
+  gap: 20px;
+}
+
+.carouselControlButton {
+  background-color: #000;
+  filter: drop-shadow(0px 4px 17.9px rgba(0, 0, 0, 0.61));
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carouselControlButton:hover {
+  background-color: #333;
+}
+
+.carouselControlButton:focus {
+  outline: none;
+}
+
+.carouselControlIcon {
+  width: 30px;
+}
+
+.collaboratorProductDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .collaborationFeature {
+    background: linear-gradient(
+      270deg,
+      rgba(103, 222, 127, 0.2) 0%,
+      rgba(62, 137, 217, 0.2) 100%
+    );
+  }
+
+  .collaborationContent {
+    gap: 40px;
+    padding: 0 30px 80px 30px;
+    background: transparent;
+  }
+
+  .collaborationFeatureTitle {
+    font-size: 36px;
+    margin-bottom: 0;
+    padding-top: 30px;
+  }
+
+  .collaborationText {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .collaboratorProductMobile {
+    display: none;
+  }
+
+  .collaboratorProductDesktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .collaborationContent {
+    gap: 40px;
+    padding: 30px 80px;
+  }
+
+  .collaborationFeatureTitle {
+    font-size: 36px;
+  }
+
+  .collaborationText {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .brandLogo img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .collaborationFeature {
+    max-width: 1500px;
+    margin: 0 auto;
+    border-radius: 19px;
+    overflow: hidden;
+  }
+
+  .collaborationContent {
+    height: 654px;
+    gap: 100px;
+    padding: 100px 150px;
+  }
+
+  .collaborationText {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  .brandLogo img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .productImage img {
+    min-width: 381px;
+  }
 }

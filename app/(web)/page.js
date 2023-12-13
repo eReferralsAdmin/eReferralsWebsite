@@ -15,7 +15,7 @@ export default function Home() {
       {/* <EReferrals /> */}
       {/* <NewsletterSignup /> */}
       <SurveyInvitationCard />
-      {/* <CollaborationFeature /> */}
+      <CollaborationFeature />
       {/* <Signup /> */}
       {/* <Faq /> */}
     </main>
