@@ -10,14 +10,14 @@ import Faq from "../../views/home/faq/Faq";
 export default function Home() {
   return (
     <main>
-      {/* <Hero /> */}
-      {/* <DashboardView /> */}
-      {/* <EReferrals /> */}
-      {/* <NewsletterSignup /> */}
-      {/* <SurveyInvitationCard /> */}
-      {/* <CollaborationFeature /> */}
+      <Hero />
+      <DashboardView />
+      <EReferrals />
+      <NewsletterSignup />
+      <SurveyInvitationCard />
+      <CollaborationFeature />
       <Signup />
-      {/* <Faq /> */}
+      <Faq />
     </main>
   );
 }
