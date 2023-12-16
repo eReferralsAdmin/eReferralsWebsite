@@ -14,9 +14,9 @@ export default function Home() {
       {/* <DashboardView /> */}
       {/* <EReferrals /> */}
       {/* <NewsletterSignup /> */}
-      <SurveyInvitationCard />
-      <CollaborationFeature />
-      {/* <Signup /> */}
+      {/* <SurveyInvitationCard /> */}
+      {/* <CollaborationFeature /> */}
+      <Signup />
       {/* <Faq /> */}
     </main>
   );

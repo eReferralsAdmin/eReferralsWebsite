@@ -13,20 +13,30 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Signup = () => {
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
+
+  // const onSubmit = (data) => {
+  //   // Yahan aap form data ko handle kar sakte hain
+  //   console.log(data);
+  // };
+
   return (
     <section className={styles.signupContainer}>
       <div className={styles.signupContent}>
         <div className={styles.header}>
           <div className={styles.branding}>
-            {/* <img src="/images/ereferrals-icon.svg" alt="eReferrals Icon" /> */}
             <Image
-              layout="fill"
-              objectFit="cover"
+              width={316}
+              height={67}
               src="/logo.svg"
               alt="eReferrals Logo"
             />
           </div>
-          <span className={styles.divider}>|</span>
+          <span className={styles.divider}></span>
           <div className={styles.signupSection}>
             <p>Sign up for</p>
             <p>BETA VERSION</p>
@@ -71,19 +81,32 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <label className={styles.checkboxContainer}>
-              <input type="checkbox" />I agree with the storage & processing of
-              my personal data
-            </label>
-            <div className={styles.links}>
-              <Link href="/">Terms</Link> | <Link href="/">Privacy</Link>
+            <div className={styles.formFooter}>
+              <div className={styles.consent}>
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                  // {...register("consent", { required: true })}
+                />
+                <label htmlFor="consent">
+                  I agree with the storage & processing of my personal data
+                </label>
+              </div>
+              <div className={styles.links}>
+                <Link className={styles.link} href="/">
+                  Terms
+                </Link>
+                <span>|</span>
+                <Link className={styles.link} href="/">
+                  Privacy
+                </Link>
+              </div>
+              <button type="submit" className={`${styles.submitButton}`}>
+                Get Started <ChevronRightIcon className="btn-icon" />
+              </button>
             </div>
-            <button
-              type="submit"
-              className={`${styles.btnGetStarted} btn-primary`}
-            >
-              Get started <ChevronRightIcon className="btn-icon" />
-            </button>
           </form>
         </div>
       </div>

@@ -1,0 +1,61 @@
+.accordionContainer {
+  padding: 16px 19px;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.accordionContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 22px;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    rgba(23, 53, 93, 1),
+    rgba(103, 222, 127, 1)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.accordionQuestionButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: transparent;
+  width: 100%;
+  color: #000;
+  font-family: Albert Sans;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.accordionQuestionText {
+  padding: 11px 0;
+}
+
+.accordionAnswerContainer {
+  padding: 15px;
+}
+
+.dNone {
+  display: none;
+}
+
+.dBlock {
+  display: block;
+}
+
+.upIcon {
+  width: 12px;
+  height: 25px;
+  stroke-width: 3px;
+  stroke: #17355d;
+}

@@ -1,68 +1,52 @@
-/* Filename: FaqSection.module.css */
 .faqSection {
-  /* Add any general styles for the section if needed */
+  padding: 30px;
 }
 
-.faqSectionH2 {
+.faqSection h2 {
+  color: #17355d;
   text-align: center;
+  font-family: Albert Sans;
+  font-size: 30px;
+  font-weight: 600;
   margin-bottom: 40px;
 }
 
-.faqItem {
-  margin-bottom: 10px;
-  border-radius: 50px;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-}
-
-.faqItem::before {
-  /* ... styles ... */
-}
-
-.faqQuestion {
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1rem;
+.askQuestion {
+  color: #fff;
+  font-family: Albert Sans;
+  font-size: 18px;
   font-weight: 600;
-  padding: 1rem;
-  background-color: transparent;
-  border-radius: 50px;
-  border: none;
+  line-height: 24px;
+  padding: 10px 25px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+
+  margin-top: 70px;
 }
 
-.faqIcon {
-  transition: transform 0.3s ease;
-}
-
-.faqQuestionExpanded .faqIcon {
-  transform: rotate(-180deg);
-}
-
-.faqAnswer {
-  padding: 0 1rem 1rem;
-  display: none;
-  text-align: left;
-  background: #fff;
-  border-radius: 4px;
-}
-
-.faqAnswerP {
-  font-size: 0.875rem;
-  color: #333;
-  line-height: 1.5;
-}
-
-/* Media query styles */
 @media screen and (min-width: 768px) {
+  .askQuestion {
+    max-width: max-content;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
   .faqSection {
     max-width: 1117px;
-    text-align: center;
-    padding: 150px 0;
     margin: 0 auto;
   }
 }

@@ -32,7 +32,10 @@ const NewsletterSignup = () => {
             </Link>
           </div>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className={styles.signupForm}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className={styles.signupForm}
+        >
           <div className={styles.inputGroup}>
             <div
               className={`${styles.inputContainer} ${

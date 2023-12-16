@@ -1,46 +1,33 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./FaqSection.module.css"; // Importing the CSS module
+import styles from "./FaqSection.module.css";
+import Accordion from "../../../components/Accordion";
+import Link from "next/link";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const Faq = () => {
-  const [expanded, setExpanded] = useState(false);
-
-  const toggleExpand = () => {
-    setExpanded(!expanded);
-  };
-
   return (
     <section className={styles.faqSection}>
-      <h2 className={styles.faqSectionH2}>Frequently Asked Questions</h2>
-      <div className={styles.faqItem}>
-        <button
-          className={`${styles.faqQuestion} ${
-            expanded ? styles.faqQuestionExpanded : ""
-          }`}
-          aria-expanded={expanded}
-          aria-controls="faq2_desc"
-          onClick={toggleExpand}
-        >
-          What are the benefits of mobile app development?
-          <i className={`ri-arrow-down-s-line ${styles.faqIcon}`}></i>
-        </button>
-        <div
-          className={`${styles.faqAnswer} ${expanded ? "d-block" : "d-none"}`}
-          id="faq2_desc"
-        >
-          <p className={styles.faqAnswerP}>
-            Mobile app development offers several benefits including increased
-            accessibility for users, personalized user experiences, improved
-            customer engagement, and the ability to leverage device capabilities
-            like GPS, camera, and notifications. It also opens up opportunities
-            for new business models and services.
-          </p>
-        </div>
-      </div>
-
-      <button className="pill-button">
-        Ask a question <i className="ri-arrow-right-s-line button-icon"></i>
-      </button>
+      <h2>Frequently Asked Questions</h2>
+      <Accordion
+        title={"What is Mobile app development?"}
+        description={
+          "It’s the creation of digital system that are tailored for mobile devices. Now more than ever the world needs to be mobilised with their business and systems and Mobile app development is the most relevant path to take. As per any other Application Development, the process is to gather requirements, define functionalities, design, build, deliver and support these mobile apps tailored for the business purpose."
+        }
+      />
+      <Accordion
+        title={"Why is Mobile app development important?"}
+        description={
+          "It’s the creation of digital system that are tailored for mobile devices. Now more than ever the world needs to be mobilised with their business and systems and Mobile app development is the most relevant path to take. As per any other Application Development, the process is to gather requirements, define functionalities, design, build, deliver and support these mobile apps tailored for the business purpose."
+        }
+      />
+      <Accordion
+        title={"How much does developing a Mobile app cost?"}
+        description={
+          "It’s the creation of digital system that are tailored for mobile devices. Now more than ever the world needs to be mobilised with their business and systems and Mobile app development is the most relevant path to take. As per any other Application Development, the process is to gather requirements, define functionalities, design, build, deliver and support these mobile apps tailored for the business purpose."
+        }
+      />
+      <Link href="/" className={styles.askQuestion}>
+        Ask a question <ChevronRightIcon className="btn-icon" />
+      </Link>
     </section>
   );
 };
