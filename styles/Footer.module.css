@@ -69,8 +69,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-
-  .footer{
+  .footer {
     max-width: 1654px;
     margin: 0 auto;
     border-radius: 38px;
@@ -82,99 +81,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  .copy{
+  .copy {
     margin-bottom: 0;
   }
 }
-/* .footer {
-  background: #17355d;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-.footerContent {
-  padding: 70px 0;
-}
-
-.footerTitle {
-  color: #edf6fd;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.description {
-  padding: 0 20px;
-  font-size: 16px;
-  color: #edf6fd;
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  line-height: 24px;
-}
-
-.chatButton {
-  border: none;
-  border-radius: 32px;
-  color: white;
-  padding: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: bold;
-  width: 100%;
-  border: 2px solid #fff;
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.footerBottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 30px;
-  gap: 40px;
-  margin: 20px auto;
-}
-
-@media screen and (min-width: 768px) {
-  .footerBottom {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 30px;
-    gap: 40px;
-    margin: 20px auto;
-  }
-
-  .chatButton {
-    width: max-content;
-    margin: 0 auto;
-    padding: 15px 90px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .footer {
-    max-width: 1628px;
-    border-radius: 38px;
-    margin: 30px auto;
-  }
-
-  .description {
-    max-width: 1061px;
-    margin: 0 auto;
-    margin-bottom: 30px;
-  }
-
-  .footerContent{
-    padding: 40px 85px;
-  }
-} */
