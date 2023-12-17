@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../../styles/header.module.css";
+import styles from "../../styles/header-0.module.css";
 import {
   Bars2Icon,
   ChevronRightIcon,
