@@ -1,0 +1,168 @@
+.header {
+  position: relative;
+  padding: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuList,
+.authLinks {
+  display: none;
+}
+
+.menuList {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+  width: 100%;
+  z-index: 1;
+  /* padding: 0 20px; */
+}
+
+.menuItem {
+  color: #17355d;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.menuItem a {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 20px;
+  display: block;
+}
+
+.menuItem a:hover,
+.menuItem a:active,
+.menuItem a:visited {
+  color: #17355d;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.menuItem:last-child {
+  border-bottom: none;
+}
+
+.menuIcon {
+  width: 30px;
+}
+
+.authLinksMobile {
+  display: block;
+}
+
+.menuList.open {
+  display: block;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu {
+  list-style: none;
+  background-color: rgba(225, 255, 244, 0.6);
+}
+
+.dropdown {
+  padding: 16px 20px;
+  display: block;
+}
+
+.submenuItem {
+  padding: 0 20px;
+}
+
+.dropdown {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdownIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.buttonSignup {
+  color: #fff;
+  font-family: Albert Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px 25px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+
+  margin: 20px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .menuItem:hover .submenu {
+    display: block;
+  }
+}
+
+.submenu.showSubmenu {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .menuIcon {
+    display: none;
+  }
+  .menuList,
+  .authLinks {
+    display: block;
+  }
+
+  .menuList {
+    position: static;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .authLinksMobile {
+    display: none;
+  }
+
+  .submenu {
+    position: absolute;
+    z-index: 2;
+    border-radius: 11px;
+    background: rgba(225, 255, 244, 0.6);
+    box-shadow: 0px 4px 30.4px 0px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(6px);
+    padding: 0;
+  }
+
+  .submenu li:first-child a {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
