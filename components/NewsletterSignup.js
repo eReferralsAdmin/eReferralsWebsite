@@ -29,7 +29,7 @@ const NewsletterSignup = () => {
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit(onSubmit)}
+        // onSubmit={handleSubmit(onSubmit)}
         className={styles.signupForm}
       >
         {/* Hidden field for Netlify */}
