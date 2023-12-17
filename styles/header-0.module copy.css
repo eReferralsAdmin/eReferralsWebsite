@@ -1,0 +1,152 @@
+.header {
+  padding: 20px;
+  position: relative;
+}
+
+.barsIcon {
+  width: 30px;
+}
+
+.nav {
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.057);
+}
+
+.dNone {
+  display: none;
+}
+
+.dBlock {
+  display: block;
+}
+
+.menuContainer {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  z-index: 3;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.signupButton {
+  color: #fff;
+  font-family: Albert Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px 25px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+  margin-bottom: 10px;
+}
+
+.nav ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.menuItem {
+  padding: 15px 20px;
+}
+
+.menuItem a {
+  color: #17355d;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .signupButton {
+    max-width: max-content;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .barsIcon {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .navContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.057);
+  }
+
+  .dBlock {
+    display: block;
+  }
+
+  .menuContainer {
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    z-index: 3;
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .signupButton {
+    color: #fff;
+    font-family: Albert Sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 10px 25px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 60px;
+    background: linear-gradient(
+      271deg,
+      #2d6465 -11.45%,
+      #3a806b -11.45%,
+      #67de7f 123.02%
+    );
+    margin-bottom: 10px;
+  }
+
+  .nav ul {
+    list-style-type: none;
+    width: 100%;
+  }
+
+  .menuItem {
+    padding: 15px 20px;
+  }
+
+  .menuItem a {
+    color: #17355d;
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

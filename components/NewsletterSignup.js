@@ -24,9 +24,19 @@ const NewsletterSignup = () => {
           <Link href="/">Privacy</Link>
         </div>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.signupForm}>
+      <form
+        name="signup-form"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.signupForm}
+      >
+        {/* Hidden field for Netlify */}
+        <input type="hidden" name="form-name" value="signup-form" />
+        <input type="hidden" name="bot-field" />{" "}
+        {/* for Netlify bot filtering */}
         <div className={styles.inputGroup}>
-          {/* <div className={`${styles.inputContainer} ${styles.error}`}> */}
           <div
             className={`${styles.inputContainer} ${
               errors.email ? styles.error : ""
@@ -35,6 +45,7 @@ const NewsletterSignup = () => {
             <EnvelopeIcon className={styles.emailIcon} />
             <input
               type="email"
+              name="email" // Ensure the name attribute is set for Netlify
               {...register("email", { required: true })}
               placeholder="Enter your email address"
             />
@@ -46,7 +57,7 @@ const NewsletterSignup = () => {
               type="checkbox"
               {...register("consent", { required: true })}
               id="consent"
-              name="consent"
+              name="consent" // Ensure the name attribute is set for Netlify
               required
             />
             <label htmlFor="consent">
