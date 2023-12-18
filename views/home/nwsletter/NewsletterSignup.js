@@ -33,9 +33,17 @@ const NewsletterSignup = () => {
           </div>
         </div>
         <form
+          name="newsletter-signup-form"
+          method="POST"
           onSubmit={handleSubmit(onSubmit)}
           className={styles.signupForm}
+          netlify
         >
+          <input
+            type="hidden"
+            name="newsletter-signup-form"
+            value="newsletter-signup-form"
+          />
           <div className={styles.inputGroup}>
             <div
               className={`${styles.inputContainer} ${
