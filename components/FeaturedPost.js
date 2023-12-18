@@ -30,7 +30,7 @@ const FeaturedPost = async () => {
           </strong>
           <p className={styles.readingTime}>
             <ClockIcon className={styles.clockIcon} />
-            <span>{calculateReadingTime(featuredPost.body)} min read</span>
+            <span>{featuredPost.readingTime} min read</span>
           </p>
         </div>
         <h1 className={styles.postTitle}>{featuredPost.title}</h1>

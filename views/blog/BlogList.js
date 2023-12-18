@@ -9,7 +9,6 @@ const BlogGrid = ({ posts }) => {
   const [blogPosts, setBlogPosts] = useState(posts);
   const [startIndex, setStartIndex] = useState(posts.length);
   const [isLoading, setIsLoading] = useState(false);
-
   const loadMorePosts = async () => {
     setIsLoading(true);
     try {
@@ -36,7 +35,7 @@ const BlogGrid = ({ posts }) => {
             title={post.title}
             slug={post.slug}
             date={post.publishedAt}
-            readTime={calculateReadingTime(post.body)}
+            readTime={post.readingTime}
             imageUrl={urlForImage(post.mainImage)}
           />
         ))}

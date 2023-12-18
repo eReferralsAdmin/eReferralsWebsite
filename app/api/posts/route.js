@@ -8,6 +8,7 @@ export async function GET(request) {
 
   try {
     const posts = await fetchPosts(startIndex, endIndex);
+
     return NextResponse.json(posts);
   } catch (error) {
     return new NextResponse(JSON.stringify({ error: "Error fetching posts" }), {

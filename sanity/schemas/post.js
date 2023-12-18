@@ -1,5 +1,3 @@
-import { calculateReadingTime } from "../lib/readingTime";
-
 export const post = {
   name: "post",
   title: "Post",
@@ -48,17 +46,23 @@ export const post = {
       type: "datetime",
       initialValue: () => new Date().toISOString(),
     },
+    {
+      name: "readingTime",
+      title: "Reading Time",
+      type: "number",
+      description: "Enter the reading time in minutes",
+      validation: (Rule) => Rule.required().min(1),
+    },
   ],
 
   preview: {
     select: {
       title: "title",
       media: "mainImage",
-      body: "body",
+      readingTime: "readingTime",
     },
     prepare(selection) {
-      const { title, body, media } = selection;
-      const readingTime = calculateReadingTime(body);
+      const { title, readingTime, media } = selection;
       return {
         title,
         subtitle: `${readingTime} min read`,
