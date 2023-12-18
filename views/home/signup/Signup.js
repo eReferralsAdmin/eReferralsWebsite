@@ -1,4 +1,3 @@
-// Filename: SignupContainer.jsx
 import React from "react";
 import styles from "./Signup.module.css"; // Importing the CSS module
 import {
@@ -54,42 +53,52 @@ const Signup = () => {
           </button>
         </div>
         <div className={styles.container}>
-          <form className={styles.signupForm}>
+          <form
+            className={styles.signupForm}
+            name="signup-for-beta-version"
+            method="POST"
+            data-netlify="true"
+          >
+            <input
+              type="hidden"
+              name="signup-for-beta-version"
+              value="signup-for-beta-version"
+            />
             <div className={styles.inputGroup}>
               <div className={styles.inputContainer}>
                 <UserIcon className={styles.inputIcon} />
                 <input
                   type="text"
+                  name="name"
                   placeholder="Enter your full name"
                   className={styles.inputField}
+                  required
                 />
               </div>
               <div className={styles.inputContainer}>
                 <PhoneIcon className={styles.inputIcon} />
                 <input
+                  name="phone"
                   type="tel"
                   placeholder="Enter your phone number"
                   className={styles.inputField}
+                  required
                 />
               </div>
               <div className={styles.inputContainer}>
                 <EnvelopeIcon className={styles.inputIcon} />
                 <input
+                  name="email"
                   type="email"
                   placeholder="Enter your email address"
                   className={styles.inputField}
+                  required
                 />
               </div>
             </div>
             <div className={styles.formFooter}>
               <div className={styles.consent}>
-                <input
-                  type="checkbox"
-                  id="consent"
-                  name="consent"
-                  required
-                  // {...register("consent", { required: true })}
-                />
+                <input type="checkbox" id="consent" name="consent" required />
                 <label htmlFor="consent">
                   I agree with the storage & processing of my personal data
                 </label>

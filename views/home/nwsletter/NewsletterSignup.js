@@ -1,21 +1,9 @@
-// "use client";
 import React from "react";
 import styles from "./newsletter-signup.module.css";
 import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import { useForm } from "react-hook-form";
 
 const NewsletterSignup = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm();
-
-  // const onSubmit = (data) => {
-  //   // Yahan aap form data ko handle kar sakte hain
-  //   console.log(data);
-  // };
   return (
     <section className={`${styles.newsletterSignup}  gradient-bg`}>
       <div className={styles.newsletterSignupContainer}>
@@ -34,7 +22,6 @@ const NewsletterSignup = () => {
         </div>
         <form
           name="newsletter-signup-form"
-          // onSubmit={handleSubmit(onSubmit)}
           className={styles.signupForm}
           method="POST"
           data-netlify="true"
@@ -65,8 +52,8 @@ const NewsletterSignup = () => {
             <div className={styles.consent}>
               <input
                 type="checkbox"
-                id="consent"
-                name="consent"
+                id="newsletter-consent"
+                name="newsletter-consent"
                 required
                 // {...register("consent", { required: true })}
               />
