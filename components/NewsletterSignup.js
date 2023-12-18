@@ -25,15 +25,18 @@ const NewsletterSignup = () => {
         </div>
       </div>
       <form
-        name="signup-form"
+        name="newsletter-signup-form"
         method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
         // onSubmit={handleSubmit(onSubmit)}
         className={styles.signupForm}
+        netlify
       >
         {/* Hidden field for Netlify */}
-        <input type="hidden" name="form-name" value="signup-form" />
+        <input
+          type="hidden"
+          name="newsletter-signup-form"
+          value="newsletter-signup-form"
+        />
         <input type="hidden" name="bot-field" />{" "}
         {/* for Netlify bot filtering */}
         <div className={styles.inputGroup}>
