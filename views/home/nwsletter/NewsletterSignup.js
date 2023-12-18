@@ -54,6 +54,7 @@ const NewsletterSignup = () => {
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email address"
                 // {...register("email", { required: true })}
                 required
