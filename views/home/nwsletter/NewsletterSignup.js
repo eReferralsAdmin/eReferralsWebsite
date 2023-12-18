@@ -35,7 +35,7 @@ const NewsletterSignup = () => {
         <form
           name="newsletter-signup-form"
           method="POST"
-          onSubmit={handleSubmit(onSubmit)}
+          // onSubmit={handleSubmit(onSubmit)}
           className={styles.signupForm}
           netlify
         >
