@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React from "react";
 import styles from "./newsletter-signup.module.css";
 import Link from "next/link";
@@ -6,16 +6,16 @@ import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { useForm } from "react-hook-form";
 
 const NewsletterSignup = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  // } = useForm();
 
-  const onSubmit = (data) => {
-    // Yahan aap form data ko handle kar sakte hain
-    console.log(data);
-  };
+  // const onSubmit = (data) => {
+  //   // Yahan aap form data ko handle kar sakte hain
+  //   console.log(data);
+  // };
   return (
     <section className={`${styles.newsletterSignup}  gradient-bg`}>
       <div className={styles.newsletterSignupContainer}>
@@ -34,10 +34,10 @@ const NewsletterSignup = () => {
         </div>
         <form
           name="newsletter-signup-form"
-          method="POST"
           // onSubmit={handleSubmit(onSubmit)}
           className={styles.signupForm}
-          netlify
+          method="POST"
+          data-netlify="true"
         >
           <input
             type="hidden"
@@ -46,15 +46,17 @@ const NewsletterSignup = () => {
           />
           <div className={styles.inputGroup}>
             <div
-              className={`${styles.inputContainer} ${
-                errors.email ? "error" : ""
-              }`}
+              className={styles.inputContainer}
+              // className={`${styles.inputContainer} ${
+              //   errors.email ? "error" : ""
+              // }`}
             >
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />
               <input
                 type="email"
                 placeholder="Enter your email address"
-                {...register("email", { required: true })}
+                // {...register("email", { required: true })}
+                required
               />
             </div>
           </div>
@@ -65,7 +67,7 @@ const NewsletterSignup = () => {
                 id="consent"
                 name="consent"
                 required
-                {...register("consent", { required: true })}
+                // {...register("consent", { required: true })}
               />
               <label htmlFor="consent">
                 I agree with the storage & processing of my personal data
