@@ -55,9 +55,8 @@ const NewsletterSignup = () => {
                 id="newsletter-consent"
                 name="newsletter-consent"
                 required
-                // {...register("consent", { required: true })}
               />
-              <label htmlFor="consent">
+              <label htmlFor="newsletter-consent">
                 I agree with the storage & processing of my personal data
               </label>
             </div>

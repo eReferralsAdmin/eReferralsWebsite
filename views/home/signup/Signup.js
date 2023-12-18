@@ -12,16 +12,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Signup = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm();
-
-  // const onSubmit = (data) => {
-  //   // Yahan aap form data ko handle kar sakte hain
-  //   console.log(data);
-  // };
 
   return (
     <section className={styles.signupContainer}>
