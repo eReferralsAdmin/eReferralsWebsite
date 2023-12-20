@@ -21,12 +21,12 @@ const NewsletterSignup = () => {
     }
 
     try {
-      const response = await fetch("/newsletter-form.html", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData,
       });
-
+      console.log(response);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
