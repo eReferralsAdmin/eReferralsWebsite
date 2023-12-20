@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./newsletter-signup.module.css";
 import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import toast, { Toaster } from "react-hot-toast";
 
 const NewsletterSignup = () => {
   const handleSubmit = (event) => {
@@ -11,17 +12,29 @@ const NewsletterSignup = () => {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    fetch("/", {
+    // Create and return a promise
+    const submitPromise = fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => console.log("Form successfully submitted"))
-      .catch((error) => alert(error));
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response;
+    });
+
+    // Use toast.promise
+    toast.promise(submitPromise, {
+      loading: "Submitting...",
+      success: "Form successfully submitted!",
+      error: "Error submitting form",
+    });
   };
 
   return (
     <section className={`${styles.newsletterSignup}  gradient-bg`}>
+      <Toaster />
       <div className={styles.newsletterSignupContainer}>
         <div className={styles.newsletterContent}>
           <h2>Get top insights and news from our search experts</h2>
