@@ -91,7 +91,7 @@ const NewsletterSignup = () => {
             <button
               type="submit"
               className={`${styles.submitButton}`}
-              disabled={isSubmitting}
+              // disabled={isSubmitting}
             >
               {/* {isSubmitting ? "Submitting..." : "Submit"}{" "} */}
               Submit
