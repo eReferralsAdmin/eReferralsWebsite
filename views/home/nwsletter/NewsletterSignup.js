@@ -7,34 +7,34 @@ import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import styles from "./newsletter-signup.module.css";
 
 const NewsletterSignup = () => {
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   formState: { isSubmitting },
-  //   reset,
-  // } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+    reset,
+  } = useForm();
 
-  const handleSubmit = (event) => {
-    const myForm = event.target;
-    const formData = new FormData(myForm);
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const submitPromise = fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    }).then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+      if (response.ok) {
+        toast.success("Form successfully submitted!");
+        reset();
+        // router.push("/success");
+      } else {
+        toast.error("Error submitting form");
       }
-      return response;
-    });
-
-    // Use toast.promise
-    toast.promise(submitPromise, {
-      loading: "Submitting...",
-      success: "Form successfully submitted!",
-      error: "Error submitting form",
-    });
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("Submission failed");
+    }
   };
 
   return (
@@ -60,8 +60,7 @@ const NewsletterSignup = () => {
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-          action="/api/newsletter"
+          onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
@@ -71,7 +70,7 @@ const NewsletterSignup = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
-                // {...register("email", { required: true })}
+                {...register("email", { required: true })}
                 required
               />
             </div>
@@ -82,7 +81,7 @@ const NewsletterSignup = () => {
                 type="checkbox"
                 id="newsletter-consent"
                 name="newsletter-consent"
-                // {...register("newsletter-consent", { required: true })}
+                {...register("newsletter-consent", { required: true })}
                 required
               />
               <label htmlFor="newsletter-consent">
@@ -92,10 +91,9 @@ const NewsletterSignup = () => {
             <button
               type="submit"
               className={`${styles.submitButton}`}
-              // disabled={isSubmitting}
+              disabled={isSubmitting}
             >
-              {/* {isSubmitting ? "Submitting..." : "Submit"}{" "} */}
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
               <ChevronRightIcon className="btn-icon" />
             </button>
           </div>
