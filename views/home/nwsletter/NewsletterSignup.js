@@ -19,7 +19,7 @@ const NewsletterSignup = () => {
     const formData = new FormData(myForm);
 
     // Create and return a promise
-    const submitPromise = fetch("/", {
+    const submitPromise = fetch("/newsletter-form.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
