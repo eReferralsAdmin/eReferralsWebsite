@@ -6,19 +6,21 @@
     <title>Static Newsletter Signup Form</title>
   </head>
   <body>
-    <form name="newsletter-form" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="newsletter-form" value="newsletter-form" />
+    <form
+      name="newsletter-form"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="newsletter-form" />
       <label for="email">Email:</label>
       <input type="email" name="email" required />
 
       <label for="newsletter-consent"
         >I agree with the storage & processing of my personal data:</label
       >
-      <input
-        type="checkbox"
-        name="newsletter-consent"
-        required
-      />
+      <input type="checkbox" name="newsletter-consent" required />
 
       <button type="submit">Submit</button>
     </form>
