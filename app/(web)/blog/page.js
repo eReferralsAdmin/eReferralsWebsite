@@ -3,6 +3,7 @@ import styles from "./blog.module.css";
 import FeaturedPost from "../../../components/FeaturedPost";
 import NewsletterSignup from "../../../views/home/nwsletter/NewsletterSignup";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 export const revalidate = 10;
 
 async function getPosts() {
