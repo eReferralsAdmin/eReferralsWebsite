@@ -21,16 +21,12 @@ const NewsletterSignup = () => {
           </div>
         </div>
         <form
-          name="newsletter-signup-form"
+          name="newsletter-form"
           className={styles.signupForm}
           method="POST"
           data-netlify="true"
         >
-          <input
-            type="hidden"
-            name="newsletter-signup-form"
-            value="newsletter-signup-form"
-          />
+          <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
             <div
               className={styles.inputContainer}
