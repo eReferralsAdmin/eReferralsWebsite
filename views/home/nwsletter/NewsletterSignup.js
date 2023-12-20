@@ -7,36 +7,35 @@ import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import styles from "./newsletter-signup.module.css";
 
 const NewsletterSignup = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { isSubmitting },
-    reset,
-  } = useForm();
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { isSubmitting },
+  //   reset,
+  // } = useForm();
 
-  const onSubmit = async (data) => {
-    const formData = new URLSearchParams();
-    for (const key in data) {
-      formData.append(key, data[key]);
-    }
+  const handleSubmit = (event) => {
+    const myForm = event.target;
+    const formData = new FormData(myForm);
 
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: data.toString(),
-      });
-      console.log(response);
+    // Create and return a promise
+    const submitPromise = fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    }).then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
+      return response;
+    });
 
-      toast.success("Form successfully submitted!");
-      reset(); // Reset form after successful submission
-    } catch (error) {
-      console.log(error);
-      toast.error("Error submitting form");
-    }
+    // Use toast.promise
+    toast.promise(submitPromise, {
+      loading: "Submitting...",
+      success: "Form successfully submitted!",
+      error: "Error submitting form",
+    });
   };
 
   return (
@@ -61,7 +60,7 @@ const NewsletterSignup = () => {
           className={styles.signupForm}
           method="POST"
           data-netlify="true"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
