@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .nav {
@@ -133,6 +133,11 @@
 }
 
 @media (min-width: 1024px) {
+  .header {
+    position: relative;
+    padding: 0 20px;
+  }
+
   .menuIcon {
     display: none;
   }

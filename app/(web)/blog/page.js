@@ -1,8 +1,7 @@
 import BlogList from "../../../views/blog/BlogList";
 import styles from "./blog.module.css";
 import FeaturedPost from "../../../components/FeaturedPost";
-import NewsletterSignup from "../../../components/NewsletterSignup";
-
+import NewsletterSignup from "../../../views/home/nwsletter/NewsletterSignup";
 export const revalidate = 10;
 
 async function getPosts() {
@@ -16,14 +15,20 @@ async function getPosts() {
 export default async function BlogPage() {
   const posts = await getPosts();
   return (
-    <main className={styles.blogContainer}>
-      <FeaturedPost />
-      <div className={styles.blogPosts}>
-        <h1 className={styles.blogTitle}>Recent blog posts</h1>
-        <BlogList posts={posts} />
-      </div>
+    <div className="wrapper">
+      <div className="container">
+        <main className={styles.blogContainer}>
+          <FeaturedPost />
+          <div className={styles.blogPosts}>
+            <h1 className={styles.blogTitle}>Recent blog posts</h1>
+            <BlogList posts={posts} />
+          </div>
 
-      <NewsletterSignup />
-    </main>
+          <div className={styles.newsletterSection}>
+            <NewsletterSignup />
+          </div>
+        </main>
+      </div>
+    </div>
   );
 }

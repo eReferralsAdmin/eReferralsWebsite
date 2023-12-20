@@ -22,7 +22,8 @@
     "react-portable-text": "^0.6.0",
     "sanity": "^3.21.0",
     "sharp": "^0.33.0",
-    "styled-components": "^6.1.1"
+    "styled-components": "^6.1.1",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "eslint": "^8",

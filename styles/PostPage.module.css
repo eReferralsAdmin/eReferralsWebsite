@@ -3,6 +3,10 @@
   position: relative;
 }
 
+.newsletterSection {
+  margin-bottom: 80px;
+}
+
 .imageContainer::after {
   content: "";
   position: absolute;

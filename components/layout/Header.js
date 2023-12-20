@@ -51,10 +51,10 @@ const Header = () => {
                 }`}
               >
                 <li className={styles.submenuItem}>
-                  <Link href="/">For Practitioner</Link>
+                  <Link href="/pratictioners">For Practitioner</Link>
                 </li>
                 <li className={styles.submenuItem}>
-                  <Link href={"/"}>For Patients</Link>
+                  <Link href={"/patients"}>For Patients</Link>
                 </li>
               </ul>
             </li>
@@ -65,14 +65,14 @@ const Header = () => {
               <Link href="/contact">Contact us</Link>
             </li>
             <div className={styles.authLinksMobile}>
-              <Link href="/" className={styles.buttonSignup}>
+              <Link href="#signup" className={styles.buttonSignup}>
                 Signup <ChevronRightIcon className="btn-icon" />
               </Link>
             </div>
           </ul>
         </div>
         <div className={styles.authLinks}>
-          <Link href="/" className={styles.buttonSignup}>
+          <Link href="#signup" className={styles.buttonSignup}>
             Signup <ChevronRightIcon className="btn-icon" />
           </Link>
         </div>

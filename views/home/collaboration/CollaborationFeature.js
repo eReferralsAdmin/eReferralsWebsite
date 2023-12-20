@@ -1,9 +1,40 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
-import styles from "./CollaborationFeature.module.css"; // Ensure the module CSS path is correct
+import styles from "./CollaborationFeature.module.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const CollaborationFeature = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      logoSrc: "/images/collaboration-brand-logo.svg",
+      text: "Richard and his team's technical capabilities to deliver functionality on time and assist with the business execution has proven to be a great investment from an ROI perspective.",
+      productMobileSrc: "/images/collaborator-product-mobile.svg",
+      productDesktopSrc: "/images/collaborator-product-desktop.svg",
+    },
+    {
+      logoSrc: "/images/collaboration-brand-logo.svg",
+      text: "2. Richard and his team's technical capabilities to deliver functionality on time and assist with the business execution has proven to be a great investment from an ROI perspective.",
+      productMobileSrc: "/images/collaborator-product-mobile.svg",
+      productDesktopSrc: "/images/collaborator-product-desktop.svg",
+    },
+  ];
+
+  const goToPreviousSlide = () => {
+    const prevSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+    setCurrentSlide(prevSlide);
+  };
+
+  const goToNextSlide = () => {
+    const nextSlide = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+    setCurrentSlide(nextSlide);
+  };
+
+  const { logoSrc, text, productMobileSrc, productDesktopSrc } =
+    slides[currentSlide];
+
   return (
     <div className={styles.collaborationFeature}>
       <h2 className={styles.collaborationFeatureTitle}>
@@ -12,43 +43,38 @@ const CollaborationFeature = () => {
       <div className={`${styles.collaborationContent}`}>
         <div className={styles.collaborationDetails}>
           <div className={styles.brandLogo}>
-            <Image
-              src="/images/collaboration-brand-logo.svg"
-              alt="Brand Logo"
-              width={321}
-              height={137}
-            />
+            <Image src={logoSrc} alt="Brand Logo" width={321} height={137} />
           </div>
-          <p className={styles.collaborationText}>
-            Richard and his team's technical capabilities to deliver
-            functionality on time and assist with the business execution has
-            proven to be a great investment from an ROI perspective.
-          </p>
+          <p className={styles.collaborationText}>{text}</p>
           <div className={styles.carouselControls}>
-            <button
-              aria-label="Previous slide"
-              className={styles.carouselControlButton}
-            >
-              <ChevronLeftIcon className={styles.carouselControlIcon} />
-            </button>
-            <button
-              aria-label="Next slide"
-              className={styles.carouselControlButton}
-            >
-              <ChevronRightIcon className={styles.carouselControlIcon} />
-            </button>
+            <div className={styles.mobileCarouselControls}>
+              <button
+                aria-label="Previous slide"
+                className={styles.carouselControlButton}
+                onClick={goToPreviousSlide}
+              >
+                <ChevronLeftIcon className={styles.carouselControlIcon} />
+              </button>
+              <button
+                aria-label="Next slide"
+                className={styles.carouselControlButton}
+                onClick={goToNextSlide}
+              >
+                <ChevronRightIcon className={styles.carouselControlIcon} />
+              </button>
+            </div>
           </div>
         </div>
         <div className={styles.productImage}>
           <Image
-            src="/images/collaborator-product-mobile.svg"
+            src={productMobileSrc}
             alt="Product Image"
             height={450}
             width={249}
             className={styles.collaboratorProductMobile}
           />
           <Image
-            src="/images/collaborator-product-desktop.svg"
+            src={productDesktopSrc}
             alt="Product Image"
             width={249}
             height={450}

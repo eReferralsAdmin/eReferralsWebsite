@@ -2,6 +2,7 @@
   padding: 16px 19px;
   position: relative;
   margin-bottom: 12px;
+  cursor: pointer;
 }
 
 .accordionContainer::before {
@@ -42,6 +43,7 @@
 }
 
 .accordionAnswerContainer {
+  cursor: default;
   padding: 15px;
 }
 
