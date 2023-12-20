@@ -93,7 +93,8 @@ const NewsletterSignup = () => {
               className={`${styles.submitButton}`}
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit"}{" "}
+              {/* {isSubmitting ? "Submitting..." : "Submit"}{" "} */}
+              Submit
               <ChevronRightIcon className="btn-icon" />
             </button>
           </div>
