@@ -21,7 +21,7 @@ const NewsletterSignup = () => {
     }
 
     try {
-      const response = await fetch("/newsletter-form", {
+      const response = await fetch("/newsletter-form.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData,
