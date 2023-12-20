@@ -4,6 +4,21 @@ import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 
 const NewsletterSignup = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => console.log("Form successfully submitted"))
+      .catch((error) => alert(error));
+  };
+
   return (
     <section className={`${styles.newsletterSignup}  gradient-bg`}>
       <div className={styles.newsletterSignupContainer}>
@@ -25,6 +40,7 @@ const NewsletterSignup = () => {
           className={styles.signupForm}
           method="POST"
           data-netlify="true"
+          onSubmit={handleSubmit}
         >
           <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
