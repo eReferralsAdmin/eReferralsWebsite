@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Newsletter Signup Form</title>
+  </head>
+  <body>
+    <form name="newsletter-form" action="/" method="POST" netlify>
+      <input type="hidden" name="form-name" value="newsletter-form" />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="newsletter-consent"
+        >I agree with the storage & processing of my personal data:</label
+      >
+      <input
+        type="checkbox"
+        id="newsletter-consent"
+        name="newsletter-consent"
+        required
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

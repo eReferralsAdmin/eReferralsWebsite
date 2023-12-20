@@ -1,39 +1,45 @@
 "use client";
 import React from "react";
-import styles from "./newsletter-signup.module.css";
+import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
-import toast, { Toaster } from "react-hot-toast";
+import styles from "./newsletter-signup.module.css";
 
 const NewsletterSignup = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+    reset,
+  } = useForm();
 
-    const myForm = event.target;
-    const formData = new FormData(myForm);
+  const onSubmit = async (data) => {
+    const formData = new URLSearchParams();
+    for (const key in data) {
+      formData.append(key, data[key]);
+    }
 
-    // Create and return a promise
-    const submitPromise = fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    }).then((response) => {
+    try {
+      const response = await fetch("newsletter-form.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: formData,
+      });
+
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
-      return response;
-    });
 
-    // Use toast.promise
-    toast.promise(submitPromise, {
-      loading: "Submitting...",
-      success: "Form successfully submitted!",
-      error: "Error submitting form",
-    });
+      toast.success("Form successfully submitted!");
+      reset(); // Reset form after successful submission
+    } catch (error) {
+      toast.error("Error submitting form");
+    }
   };
 
   return (
-    <section className={`${styles.newsletterSignup}  gradient-bg`}>
+    <section className={`${styles.newsletterSignup} gradient-bg`}>
       <Toaster />
       <div className={styles.newsletterSignupContainer}>
         <div className={styles.newsletterContent}>
@@ -54,22 +60,17 @@ const NewsletterSignup = () => {
           className={styles.signupForm}
           method="POST"
           data-netlify="true"
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
-            <div
-              className={styles.inputContainer}
-              // className={`${styles.inputContainer} ${
-              //   errors.email ? "error" : ""
-              // }`}
-            >
+            <div className={styles.inputContainer}>
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />
               <input
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
-                // {...register("email", { required: true })}
+                {...register("email", { required: true })}
                 required
               />
             </div>
@@ -80,14 +81,20 @@ const NewsletterSignup = () => {
                 type="checkbox"
                 id="newsletter-consent"
                 name="newsletter-consent"
+                {...register("newsletter-consent", { required: true })}
                 required
               />
               <label htmlFor="newsletter-consent">
                 I agree with the storage & processing of my personal data
               </label>
             </div>
-            <button type="submit" className={`${styles.submitButton}`}>
-              Submit <ChevronRightIcon className="btn-icon" />
+            <button
+              type="submit"
+              className={`${styles.submitButton}`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Submit"}{" "}
+              <ChevronRightIcon className="btn-icon" />
             </button>
           </div>
         </form>
