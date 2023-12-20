@@ -18,7 +18,7 @@ const NewsletterSignup = () => {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    const submitPromise = fetch("/", {
+    const submitPromise = fetch("/blog", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
