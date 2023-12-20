@@ -18,7 +18,7 @@ const NewsletterSignup = () => {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    const submitPromise = fetch("/blog", {
+    const submitPromise = fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
@@ -61,7 +61,7 @@ const NewsletterSignup = () => {
           data-netlify="true"
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
-          action="/success"
+          action="/api/newsletter"
         >
           <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
