@@ -26,7 +26,6 @@ const NewsletterSignup = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData,
       });
-      console.log(response);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -34,6 +33,7 @@ const NewsletterSignup = () => {
       toast.success("Form successfully submitted!");
       reset(); // Reset form after successful submission
     } catch (error) {
+      console.log(error);
       toast.error("Error submitting form");
     }
   };
@@ -60,7 +60,7 @@ const NewsletterSignup = () => {
           className={styles.signupForm}
           method="POST"
           data-netlify="true"
-          onSubmit={handleSubmit(onSubmit)}
+          // onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
