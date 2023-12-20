@@ -70,7 +70,7 @@ const NewsletterSignup = () => {
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
-                {...register("email", { required: true })}
+                // {...register("email", { required: true })}
                 required
               />
             </div>
@@ -81,7 +81,7 @@ const NewsletterSignup = () => {
                 type="checkbox"
                 id="newsletter-consent"
                 name="newsletter-consent"
-                {...register("newsletter-consent", { required: true })}
+                // {...register("newsletter-consent", { required: true })}
                 required
               />
               <label htmlFor="newsletter-consent">
