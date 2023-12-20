@@ -59,10 +59,11 @@ const NewsletterSignup = () => {
           name="newsletter-form"
           className={styles.signupForm}
           method="POST"
-          data-netlify="true"
+          netlify
+          netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name="newsletter-form" />
+          <input type="hidden" name="newsletter-form" value="newsletter-form" />
           <div className={styles.inputGroup}>
             <div className={styles.inputContainer}>
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />
