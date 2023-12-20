@@ -24,8 +24,9 @@ const NewsletterSignup = () => {
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData,
+        body: data.toString(),
       });
+      console.log(response);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -60,7 +61,7 @@ const NewsletterSignup = () => {
           className={styles.signupForm}
           method="POST"
           data-netlify="true"
-          // onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
