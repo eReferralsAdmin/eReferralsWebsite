@@ -25,12 +25,12 @@ const Hero = () => {
             and simplify the referral process for patients.
           </p>
           <div className={styles.buttonsContainer}>
-            <Link href="#signup" className={styles.buttonInterested}>
+            <a href="#signup" className={styles.buttonInterested}>
               I'm interested! <ChevronRightIcon className="btn-icon" />
-            </Link>
-            <Link href="#learn-more" className={styles.buttonLearnMore}>
+            </a>
+            <a href="#learn-more" className={styles.buttonLearnMore}>
               Learn more <MagnifyingGlassIcon className="btn-icon" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -60,9 +60,9 @@ const EReferrals = () => {
                 allowing you to readily identify the most suitable provider for
                 your patient's needs.
               </p>
-              <Link href="#signup" className={styles.buttonInterested}>
+              <a href="#signup" className={styles.buttonInterested}>
                 I'm interested! <ChevronRightIcon className="btn-icon" />
-              </Link>
+              </a>
             </div>
           </div>
         )}
@@ -90,9 +90,9 @@ const EReferrals = () => {
                 allowing you to readily identify the most suitable provider for
                 your patient's needs.
               </p>
-              <Link href="#signup" className={styles.buttonInterested}>
+              <a href="#signup" className={styles.buttonInterested}>
                 I'm interested! <ChevronRightIcon className="btn-icon" />
-              </Link>
+              </a>
             </div>
           </div>
         )}
