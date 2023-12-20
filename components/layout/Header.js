@@ -65,16 +65,16 @@ const Header = () => {
               <Link href="/contact">Contact us</Link>
             </li>
             <div className={styles.authLinksMobile}>
-              <Link href="#signup" className={styles.buttonSignup}>
+              <a href="#signup" className={styles.buttonSignup}>
                 Signup <ChevronRightIcon className="btn-icon" />
-              </Link>
+              </a>
             </div>
           </ul>
         </div>
         <div className={styles.authLinks}>
-          <Link href="#signup" className={styles.buttonSignup}>
+          <a href="#signup" className={styles.buttonSignup}>
             Signup <ChevronRightIcon className="btn-icon" />
-          </Link>
+          </a>
         </div>
       </nav>
     </header>
