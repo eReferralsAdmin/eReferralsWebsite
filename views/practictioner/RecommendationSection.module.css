@@ -7,7 +7,7 @@
       #fff 100%
     ),
     url("/image/recommendationContainerbg.png"), lightgray 50% / cover no-repeat; */
-  overflow: visible;
+  /* overflow: visible; */
   width: 100%;
   margin-bottom: 100px;
 }
@@ -21,48 +21,95 @@
   font-weight: 600;
 }
 
-/* .cardsContainer {
-  display: flex;
-  gap: 35px;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 100px;
-  border-radius: 19px;
-  background: linear-gradient(
-    270deg,
-    rgba(103, 222, 127, 0.2) 0%,
-    rgba(62, 137, 217, 0.2) 100%
-  );
-  height: 118px;
-  width: 1510px;
-  margin: 0 auto;
+/* .testimonialsContent {
+  max-width: 100%;
+}
+
+.swiperNavIcon {
+  width: 65px;
+  height: 65px;
+  padding: 10px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 50%;
+  filter: drop-shadow(0px 9px 26.5px rgba(0, 0, 0, 0.65));
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  z-index: -1;
+}
+
+.testimonialsContent {
+  position: relative;
+}
+@media screen and (min-width: 1120px) {
+  .testimonialsContainer {
+    position: relative;
+    padding: 0px 70px;
+    margin: 0 200px;
+  }
+
+  .testimonialsContainer::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 19px;
+    background: linear-gradient(
+      270deg,
+      rgba(103, 222, 127, 0.2) 0%,
+      rgba(62, 137, 217, 0.2) 100%
+    );
+    height: 150px;
+  }
 } */
 
-.cardsContainer {
-  position: relative;
+.swiperNav {
+  display: none;
 }
 
-.cardsBg {
+.testimonialsContainer {
+  position: relative;
+  /* padding: 0px 70px; */
+  /* margin: 0 200px; */
+}
+
+.testimonialsContainer::after {
+  content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  width: 100%;
   background: linear-gradient(
     270deg,
     rgba(103, 222, 127, 0.2) 0%,
     rgba(62, 137, 217, 0.2) 100%
   );
-  height: 118px;
-  width: 1510px;
-  margin: 0 auto;
+  height: 159px;
 }
 
-.testimonialCards {
-  display: flex;
-  gap: 35px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 100px;
-  border-radius: 19px;
-  position: relative;
+@media screen and (min-width: 1200px) {
+  .swiperNav {
+    display: block;
+  }
+
+  .testimonialsContainer::after {
+    border-radius: 22px;
+    height: 180px;
+  }
+
+  .testimonialsContainer {
+    position: relative;
+    padding: 0px 70px;
+    margin: 0 200px;
+  }
 }

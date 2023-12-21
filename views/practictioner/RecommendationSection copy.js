@@ -1,20 +1,16 @@
 "use client";
 import React from "react";
-import { Navigation, EffectCoverflow, Scrollbar, A11y } from "swiper/modules";
+
 import TestimonialCard from "../../components/TestimonialCard";
 import styles from "./RecommendationSection.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import "swiper/css/navigation";
-
 const recommendations = [
   {
-    quote:
-      "“This chapter introduces the topic of error as an essential foundation for an understanding of patient safety. We introduce...",
+    quote: "Excellent resource for understanding patient safety nuances.",
     imageUrl: "/images/test1.png",
-    name: "Dr. John Doe",
-    title: "Surgeon at Sydney Clinic",
+    name: "Dr. Jane Smith",
+    title: "Cardiologist at HeartCare Clinic",
   },
   {
     quote: "A thorough dive into the procedural standards of care.",
@@ -46,42 +42,37 @@ const RecommendationSection = () => {
   return (
     <section className={styles.recommendationContainer}>
       <h2>Recommended by Medics</h2>
-      <div className={styles.testimonialsContainer}>
+      {/* <div className={styles.cardsContainer}>
+        <div className={styles.cardsBg}></div>
+        <div className={styles.testimonialCards}>
+          {recommendations.map((recommendation, index) => (
+            <TestimonialCard
+              key={index}
+              quote={recommendation.quote}
+              imageSrc={recommendation.imageUrl}
+              altText={recommendation.name}
+              name={recommendation.name}
+              title={recommendation.title}
+            />
+          ))}
+        </div>
+      </div> */}
+      <div className={styles.cardsContainer}>
         <Swiper
-          className={styles.testimonialsContent}
-          // effect={"coverflow"}
-          // coverflowEffect={{
-          //   rotate: 0,
-          //   stretch: 0,
-          //   depth: 300,
-          //   modifier: 1,
-          //   slideShadows: false,
-          //   slidesPerView: 1.4,
-          // }}
-          slidesPerView={1.4}
-          spaceBetween={27}
-          loop={true}
+          spaceBetween={10}
+          slidesPerView={3}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
           breakpoints={{
-            768: {
-              slidesPerView: 2.4,
+            320: {
+              slidesPerView: 1,
               spaceBetween: 20,
+              centeredSlides: true,
             },
-
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 10,
-            },
-          }}
-          // onSlideChange={() => console.log("slide change")}
-          // onSwiper={(swiper) => console.log(swiper)}
-          modules={[Navigation, EffectCoverflow]}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
           }}
         >
           {recommendations.map((recommendation, index) => (
-            <SwiperSlide className={styles.slideCard}>
+            <SwiperSlide>
               <TestimonialCard
                 key={index}
                 quote={recommendation.quote}
@@ -93,12 +84,7 @@ const RecommendationSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className={styles.swiperNav}>
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
-        </div>
       </div>
-      <div className={styles.bg}></div>
     </section>
   );
 };

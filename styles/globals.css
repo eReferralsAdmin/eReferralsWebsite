@@ -85,7 +85,44 @@ button {
   border: 1px solid red;
 }
 
-@media screen and (min-width: 768px) {
+/* .swiper {
+  padding: 100px 0 !important;
+} */
+
+.swiper-wrapper {
+  margin: 0 30px;
+  padding: 70px 0 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: #000;
+  color: #fff !important;
+  padding: 30px;
+  border-radius: 50%;
+  filter: drop-shadow(0px 9px 26.5px rgba(0, 0, 0, 0.65));
+}
+
+.swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, -25px) !important;
+  left: auto;
+}
+
+.swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, -25px) !important;
+  left: auto;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev::after {
+  font-size: 28px !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .swiper-slide-next {
+    transform: scale(1.2) !important;
+    transition: transform 0.3s ease-in-out;
+  }
 }
 
 @media screen and (min-width: 1200px) {
