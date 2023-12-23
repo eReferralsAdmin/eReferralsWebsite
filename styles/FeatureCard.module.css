@@ -1,0 +1,41 @@
+.featureItem {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 275px;
+  /* height: 207px; */
+  flex-shrink: 0;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 4px 55px 0px rgba(0, 0, 0, 0.11);
+}
+
+.icon {
+  margin-right: 16px;
+}
+
+.featureTitle {
+  color: #000;
+  font-family: Albert Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+
+.featureDescription {
+  color: #000;
+  font-family: Albert Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@media screen and (min-width: 1200px) {
+  .featureItem {
+    width: 100%;
+  }
+}

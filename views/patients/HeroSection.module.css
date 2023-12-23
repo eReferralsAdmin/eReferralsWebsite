@@ -1,0 +1,160 @@
+.imageContainer {
+  width: 100%;
+  margin: auto;
+  padding: 70px 38px;
+  position: relative;
+}
+
+.topImage {
+  position: relative;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  z-index: 3;
+  box-shadow: 0px 0px 180.8px 0px rgba(103, 222, 127, 0.6);
+  max-width: 608px;
+}
+
+.bottomImages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 50% 50%;
+  filter: drop-shadow(0px 0px 103.8px rgba(63, 162, 247, 0.5));
+  justify-content: space-between;
+}
+
+.bottomImages img {
+  width: 70%;
+  max-width: 461px;
+  /* padding: 38px; */
+}
+
+.headerContent {
+  text-align: center;
+  margin-bottom: 60px;
+
+  margin: auto;
+}
+
+.logoContainer {
+  width: 316px;
+  margin: auto;
+}
+
+.logoContainer img {
+  width: 100%;
+  margin: auto;
+}
+
+.headerContent p:first-child {
+  color: #17355d;
+  text-align: center;
+  font-family: Albert Sans;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.headerContent h1 {
+  color: #17355d;
+  font-family: Albert Sans;
+  font-size: 44px;
+  font-weight: 600;
+}
+
+.heroDescription {
+  color: #8192a5;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 34px 40px;
+  line-height: 24px;
+  font-weight: 400;
+  max-width: 865px;
+  margin: auto;
+}
+
+.submitButton {
+  border: none;
+  width: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: Albert Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+
+  display: flex;
+  width: 360px;
+  height: 50px;
+  padding: 10px 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .bottomImages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 575px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;
+  }
+
+  .headerContainer {
+    order: 1;
+  }
+
+  .imageContainer {
+    order: 2;
+  }
+
+  .heroContainer {
+    order: 3;
+  }
+
+  .logoContainer {
+    width: 515px;
+    margin: auto;
+  }
+
+  .headerContent p:first-child {
+    color: #17355d;
+    text-align: center;
+    font-family: Albert Sans;
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  .headerContent h1 {
+    color: #17355d;
+    font-family: Albert Sans;
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  .submitButton {
+    width: max-content;
+  }
+}

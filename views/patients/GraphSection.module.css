@@ -1,0 +1,103 @@
+.imageContainer {
+  width: 100%;
+}
+
+.imageContainer img {
+  width: 100%;
+}
+
+.infoSection {
+  padding: 30px;
+}
+
+.infoSection h1 {
+  margin-bottom: 20px;
+  color: #17355d;
+  text-align: center;
+  font-family: Albert Sans;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.infoSection p {
+  color: #000;
+  font-family: Albert Sans;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.featuresSection {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.feature {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature p {
+  color: #17355d;
+  font-family: Albert Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.graphImageDesktop {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .graphImageMobile {
+    display: none;
+  }
+
+  .graphImageDesktop {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .dashboardContent {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+  }
+
+  .infoSection {
+    padding: 0;
+    max-width: 430px;
+  }
+
+  .infoSection p,
+  .infoSection h1 {
+    text-align: left;
+  }
+
+  .infoSection h1 {
+    margin-bottom: 30px;
+  }
+
+  .infoSection p {
+    line-height: 30px;
+  }
+
+  .graphImageDesktop {
+    max-width: 878px;
+    margin: auto;
+  }
+
+  .featuresSection {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
