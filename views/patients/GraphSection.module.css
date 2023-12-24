@@ -1,3 +1,16 @@
+.dashboard {
+  background: linear-gradient(
+      180deg,
+      #eff9f7 0%,
+      rgba(239, 249, 247, 0) 39.58%,
+      #eff9f7 100%
+    ),
+    url("/images/graph-bg1.png"), lightgray 50% / cover no-repeat;
+  /* background: url("/images/graph-bg.png"), lightgray 50% / cover no-repeat; */
+  background-position: center;
+  padding: 100px 0;
+}
+
 .imageContainer {
   width: 100%;
 }
@@ -62,6 +75,9 @@
 
   .graphImageDesktop {
     display: block;
+  }
+  .dashboard {
+    padding-bottom: 150px;
   }
 }
 

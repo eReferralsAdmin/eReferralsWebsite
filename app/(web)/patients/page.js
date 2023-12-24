@@ -5,6 +5,7 @@ import KeyFeatures from "../../../views/patients/KeyFeatures";
 import DemoSection from "../../../views/patients/DemoSection";
 import Faq from "../../../components/Faq";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
+import styles from "./patients.module.css";
 
 const faqs = [
   {
@@ -16,14 +17,14 @@ const faqs = [
 
 const page = () => {
   return (
-    <div>
+    <main className={styles.main}>
       <HeroSection />
       <FeaturesSection />
       <KeyFeatures />
       <RecommendationSection />
       <DemoSection />
       <Faq faqs={faqs} />
-    </div>
+    </main>
   );
 };
 

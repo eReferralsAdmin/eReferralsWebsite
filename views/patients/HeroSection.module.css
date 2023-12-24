@@ -1,3 +1,7 @@
+.container {
+  /* margin-bottom: 65px; */
+}
+
 .imageContainer {
   width: 100%;
   margin: auto;
@@ -106,6 +110,9 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .container {
+    /* margin-bottom: 165px; */
+  }
 }
 
 @media screen and (min-width: 1200px) {

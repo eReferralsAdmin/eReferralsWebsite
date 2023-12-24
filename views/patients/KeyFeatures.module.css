@@ -38,6 +38,7 @@
   .featuresSection {
     display: grid;
     grid-template-columns: 40% 60%;
+    padding-bottom: 100px;
   }
 
   .featuresGrid {
