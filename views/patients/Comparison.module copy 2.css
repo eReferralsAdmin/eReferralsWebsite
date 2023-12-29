@@ -1,0 +1,138 @@
+.comparisonSection {
+  padding: 0 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.comparisonContentMobile {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  justify-content: center;
+}
+
+.before p,
+.after p,
+.beforeHeader h2,
+.afterHeader h2 {
+  color: #17355d;
+  font-family: "Albert Sans", sans-serif; /* Ensure the font family is consistently applied */
+  font-weight: 400;
+  line-height: normal;
+}
+
+.beforeHeader,
+.afterHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 15px;
+}
+
+.beforeHeader h2,
+.afterHeader h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.before p,
+.after p {
+  font-size: 14px;
+  text-align: right;
+}
+
+.sliderContainer {
+  width: 100%;
+  max-width: 432px;
+  margin: 32px auto;
+}
+
+.sliderWrapperBefore,
+.sliderWrapperAfter {
+  padding: 60px 38px;
+  border-radius: 22px;
+}
+
+.sliderWrapperBefore {
+  background: linear-gradient(180deg, #224972 0%, #4290d3 89.71%);
+}
+
+.sliderWrapperAfter {
+  background: linear-gradient(180deg, #408a6e 0%, #5fcd7c 87.2%);
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .imageComparisonContainer {
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    padding: 30px;
+    height: 900px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .comparisonSection {
+    width: 100%;
+    flex: 1;
+  }
+
+  .comparisonBefore {
+    background: linear-gradient(90deg, #214871 0%, #4290d3 100%);
+  }
+
+  .comparisonAfter {
+    background: linear-gradient(270deg, #3f896d 0%, #60ce7c 100%);
+    text-align: right;
+  }
+
+  .sliderContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 370px;
+  }
+
+  /* .comparisonContentMobile {
+    display: none;
+  } */
+
+  .sliderWrapperBefore,
+  .sliderWrapperAfter {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .before p,
+  .after p,
+  .beforeHeader h2,
+  .afterHeader h2 {
+    color: #fff;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .beforeHeader h2,
+  .afterHeader h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .before p {
+    text-align: left;
+  }
+  .after p {
+    font-size: 14px;
+    text-align: right;
+  }
+}

@@ -1,141 +1,70 @@
-import React from "react";
-import styles from "./practictioner.module.css";
 import Image from "next/image";
-import {
-  ChevronRightIcon,
-  EnvelopeIcon,
-  PhoneIcon,
-  UserIcon,
-} from "@heroicons/react/24/outline";
-import Link from "next/link";
-import RecommendationSection from "../../../views/practictioner/RecommendationSection";
-import Faq from "../../../components/Faq";
+import styles from "./patients.module.css";
 
-const recommendations = [
-  {
-    quote: "Excellent resource for understanding patient safety nuances.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Jane Smith",
-    title: "Cardiologist at HeartCare Clinic",
-  },
-  {
-    quote: "A thorough dive into the procedural standards of care.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Emily Doe",
-    title: "General Practitioner at Wellness Center",
-  },
-];
-
-const faqs = [
-  {
-    title: "What is Mobile app development?",
-    description:
-      "It’s the creation of digital system that are tailored for mobile devices. Now more than ever the world needs to be mobilised with their business and systems and Mobile app development is the most relevant path to take. As per any other Application Development, the process is to gather requirements, define functionalities, design, build, deliver and support these mobile apps tailored for the business purpose.",
-  },
-];
-
-const PratictionersPage = () => {
+const PatientsPage = () => {
   return (
-    <>
-      <section className={styles.signupContainer}>
-        <div className={styles.signupContent}>
-          <div className={styles.header}>
-            <div className={styles.branding}>
-              <Image
-                width={316}
-                height={67}
-                src="/logo.svg"
-                alt="eReferrals Logo"
-              />
-            </div>
-            <div className={styles.signupSection}>
-              <p>Sign up for</p>
-              <p>BETA VERSION</p>
-            </div>
-          </div>
-          <div className={styles.toggleButtons}>
-            <button
-              className={`${styles.toggleBtn} ${styles.active}`}
-              aria-pressed="true"
-            >
-              For Practitioners
-            </button>
-            <button className={styles.toggleBtn} aria-pressed="false">
-              For Patients
-            </button>
-          </div>
-          <div className={styles.container}>
-            <form
-              className={styles.signupForm}
-              name="signup-for-beta-version"
-              method="POST"
-              data-netlify="true"
-            >
-              <input
-                type="hidden"
-                name="signup-for-beta-version"
-                value="signup-for-beta-version"
-              />
-              <div className={styles.inputGroup}>
-                <div className={styles.inputContainer}>
-                  <UserIcon className={styles.inputIcon} />
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your full name"
-                    className={styles.inputField}
-                    required
-                  />
-                </div>
-                <div className={styles.inputContainer}>
-                  <PhoneIcon className={styles.inputIcon} />
-                  <input
-                    name="phone"
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    className={styles.inputField}
-                    required
-                  />
-                </div>
-                <div className={styles.inputContainer}>
-                  <EnvelopeIcon className={styles.inputIcon} />
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="Enter your email address"
-                    className={styles.inputField}
-                    required
-                  />
-                </div>
-              </div>
-              <div className={styles.formFooter}>
-                <div className={styles.consent}>
-                  <input type="checkbox" id="consent" name="consent" required />
-                  <label htmlFor="consent">
-                    I agree with the storage & processing of my personal data
-                  </label>
-                </div>
-                <div className={styles.links}>
-                  <Link className={styles.link} href="/">
-                    Terms
-                  </Link>
-                  <span>|</span>
-                  <Link className={styles.link} href="/">
-                    Privacy
-                  </Link>
-                </div>
-                <button type="submit" className={`${styles.submitButton}`}>
-                  Get Started <ChevronRightIcon className="btn-icon" />
-                </button>
-              </div>
-            </form>
-          </div>
+    <div className={styles.dashboard}>
+      <div className={styles.graphSection}>
+        <div className={styles.graphCard}>
+          <Image
+            src={"/images/graph.png"}
+            className={styles.graphImage}
+            width={878}
+            height={280}
+            // style={{
+            //   maxWidth: "516px",
+            //   height: "auto",
+            //   objectFit: "cover",
+            //   margin: "auto",
+            // }}
+          />
         </div>
-      </section>
-      {/* <RecommendationSection /> */}
-      <Faq faqs={faqs} />
-    </>
+        <div className={styles.infoSection}>
+          <h1 className={styles.mainTitle}>
+            Manage your hospital inventory easily
+          </h1>
+          <p className={styles.description}>
+            This chapter introduces the topic of error as an essential
+            foundation for an understanding of patient safety. We introduce
+            psychological classifications of error and then, using clinical
+            examples
+          </p>
+        </div>
+      </div>
+
+      <div className={styles.benefits}>
+        <div className={styles.benefitItem}>
+          <Image
+            className={styles.icon}
+            src="/images/dashboard.svg"
+            height={29}
+            width={29}
+          />
+          <span className={styles.benefitItemTitle}>Easy management</span>
+        </div>
+        <div className={styles.benefitItem}>
+          <Image
+            className={styles.icon}
+            src="/images/energy.svg"
+            height={29}
+            width={29}
+          />
+          <span className={styles.benefitItemTitle}>
+            Increase Hospital Efficiency
+          </span>
+        </div>
+        <div className={styles.benefitItem}>
+          <Image
+            className={styles.icon}
+            src="/images/support.svg"
+            height={29}
+            width={29}
+          />
+          <span className={styles.benefitItemTitle}>24/7 Live Support</span>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default PratictionersPage;
+export default PatientsPage;

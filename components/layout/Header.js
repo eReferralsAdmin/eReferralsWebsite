@@ -65,14 +65,14 @@ const Header = () => {
               <Link href="/contact">Contact us</Link>
             </li>
             <div className={styles.authLinksMobile}>
-              <a href="/pratictioners" className={styles.buttonSignup}>
+              <a href="/pratictioners-signup" className={styles.buttonSignup}>
                 Signup <ChevronRightIcon className="btn-icon" />
               </a>
             </div>
           </ul>
         </div>
         <div className={styles.authLinks}>
-          <a href="/pratictioners" className={styles.buttonSignup}>
+          <a href="/pratictioners-signup" className={styles.buttonSignup}>
             Signup <ChevronRightIcon className="btn-icon" />
           </a>
         </div>
