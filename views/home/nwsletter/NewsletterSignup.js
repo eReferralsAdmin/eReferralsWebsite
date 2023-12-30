@@ -62,6 +62,7 @@ const NewsletterSignup = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <input type="hidden" name="newsletter-form" />
+          <input type="hidden" name="test" />
           <div className={styles.inputGroup}>
             <div className={styles.inputContainer}>
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />
@@ -80,6 +81,7 @@ const NewsletterSignup = () => {
                 type="checkbox"
                 id="newsletter-consent"
                 name="newsletter-consent"
+                value={"Agree"}
                 {...register("newsletter-consent", { required: true })}
                 required
               />
