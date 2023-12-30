@@ -30,13 +30,13 @@ const PratictionersPage = () => {
     reset,
   } = useForm();
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (data) => {
     try {
-      const data = {
-        ...formData,
-        "signup-as": activeTab,
-      };
-      console.log(data);
+      // const data = {
+      //   ...formData,
+      //   "signup-as": activeTab,
+      // };
+      // console.log(data);
       const response = await fetch("/api/signup", {
         method: "POST",
         headers: {
@@ -119,7 +119,12 @@ const PratictionersPage = () => {
                 name="signup-for-beta-version"
                 value="signup-for-beta-version"
               /> */}
-              {/* <input type="hidden" name="signup-as" value={activeTab} /> */}
+              <input
+                type="hidden"
+                name="signup-as"
+                value={activeTab}
+                {...register("signup-as", { required: true })}
+              />
               <div className={styles.inputGroup}>
                 <div className={styles.inputContainer}>
                   <UserIcon className={styles.inputIcon} />
