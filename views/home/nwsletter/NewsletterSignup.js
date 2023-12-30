@@ -32,7 +32,6 @@ const NewsletterSignup = () => {
         toast.error("Error submitting form");
       }
     } catch (error) {
-      console.error("Submission error:", error);
       toast.error("Submission failed");
     }
   };

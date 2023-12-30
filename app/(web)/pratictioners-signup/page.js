@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 import styles from "./practictioner-signup.module.css";
 import Image from "next/image";
 import {
@@ -10,21 +10,9 @@ import {
 import Link from "next/link";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
 import Faq from "../../../components/Faq";
-
-const recommendations = [
-  {
-    quote: "Excellent resource for understanding patient safety nuances.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Jane Smith",
-    title: "Cardiologist at HeartCare Clinic",
-  },
-  {
-    quote: "A thorough dive into the procedural standards of care.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Emily Doe",
-    title: "General Practitioner at Wellness Center",
-  },
-];
+import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -35,6 +23,50 @@ const faqs = [
 ];
 
 const PratictionersPage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+    reset,
+  } = useForm();
+
+  const onSubmit = async (formData) => {
+    try {
+      const data = {
+        ...formData,
+        signupAs: activeTab,
+      };
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success("Form successfully submitted!");
+        reset({
+          name: "",
+          phone: "",
+          email: "",
+          "signup-consent": false,
+        });
+        // router.push("/success");
+      } else {
+        toast.error("Error submitting form");
+      }
+    } catch (error) {
+      toast.error("Submission failed");
+    }
+  };
+
+  const [activeTab, setActiveTab] = useState("practitioners");
+
+  const toggleTab = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <>
       <section className={styles.signupContainer}>
@@ -55,12 +87,21 @@ const PratictionersPage = () => {
           </div>
           <div className={styles.toggleButtons}>
             <button
-              className={`${styles.toggleBtn} ${styles.active}`}
-              aria-pressed="true"
+              className={`${styles.toggleBtn} ${
+                activeTab === "practitioners" ? styles.active : ""
+              }`}
+              aria-pressed={activeTab === "practitioners"}
+              onClick={() => toggleTab("practitioners")}
             >
               For Practitioners
             </button>
-            <button className={styles.toggleBtn} aria-pressed="false">
+            <button
+              className={`${styles.toggleBtn} ${
+                activeTab === "patients" ? styles.active : ""
+              }`}
+              aria-pressed={activeTab === "patients"}
+              onClick={() => toggleTab("patients")}
+            >
               For Patients
             </button>
           </div>
@@ -70,6 +111,7 @@ const PratictionersPage = () => {
               name="signup-for-beta-version"
               method="POST"
               data-netlify="true"
+              onSubmit={handleSubmit(onSubmit)}
             >
               <input
                 type="hidden"
@@ -85,6 +127,7 @@ const PratictionersPage = () => {
                     placeholder="Enter your full name"
                     className={styles.inputField}
                     required
+                    {...register("name", { required: true })}
                   />
                 </div>
                 <div className={styles.inputContainer}>
@@ -95,6 +138,7 @@ const PratictionersPage = () => {
                     placeholder="Enter your phone number"
                     className={styles.inputField}
                     required
+                    {...register("phone", { required: true })}
                   />
                 </div>
                 <div className={styles.inputContainer}>
@@ -105,12 +149,19 @@ const PratictionersPage = () => {
                     placeholder="Enter your email address"
                     className={styles.inputField}
                     required
+                    {...register("email", { required: true })}
                   />
                 </div>
               </div>
               <div className={styles.formFooter}>
                 <div className={styles.consent}>
-                  <input type="checkbox" id="consent" name="consent" required />
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    {...register("signup-consent", { required: true })}
+                    required
+                  />
                   <label htmlFor="consent">
                     I agree with the storage & processing of my personal data
                   </label>

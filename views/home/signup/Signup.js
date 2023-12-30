@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./Signup.module.css"; // Importing the CSS module
+import styles from "./Signup.module.css";
 import {
-  ArrowRightIcon,
   ChevronRightIcon,
   EnvelopeIcon,
-  MinusIcon,
   PhoneIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
