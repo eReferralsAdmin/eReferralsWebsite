@@ -23,6 +23,7 @@ const faqs = [
 ];
 
 const PratictionersPage = () => {
+  const [activeTab, setActiveTab] = useState("practitioners");
   const {
     register,
     handleSubmit,
@@ -30,11 +31,15 @@ const PratictionersPage = () => {
     reset,
   } = useForm();
 
+  const toggleTab = (tab) => {
+    setActiveTab(tab);
+  };
+
   const onSubmit = async (formData) => {
     try {
       const data = {
         ...formData,
-        'signup-as': activeTab,
+        "signup-as": activeTab,
       };
 
       const response = await fetch("/api/signup", {
@@ -60,12 +65,6 @@ const PratictionersPage = () => {
     } catch (error) {
       toast.error("Submission failed");
     }
-  };
-
-  const [activeTab, setActiveTab] = useState("practitioners");
-
-  const toggleTab = (tab) => {
-    setActiveTab(tab);
   };
 
   return (
@@ -166,7 +165,7 @@ const PratictionersPage = () => {
                     type="checkbox"
                     id="signup-consent"
                     name="signup-consent"
-                    value='Agree to store and process my personal data'
+                    value="Agree"
                     {...register("signup-consent", { required: true })}
                     required
                   />
@@ -183,8 +182,13 @@ const PratictionersPage = () => {
                     Privacy
                   </Link>
                 </div>
-                <button type="submit" className={`${styles.submitButton}`}>
-                  Get Started <ChevronRightIcon className="btn-icon" />
+                <button
+                  type="submit"
+                  className={`${styles.submitButton}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Get Starting"}
+                  <ChevronRightIcon className="btn-icon" />
                 </button>
               </div>
             </form>
