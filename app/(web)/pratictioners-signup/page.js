@@ -164,12 +164,12 @@ const PratictionersPage = () => {
                 <div className={styles.consent}>
                   <input
                     type="checkbox"
-                    id="consent"
-                    name="consent"
+                    id="signup-consent"
+                    name="signup-consent"
                     {...register("signup-consent", { required: true })}
                     required
                   />
-                  <label htmlFor="consent">
+                  <label htmlFor="signup-consent">
                     I agree with the storage & processing of my personal data
                   </label>
                 </div>
