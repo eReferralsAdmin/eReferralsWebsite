@@ -30,13 +30,13 @@ const PratictionersPage = () => {
     reset,
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (formData) => {
     try {
-      // const data = {
-      //   ...formData,
-      //   "signup-as": activeTab,
-      // };
-      // console.log(data);
+      const data = {
+        ...formData,
+        'signup-as': activeTab,
+      };
+
       const response = await fetch("/api/signup", {
         method: "POST",
         headers: {
@@ -110,15 +110,15 @@ const PratictionersPage = () => {
             <form
               className={styles.signupForm}
               name="signup-for-beta-version"
-              // method="POST"
-              // data-netlify="true"
+              method="POST"
+              data-netlify="true"
               onSubmit={handleSubmit(onSubmit)}
             >
-              {/* <input
+              <input
                 type="hidden"
                 name="signup-for-beta-version"
                 value="signup-for-beta-version"
-              /> */}
+              />
               <input
                 type="hidden"
                 name="signup-as"
@@ -166,6 +166,7 @@ const PratictionersPage = () => {
                     type="checkbox"
                     id="signup-consent"
                     name="signup-consent"
+                    value='Agree to store and process my personal data'
                     {...register("signup-consent", { required: true })}
                     required
                   />

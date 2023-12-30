@@ -13,20 +13,20 @@ export async function POST(request) {
 
     console.log(netlifyFormData);
 
-    const netlifyResponse = await fetch(
-      "https://main--erefferals-web-dev.netlify.app/",
-      {
-        method: "POST",
-        body: netlifyFormData,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      }
-    );
+    // const netlifyResponse = await fetch(
+    //   "https://main--erefferals-web-dev.netlify.app/",
+    //   {
+    //     method: "POST",
+    //     body: netlifyFormData,
+    //     headers: {
+    //       "Content-Type": "application/x-www-form-urlencoded",
+    //     },
+    //   }
+    // );
 
-    if (!netlifyResponse.ok) {
-      throw new Error("Failed to submit to Netlify");
-    }
+    // if (!netlifyResponse.ok) {
+    //   throw new Error("Failed to submit to Netlify");
+    // }
 
     return NextResponse.json({ message: "success" });
   } catch (error) {
