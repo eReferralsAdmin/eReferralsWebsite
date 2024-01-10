@@ -263,7 +263,7 @@ const Signup = () => {
                   className={`${styles.submitButton}`}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Get Starting"}
+                  {isSubmitting ? "Submitting..." : "Get Started"}
                   <ChevronRightIcon className="btn-icon" />
                 </button>
               </div>
