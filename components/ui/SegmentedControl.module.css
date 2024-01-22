@@ -1,0 +1,78 @@
+/* SegmentedControl.module.css */
+.controlsContainer {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: 74px;
+  background: #fff;
+  width: 100%;
+  /* max-width: 300px; */
+  height: 50px;
+  margin: 0 auto;
+  border: solid 6px #fff;
+}
+
+.hiddenRadio {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  flex: 1;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+  color: #0075d5;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  gap: 6px;
+}
+
+.labelActive {
+  color: #fff;
+}
+
+.paddle {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #5fcc7c 0%, #3f8a6e 100%);
+  border-radius: 20px;
+  transition: left 0.3s ease, right 0.3s ease, background-color 0.3s ease;
+  z-index: 0;
+}
+
+.paddleActive {
+  width: 50%;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.paddleInactive {
+  background-color: transparent; /* Hide the paddle by making it transparent */
+}
+
+.checkIcon {
+  width: 30px;
+  stroke-width: 3px;
+  stroke: #fff;
+}

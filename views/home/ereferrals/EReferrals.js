@@ -58,10 +58,10 @@ const EReferrals = () => {
                 Easily locate pathology and radiology providers based on
                 location, services offered, or your personal favourites list,
                 allowing you to readily identify the most suitable provider for
-                your patient's needs.
+                your patient&apos;s needs.
               </p>
               <a href="#signup" className={styles.buttonInterested}>
-                I'm interested! <ChevronRightIcon className="btn-icon" />
+                I&apos;m interested! <ChevronRightIcon className="btn-icon" />
               </a>
             </div>
           </div>
@@ -88,10 +88,10 @@ const EReferrals = () => {
                 Easily locate pathology and radiology providers based on
                 location, services offered, or your personal favourites list,
                 allowing you to readily identify the most suitable provider for
-                your patient's needs.
+                your patient&apos;s needs.
               </p>
               <a href="#signup" className={styles.buttonInterested}>
-                I'm interested! <ChevronRightIcon className="btn-icon" />
+                I&apos;m interested! <ChevronRightIcon className="btn-icon" />
               </a>
             </div>
           </div>

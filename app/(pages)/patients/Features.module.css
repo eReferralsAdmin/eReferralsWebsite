@@ -1,0 +1,113 @@
+.featuresContainer {
+  margin-block: 75px;
+  background: linear-gradient(
+      180deg,
+      #eff9f7 0%,
+      rgba(239, 249, 247, 0.73) 39.58%,
+      #eff9f7 100%
+    ),
+    url("/patient/features-mobile-bg.svg"), lightgray 50% / cover no-repeat;
+}
+
+.textContainer,
+.imageContainer {
+  padding-inline: 30px;
+  position: relative;
+}
+
+.title,
+.description {
+  color: #17355d;
+  font-family: Albert Sans;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.description {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.imageContainer {
+  height: 508px;
+}
+
+.featuresSection {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.feature {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature p {
+  color: #17355d;
+  font-family: Albert Sans;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .featuresContainer {
+    background-image: url("/patient/features-mobile-bg.svg");
+  }
+
+  .description {
+    margin-block: 34px;
+    padding: 0 43px;
+  }
+
+  .featuresSection {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .featuresContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .textContainer,
+  .imageContainer {
+    padding-inline: 0;
+    flex: 1;
+  }
+
+  .title,
+  .description {
+    text-align: left;
+  }
+
+  .description {
+    padding-left: 0px;
+  }
+
+  .featuresSection {
+    padding: 0;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .feature {
+    justify-content: end;
+    flex-direction: row-reverse;
+  }
+}
