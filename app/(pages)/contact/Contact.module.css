@@ -9,6 +9,10 @@
   gap: 40px;
 }
 
+.faqContainer {
+  margin-top: 100px;
+}
+
 .heading,
 .heading h2,
 .heading p,
@@ -34,7 +38,7 @@
 .inputField,
 .legalLinksHeader a,
 .legalLinksFooter a {
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -47,7 +51,7 @@
 .legalLinksHeader,
 .legalLinksFooter {
   margin-top: 10px;
-  font-size: 0.9em;
+  /* font-size: 0.9em; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +75,8 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 14px;
-  width: 290px;
+  width: 325px;
+  line-height: 26px;
   margin: 0 auto;
 }
 
@@ -162,10 +167,14 @@
   }
 
   .legalLinksHeader {
-    display: block;
+    display: flex;
     text-align: left;
     justify-content: start;
     padding-top: 50px;
+  }
+
+  .consentContainer {
+    margin: 0;
   }
 
   .legalLinksFooter {
