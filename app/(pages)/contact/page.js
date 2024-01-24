@@ -22,94 +22,89 @@ const ContactUs = () => {
   const [isPaddleActive, setIsPaddleActive] = useState(true);
 
   const segmentOptions = [
-    { label: "Patient", value: "Patient" },
     { label: "Pratictioner", value: "Pratictioner" },
+    { label: "Patient", value: "Patient" },
   ];
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      data-netlify="true"
-      name="contact"
-      className={styles.formContainer}
-    >
-      <input type="hidden" name="form-name" value="contact" />
-      <div className={styles.formHeading}>
+    <div className={styles.container}>
+      <div className={styles.heading}>
         <h2>Contact us!</h2>
         <p>We respond within 24 hours.</p>
+        <div className={styles.legalLinksHeader}>
+          <Link href="#terms">Terms</Link>
+          <MinusIcon className={styles.divider} />
+          <Link href="#privacy">Privacy</Link>
+        </div>
       </div>
-      <textarea
-        className={`${styles.formInput} ${styles.textareaContainer}`}
-        {...register("message", { required: "Your message is required." })}
-        placeholder="Enter your message"
-        rows={8}
-      ></textarea>
-      {errors.message && (
-        <p className={styles.errorMessage}>{errors.message.message}</p>
-      )}
 
-      <SegmentedControl
-        options={segmentOptions}
-        name="role"
-        activeSegment={segment}
-        onSegmentChange={setSegment}
-        paddleActive={isPaddleActive}
-      />
+      <form className={styles.form}>
+        <div className={styles.segmentedControlContainer}>
+          <SegmentedControl
+            options={segmentOptions}
+            name="role"
+            activeSegment={segment}
+            onSegmentChange={setSegment}
+            paddleActive={isPaddleActive}
+          />
+        </div>
 
-      {errors.role && (
-        <p className={styles.errorMessage}>{errors.role.message}</p>
-      )}
-
-      <div className={styles.inputGroup}>
         <input
-          className={styles.formInput}
-          {...register("name", { required: "Name is required." })}
           type="text"
+          id="name"
+          name="name"
           placeholder="Name"
+          required
+          className={styles.inputField}
         />
-        {errors.name && (
-          <p className={styles.errorMessage}>{errors.name.message}</p>
-        )}
 
         <input
-          className={styles.formInput}
-          {...register("email", {
-            required: "Enter a valid email address.",
-            pattern: /^\S+@\S+$/i,
-          })}
           type="email"
+          id="email"
+          name="email"
           placeholder="Enter your email address"
+          required
+          className={styles.inputField}
         />
-        {errors.email && (
-          <p className={styles.errorMessage}>{errors.email.message}</p>
-        )}
-      </div>
 
-      <div className={styles.consentContainer}>
-        <input
-          {...register("consent", {
-            required: "You must agree before submitting.",
-          })}
-          type="checkbox"
-        />
-        <label htmlFor="consent" className={styles.consentLabel}>
-          I agree with the storage & processing of my personal data
-        </label>
-      </div>
-      {errors.consent && (
-        <p className={styles.errorMessage}>{errors.consent.message}</p>
-      )}
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Enter your message"
+          required
+          className={`${styles.inputField} ${styles.textarea}`}
+          rows={4}
+        ></textarea>
 
-      <button className={"primaryButton"} type="submit">
-        <span>Send</span>
-        <ChevronRightIcon className="chevronRightIcon" />
-      </button>
+        <div className={styles.formBottom}>
+          <div className={styles.consentContainer}>
+            <input
+              {...register("consent", {
+                required: "You must agree before submitting.",
+              })}
+              id="consent"
+              type="checkbox"
+            />
+            <label htmlFor="consent" className={styles.consentLabel}>
+              I agree with the storage & processing of my personal data
+            </label>
+          </div>
+          {errors.consent && (
+            <p className={styles.errorMessage}>{errors.consent.message}</p>
+          )}
+          <button type="submit" className={styles.sendButton}>
+            <span>Send</span>
+            <ChevronRightIcon className="chevronRightIcon" />
+          </button>
+        </div>
+      </form>
 
-      <div className="tos">
-        <Link href="/terms">Terms</Link> <MinusIcon className="minusIcon" />
-        <Link href="/privacy">Privacy</Link>
+      <div className={styles.legalLinksFooter}>
+        <Link href="#terms">Terms</Link>
+        <MinusIcon className={styles.divider} />
+        <Link href="#privacy">Privacy</Link>
       </div>
-    </form>
+    </div>
   );
 };
 

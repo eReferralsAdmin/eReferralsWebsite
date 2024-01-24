@@ -1,4 +1,4 @@
-.formContainer {
+.container {
   background: linear-gradient(
     270deg,
     rgba(103, 222, 127, 0.2) 0%,
@@ -9,34 +9,53 @@
   gap: 40px;
 }
 
-.formHeading h2 {
-  color: #000;
+.heading,
+.heading h2,
+.heading p,
+.inputField,
+.legalLinksHeader a,
+.legalLinksFooter a,
+.divider {
   text-align: center;
+  color: #000;
   font-family: Albert Sans;
+}
+
+.heading {
+  margin-bottom: 20px;
+}
+
+.heading h2 {
   font-size: 40px;
   font-weight: 700;
 }
 
-.formHeading p {
-  color: #000;
-  font-family: Albert Sans;
+.heading p,
+.inputField,
+.legalLinksHeader a,
+.legalLinksFooter a {
   font-size: 24px;
-  text-align: center;
   font-weight: 400;
 }
 
-.inputGroup {
+.form {
   display: grid;
   row-gap: 26px;
+  width: 100%;
 }
 
-.formInput {
+.legalLinksHeader,
+.legalLinksFooter {
+  margin-top: 10px;
+  font-size: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputField {
   border: none;
   padding: 10px 21px;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  font-family: Inter;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -44,7 +63,7 @@
   background: #fff;
 }
 
-.textareaContainer {
+.textarea {
   border-radius: 17px;
 }
 
@@ -56,15 +75,100 @@
   margin: 0 auto;
 }
 
-.consentLabel {
-  color: #000;
-  font-family: Albert Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 171.429% */
+.sendButton {
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+  padding: 10px 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.errorMessage {
-  color: red;
+.formBottom {
+  display: grid;
+  row-gap: 26px;
+}
+
+.divider {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  width: 20px;
+  transform: rotate(90deg);
+}
+
+.segmentedControlContainer {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .segmentedControlContainer {
+    width: 100%;
+    max-width: 293px;
+  }
+
+  .form {
+    max-width: 624px;
+    margin-inline: auto;
+  }
+
+  .inputField {
+    text-align: left;
+  }
+
+  .textarea {
+    resize: none;
+  }
+
+  .sendButton {
+    max-width: max-content;
+  }
+
+  .formBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    max-width: 1500px;
+    margin-inline: auto;
+    border-radius: 19px;
+    padding-inline: 120px;
+  }
+
+  .heading h2 {
+    font-size: 70px;
+  }
+
+  .heading p,
+  .heading h2 {
+    text-align: left;
+  }
+
+  .legalLinksHeader {
+    display: block;
+    text-align: left;
+    justify-content: start;
+    padding-top: 50px;
+  }
+
+  .legalLinksFooter {
+    display: none;
+  }
 }

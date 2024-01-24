@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./SegmentedControl.module.css";
-import { CheckBadgeIcon, CheckIcon } from "@heroicons/react/24/outline";
+import { CheckIcon } from "@heroicons/react/24/outline";
 
 const SegmentedControl = ({
   options,

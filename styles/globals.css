@@ -153,44 +153,6 @@ button {
   transform: rotate(90deg);
 }
 
-.primaryButton {
-  border-radius: 60px;
-  background: linear-gradient(
-    271deg,
-    #2d6465 -11.45%,
-    #3a806b -11.45%,
-    #67de7f 123.02%
-  );
-  display: flex;
-  padding: 10px 25px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  color: #fff;
-  font-family: Albert Sans;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 133.333% */
-}
-
-.tos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.tos a {
-  color: #000;
-  font-family: Albert Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px; /* 171.429% */
-}
-
 .logoContainer {
   position: relative;
   width: 100%;
