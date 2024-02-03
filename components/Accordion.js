@@ -7,7 +7,7 @@ const Accordion = ({ title, description }) => {
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   return (
-    <div
+    <dwiv
       className={styles.accordionContainer}
       onClick={() => setAccordionOpen(!accordionOpen)}
     >
@@ -25,7 +25,7 @@ const Accordion = ({ title, description }) => {
       >
         <li>{description}</li>
       </ul>
-    </div>
+    </dwiv>
   );
 };
 

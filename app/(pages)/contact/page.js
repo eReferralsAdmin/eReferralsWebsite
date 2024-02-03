@@ -5,15 +5,7 @@ import styles from "./Contact.module.css";
 import SegmentedControl from "../../../components/ui/SegmentedControl";
 import { ChevronRightIcon, MinusIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Faq from "../../../components/Faq";
-
-const faqs = [
-  {
-    title: "What is Mobile app development?",
-    description:
-      "It’s the creation of digital system that are tailored for mobile devices. Now more than ever the world needs to be mobilised with their business and systems and Mobile app development is the most relevant path to take. As per any other Application Development, the process is to gather requirements, define functionalities, design, build, deliver and support these mobile apps tailored for the business purpose.",
-  },
-];
+import Faq from "../../../components/faq/Faq";
 
 const ContactUs = () => {
   const {
@@ -139,8 +131,8 @@ const ContactUs = () => {
           <Link href="#privacy">Privacy</Link>
         </div>
       </div>
-      <div className={styles.faqContainer}>
-        <Faq faqs={faqs} />
+      <div className={"faqContainer"}>
+        <Faq />
       </div>
     </>
   );

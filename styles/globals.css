@@ -159,3 +159,40 @@ button {
   height: 67.21px;
   margin-inline: auto;
 }
+
+.faqContainer {
+  margin-bottom: 100px;
+}
+
+.askQuestion {
+  color: #fff;
+  font-family: Albert Sans;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 10px 25px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 60px;
+  background: linear-gradient(
+    271deg,
+    #2d6465 -11.45%,
+    #3a806b -11.45%,
+    #67de7f 123.02%
+  );
+
+  margin-w: 70px;
+}
+
+@media screen and (min-width: 768px) {
+  .askQuestion {
+    max-width: max-content;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}

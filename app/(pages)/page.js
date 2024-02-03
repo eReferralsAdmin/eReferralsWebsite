@@ -5,15 +5,10 @@ import NewsletterSignup from "../../views/home/nwsletter/NewsletterSignup";
 import SurveyInvitationCard from "../../views/home/survey/SurveyInvitationCard";
 import CollaborationFeature from "../../views/home/collaboration/CollaborationFeature";
 import Signup from "../../views/home/signup/Signup";
-import Faq from "../../components/Faq";
-
-const faqs = [
-  {
-    title: "What is Mobile app development?",
-    description:
-      "It’s the creation of digital system that are tailored for mobile devices. Now more than ever the world needs to be mobilised with their business and systems and Mobile app development is the most relevant path to take. As per any other Application Development, the process is to gather requirements, define functionalities, design, build, deliver and support these mobile apps tailored for the business purpose.",
-  },
-];
+import Faq from "../../components/faq/Faq";
+import Link from "next/link";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
@@ -30,7 +25,12 @@ export default function Home() {
         <div id="signup">
           <Signup />
         </div>
-        <Faq faqs={faqs} />
+        <div className={styles.faqContainer}>
+          <Faq />
+          <Link href="/" className={styles.askQuestion}>
+            Ask a question <ChevronRightIcon className="btn-icon" />
+          </Link>
+        </div>
       </div>
     </div>
   );
