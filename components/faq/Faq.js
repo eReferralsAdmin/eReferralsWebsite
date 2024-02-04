@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Faq.module.css";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 
@@ -25,16 +25,23 @@ const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
   const [setHeight, setHeightState] = useState("0px");
   const content = useRef(null);
 
+  // useEffect hook ka istemal karenge jab bhi activeFaq update hota hai
+  useEffect(() => {
+    if (activeFaq === index) {
+      // Agar ye active faq hai to iska height set karenge
+      setHeightState(`${content.current.scrollHeight}px`);
+    } else {
+      // Warna iska height 0px karenge
+      setHeightState("0px");
+    }
+  }, [activeFaq, index]);
+
   const toggleItem = () => {
-    const newHeight =
-      activeFaq === index ? "0px" : `${content.current.scrollHeight}px`;
-    setHeightState(newHeight);
-    toggleFaq(index);
+    toggleFaq(index); // Yahaan hum bas index bhej rahe hain, active check parent component mein hoga
   };
 
   return (
     <div
-      key={index}
       className={`${styles.faq} ${activeFaq === index ? styles.active : ""}`}
     >
       <div className={styles.question} onClick={toggleItem}>
@@ -56,16 +63,14 @@ const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
   );
 };
 
+
 const Faq = () => {
   const [activeFaq, setActiveFaq] = useState(null);
 
   const toggleFaq = (index) => {
-    if (activeFaq === index) {
-      setActiveFaq(null);
-    } else {
-      setActiveFaq(index);
-    }
+    setActiveFaq(activeFaq === index ? null : index);
   };
+
 
   return (
     <div className={styles.container}>
