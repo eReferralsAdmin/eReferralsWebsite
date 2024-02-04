@@ -44,11 +44,11 @@ const NewsletterSignup = () => {
           <h2>Get top insights and news from our search experts</h2>
           <p>Delivered to you daily, straight to your inbox.</p>
           <div className={styles.links}>
-            <Link className={styles.link} href="/">
+            <Link className={styles.link} href="/terms">
               Terms
             </Link>
             <span>|</span>
-            <Link className={styles.link} href="/">
+            <Link className={styles.link} href="/privacy">
               Privacy
             </Link>
           </div>

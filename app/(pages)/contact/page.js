@@ -40,9 +40,9 @@ const ContactUs = () => {
           <h2>Contact us!</h2>
           <p>We respond within 24 hours.</p>
           <div className={styles.legalLinksHeader}>
-            <Link href="#terms">Terms</Link>
+            <Link href="/terms">Terms</Link>
             <MinusIcon className={styles.divider} />
-            <Link href="#privacy">Privacy</Link>
+            <Link href="/privacy">Privacy</Link>
           </div>
         </div>
 
@@ -134,7 +134,7 @@ const ContactUs = () => {
         <div className={styles.legalLinksFooter}>
           <Link href="#terms">Terms</Link>
           <MinusIcon className={styles.divider} />
-          <Link href="#privacy">Privacy</Link>
+          <Link href="/privacy">Privacy</Link>
         </div>
       </div>
       <div className={"faqContainer"}>

@@ -178,7 +178,7 @@ const PratictionersPage = () => {
                     Terms
                   </Link>
                   <span>|</span>
-                  <Link className={styles.link} href="/">
+                  <Link className={styles.link} href="/privacy">
                     Privacy
                   </Link>
                 </div>
