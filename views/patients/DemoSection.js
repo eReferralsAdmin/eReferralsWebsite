@@ -20,7 +20,7 @@ const DemoSection = () => {
           for an understanding of patient safety. We introduce psychological
           classifications of error and then, using clinical examples
         </p>
-        <Link href={"/"} className={`${styles.ctaButton}`}>
+        <Link href={"/contact"} className={`${styles.ctaButton}`}>
           Book a free demo! <ChevronRightIcon className="btn-icon" />
         </Link>
       </div>

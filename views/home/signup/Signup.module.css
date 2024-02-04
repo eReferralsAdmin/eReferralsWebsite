@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+.textCenter {
+  text-align: center;
+}
+
 .signupContainer::before,
 .signupContainer::after {
   content: "";

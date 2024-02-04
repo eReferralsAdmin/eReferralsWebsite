@@ -10,7 +10,7 @@ const Faq = ({ faqs }) => {
       {faqs.map(({ title, description }, index) => (
         <Accordion key={index} title={title} description={description} />
       ))}
-      <Link href="/" className={styles.askQuestion}>
+      <Link href="/contact" className={styles.askQuestion}>
         Ask a question <ChevronRightIcon className="btn-icon" />
       </Link>
     </section>

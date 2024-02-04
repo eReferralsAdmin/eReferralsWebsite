@@ -38,8 +38,11 @@ const HeroSection = () => {
               Modern web application that allows referrals to be sent and
               received seamlessly between healthcare professionals
             </p>
-            <Link href={"/"} className={`${styles.submitButton}`}>
-              Get Started <ChevronRightIcon className="btn-icon" />
+            <Link
+              href={"/pratictioners-signup"}
+              className={`${styles.submitButton}`}
+            >
+              Sign Up <ChevronRightIcon className="btn-icon" />
             </Link>
           </div>
         </div>

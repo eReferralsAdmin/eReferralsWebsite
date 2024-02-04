@@ -11,7 +11,6 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -25,6 +24,13 @@ const ContactUs = () => {
   const segmentOptions = [
     { label: "Pratictioner", value: "Pratictioner" },
     { label: "Patient", value: "Patient" },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const options = [
+    { label: "Pratictioner", showIcon: true },
+    { label: "Patient", showIcon: true },
   ];
 
   return (
@@ -48,16 +54,16 @@ const ContactUs = () => {
         >
           <input type="hidden" name="contact-form" value="contact" />
           <div className={styles.segmentedControlContainer}>
-            <SegmentedControl
-              options={segmentOptions}
-              name="role"
-              activeSegment={segment}
-              onSegmentChange={setSegment}
-              paddleActive={isPaddleActive}
-            />
-            {errors.role && (
-              <p className={styles.errorMessage}>{errors.role.message}</p>
-            )}
+          <SegmentedControl
+            options={segmentOptions}
+            name="role"
+            activeSegment={segment}
+            onSegmentChange={setSegment}
+            paddleActive={isPaddleActive}
+          />
+          {errors.role && (
+            <p className={styles.errorMessage}>{errors.role.message}</p>
+          )}
           </div>
 
           <input

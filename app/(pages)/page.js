@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <div className={styles.faqContainer}>
           <Faq />
-          <Link href="/" className={styles.askQuestion}>
+          <Link href="/contact" className={styles.askQuestion}>
             Ask a question <ChevronRightIcon className="btn-icon" />
           </Link>
         </div>

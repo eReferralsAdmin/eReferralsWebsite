@@ -1,0 +1,15 @@
+.container {
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.content {
+  font-size: 16px;
+  line-height: 1.6;
+}

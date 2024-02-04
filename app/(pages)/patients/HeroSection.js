@@ -30,8 +30,8 @@ const HeroSection = () => {
         </p>
       </div>
       <div className={styles.cta}>
-        <Link href={"/"} className={styles.ctaButton}>
-          <span>Get started</span>
+        <Link href={"/pratictioners-signup"} className={styles.ctaButton}>
+          <span>Sign Up</span>
           <ChevronRightIcon className="chevronRightIcon" />
         </Link>
       </div>

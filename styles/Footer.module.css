@@ -1,6 +1,7 @@
 .footer {
   background: #17355d;
   padding: 50px;
+  width: 100%;
 }
 
 .footerTitle {
@@ -74,6 +75,7 @@
     margin: 0 auto;
     border-radius: 38px;
     padding: 80px;
+    width: 100%;
   }
 
   .footerBottom {

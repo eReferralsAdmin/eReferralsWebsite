@@ -25,7 +25,10 @@ const SurveyInvitationCard = () => {
           participate in the development of our solution to help the Australian
           health System.
         </p>
-        <Link href="/" className={styles.surveyButton}>
+        <Link
+          href="https://docs.google.com/forms/d/1zj72ePxRInMYBP1Npqrx_FXIOoPsYQ3vyTq3DSSc7fY/edit?ts=64fa5484."
+          className={styles.surveyButton}
+        >
           Participate <ChevronRightIcon className="btn-icon" />
         </Link>
       </div>

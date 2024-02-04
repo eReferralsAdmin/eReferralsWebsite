@@ -75,6 +75,9 @@ const Signup = () => {
             <p>BETA VERSION</p>
           </div>
         </div>
+        <p className={styles.textCenter}>
+          Sign up for early access to our Beta Version (completely free)
+        </p>
         <div className={styles.toggleButtons}>
           <button
             className={`${styles.toggleBtn} ${

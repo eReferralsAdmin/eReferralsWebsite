@@ -60,9 +60,9 @@ const EReferrals = () => {
                 allowing you to readily identify the most suitable provider for
                 your patient&apos;s needs.
               </p>
-              <a href="#signup" className={styles.buttonInterested}>
-                I&apos;m interested! <ChevronRightIcon className="btn-icon" />
-              </a>
+              <Link href="/pratictioners" className={styles.buttonInterested}>
+                View More <ChevronRightIcon className="btn-icon" />
+              </Link>
             </div>
           </div>
         )}
@@ -70,7 +70,7 @@ const EReferrals = () => {
           <div className={styles.ereferralInfo}>
             <div className={styles.imageContainer}>
               <Image
-                src="/images/ereferrals-for-practioers.svg"
+                src="/patient-app.svg"
                 alt="eReferrals information graphic"
                 width={348}
                 height={335}
@@ -83,15 +83,15 @@ const EReferrals = () => {
               />
             </div>
             <div className={styles.advancedSearch}>
-              <h3>Advanced Provider Search 2</h3>
+              <h3>Advanced Provider Search</h3>
               <p>
                 Easily locate pathology and radiology providers based on
                 location, services offered, or your personal favourites list,
                 allowing you to readily identify the most suitable provider for
                 your patient&apos;s needs.
               </p>
-              <a href="#signup" className={styles.buttonInterested}>
-                I&apos;m interested! <ChevronRightIcon className="btn-icon" />
+              <a href="/patients" className={styles.buttonInterested}>
+                View More <ChevronRightIcon className="btn-icon" />
               </a>
             </div>
           </div>

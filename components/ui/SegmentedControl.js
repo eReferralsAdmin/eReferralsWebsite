@@ -45,7 +45,7 @@ const SegmentedControl = ({
                 isActive ? styles.labelActive : ""
               }`}
             >
-              <CheckIcon className={styles.checkIcon} />
+              {/* <CheckIcon className={styles.checkIcon} /> */}
               {option.label}
             </label>
           </React.Fragment>

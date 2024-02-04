@@ -13,7 +13,7 @@ const Footer = () => {
             Join the over +100 clinics, +3000 patients, and +600 professionals
             in the digital revolution of the medical report management world.
           </p>
-          <Link href={"#"} className={styles.chatButton}>
+          <Link href={"/contact"} className={styles.chatButton}>
             Chat to us
           </Link>
         </div>
