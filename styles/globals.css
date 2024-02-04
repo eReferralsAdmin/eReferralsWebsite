@@ -24,7 +24,7 @@ body {
   width: 100%;
   height: auto;
   scroll-behavior: smooth;
-  height: 100%;
+  height: auto;
 }
 
 textarea:focus-visible,

@@ -54,16 +54,16 @@ const ContactUs = () => {
         >
           <input type="hidden" name="contact-form" value="contact" />
           <div className={styles.segmentedControlContainer}>
-          <SegmentedControl
-            options={segmentOptions}
-            name="role"
-            activeSegment={segment}
-            onSegmentChange={setSegment}
-            paddleActive={isPaddleActive}
-          />
-          {errors.role && (
-            <p className={styles.errorMessage}>{errors.role.message}</p>
-          )}
+            <SegmentedControl
+              options={segmentOptions}
+              name="role"
+              activeSegment={segment}
+              onSegmentChange={setSegment}
+              paddleActive={isPaddleActive}
+            />
+            {errors.role && (
+              <p className={styles.errorMessage}>{errors.role.message}</p>
+            )}
           </div>
 
           <input
@@ -137,7 +137,7 @@ const ContactUs = () => {
           <Link href="/privacy">Privacy</Link>
         </div>
       </div>
-      <div className={"faqContainer"}>
+      <div className={styles.faqContainer}>
         <Faq />
       </div>
     </>
