@@ -1,15 +1,32 @@
-.container {
+.privacyContainer {
+  margin: 20px;
   padding: 20px;
-  margin: auto;
+  /* background-color: #f9f9f9; */
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  color: #17355d;
   max-width: 1200px;
+  margin-inline: auto;
 }
 
-.heading {
+.privacyContainer h1 {
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  color: #17355d;
 }
 
-.content {
+.privacyContainer h2 {
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 10px;
+  color: #17355d;
+}
+
+.privacyContainer p {
+  color: #17355d;
+  text-align: justify;
   font-size: 16px;
   line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

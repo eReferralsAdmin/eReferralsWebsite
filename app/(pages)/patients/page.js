@@ -11,7 +11,10 @@ const page = () => {
       <HeroSection />
       <Features />
       <KeyFeatres />
-      <ComparisonSection />
+      <ComparisonSection
+        beforeImage={"/images/before-p.png"}
+        afterImage={"/images/mobile-after.png"}
+      />
       <RecommendationSection />
       <div className={"faqContainer"}>
         <Faq />

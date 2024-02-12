@@ -24,7 +24,8 @@ const CustomHandle = () => {
   );
 };
 
-const ComparisonSection = () => {
+const ComparisonSection = ({beforeImage, afterImage}) => {
+  console.log(beforeImage);
   return (
     <div className={styles.comparisonSection}>
       <div className={`${styles.beforeContent} ${styles.content}`}>
@@ -49,18 +50,12 @@ const ComparisonSection = () => {
           handle={<CustomHandle />}
           itemOne={
             <div className={styles.sliderWrapperBefore}>
-              <ReactCompareSliderImage
-                src="/images/before.png"
-                alt="Image one"
-              />
+              <ReactCompareSliderImage src={beforeImage} alt="Before Image" />
             </div>
           }
           itemTwo={
             <div className={styles.sliderWrapperAfter}>
-              <ReactCompareSliderImage
-                src="/images/after.png"
-                alt="Image two"
-              />
+              <ReactCompareSliderImage src={afterImage} alt="After Image" />
             </div>
           }
         />
