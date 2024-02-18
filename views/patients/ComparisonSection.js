@@ -24,8 +24,7 @@ const CustomHandle = () => {
   );
 };
 
-const ComparisonSection = ({beforeImage, afterImage}) => {
-  console.log(beforeImage);
+const ComparisonSection = ({ beforeImage, afterImage }) => {
   return (
     <div className={styles.comparisonSection}>
       <div className={`${styles.beforeContent} ${styles.content}`}>

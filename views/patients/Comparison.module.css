@@ -60,11 +60,11 @@
 }
 
 .sliderWrapperBefore {
-  background: linear-gradient(180deg, #224972 0%, #4290d3 89.71%);
+  background: linear-gradient(90deg, #224972 0%, #4290d3 89.71%);
 }
 
 .sliderWrapperAfter {
-  background: linear-gradient(180deg, #408a6e 0%, #5fcd7c 87.2%);
+  background: linear-gradient(90deg, #408a6e 0%, #5fcd7c 87.2%);
 }
 
 .customHandle {
@@ -120,10 +120,15 @@
 @media screen and (min-width: 1024px) {
   .sliderWrapperBefore,
   .sliderWrapperAfter {
-    padding: 0;
+    padding: 1px;
     border-radius: 0;
-    background: none;
+    /* background: none; */
   }
+
+  .sliderWrapperAfter {
+    background: linear-gradient(180deg, #459570, #5fcd7c);
+  }
+
 
   .comparisonSection {
     width: 100%;
@@ -149,10 +154,10 @@
     color: #fff;
   }
 
-  .beforeContent p{
+  .beforeContent p {
     text-align: left;
   }
-  .afterContent p{
+  .afterContent p {
     text-align: right;
   }
 
@@ -165,7 +170,7 @@
   }
 
   .beforeContent {
-    background: linear-gradient(180deg, #224972 0%, #4290d3 89.71%);
+    background: linear-gradient(90deg, #224972 0%, #4290d3 89.71%);
     border-radius: 22px 0 0 22px;
   }
 
