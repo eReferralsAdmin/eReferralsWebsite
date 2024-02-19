@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
@@ -25,6 +26,10 @@ const CustomHandle = () => {
 };
 
 const ComparisonSection = ({ beforeImage, afterImage }) => {
+  const [handlePosition, setHandlePosition] = useState(50);
+
+  // Calculate clipPath value based on handle position
+  const clipPathValue = `inset(0% ${100 - handlePosition}% 0% 0%)`;
   return (
     <div className={styles.comparisonSection}>
       <div className={`${styles.beforeContent} ${styles.content}`}>
@@ -43,13 +48,20 @@ const ComparisonSection = ({ beforeImage, afterImage }) => {
       </div>
       <div className={styles.sliderContainer}>
         <ReactCompareSlider
+          onPositionChange={(position) => setHandlePosition(position)}
           style={{
             overflow: "visible",
           }}
           handle={<CustomHandle />}
           itemOne={
             <div className={styles.sliderWrapperBefore}>
-              <ReactCompareSliderImage src={beforeImage} alt="Before Image" />
+              <ReactCompareSliderImage
+                src={beforeImage}
+                alt="Before Image"
+                style={{
+                  clipPath: clipPathValue, // Use dynamic clipPath value
+                }}
+              />
             </div>
           }
           itemTwo={

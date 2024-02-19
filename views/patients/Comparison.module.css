@@ -122,13 +122,12 @@
   .sliderWrapperAfter {
     padding: 1px;
     border-radius: 0;
-    /* background: none; */
+    background: none;
   }
 
-  .sliderWrapperAfter {
+  /* .sliderWrapperAfter {
     background: linear-gradient(180deg, #459570, #5fcd7c);
-  }
-
+  } */
 
   .comparisonSection {
     width: 100%;

@@ -12,8 +12,8 @@ const page = () => {
       <Features />
       <KeyFeatres />
       <ComparisonSection
-        beforeImage={"/before-app.png"}
-        afterImage={"/after-app.png"}
+        beforeImage={"/before-app-paper.png"}
+        afterImage={"/after-app-mobile.png"}
       />
       <RecommendationSection />
       <div className={"faqContainer"}>
