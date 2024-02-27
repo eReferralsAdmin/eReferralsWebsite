@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { fetchFAQs } from "../../../lib/fetchData";
-
+export const revalidate = 10;
 export async function GET(request) {
   try {
     const faqs = await fetchFAQs();

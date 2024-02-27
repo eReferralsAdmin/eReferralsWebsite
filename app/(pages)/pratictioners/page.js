@@ -7,13 +7,21 @@ import Faq from "../../../components/faq/Faq";
 import CommparisonSection from "../../../views/patients/ComparisonSection";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
 import styles from "./pratictioners.module.css";
+import {
+  fetchFAQs,
+  fetchInventorySection,
+  fetchPractitionersFeatureContent,
+} from "../../../lib/fetchData";
 
-const page = () => {
+const page = async () => {
+  const faqs = await fetchFAQs();
+  const inventorySectionContent = await fetchInventorySection();
+  const practitionersFeatureContent = await fetchPractitionersFeatureContent();
   return (
     <main className={styles.main}>
       <HeroSection />
-      <FeaturesSection />
-      <KeyFeatures />
+      <FeaturesSection data={inventorySectionContent} />
+      <KeyFeatures data={practitionersFeatureContent} />
       <RecommendationSection />
       <CommparisonSection
         beforeImage={"/before-app-paper.png"}
@@ -21,7 +29,7 @@ const page = () => {
       />
       <DemoSection />
       <div className={"faqContainer"}>
-        <Faq />
+        <Faq faqs={faqs} />
       </div>
     </main>
   );

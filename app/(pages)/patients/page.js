@@ -4,8 +4,10 @@ import KeyFeatres from "../../../views/patients/KeyFeatures";
 import ComparisonSection from "../../../views/patients/ComparisonSection";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
 import Faq from "../../../components/faq/Faq";
+import { fetchFAQs } from "../../../lib/fetchData";
 
-const page = () => {
+const page = async () => {
+  const faqs = await fetchFAQs();
   return (
     <div>
       <HeroSection />
@@ -17,7 +19,7 @@ const page = () => {
       />
       <RecommendationSection />
       <div className={"faqContainer"}>
-        <Faq />
+        <Faq faqs={faqs} />
       </div>
     </div>
   );

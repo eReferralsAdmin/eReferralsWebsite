@@ -4,9 +4,9 @@ import Image from "next/image";
 import styles from "./CollaborationFeature.module.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-const CollaborationFeature = () => {
+const CollaborationFeature = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  console.log(data);
   const slides = [
     {
       logoSrc: "/images/collaboration-brand-logo.svg",

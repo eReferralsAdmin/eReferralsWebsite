@@ -6,7 +6,8 @@ import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import styles from "./newsletter-signup.module.css";
 
-const NewsletterSignup = () => {
+const NewsletterSignup = ({ content }) => {
+  console.log(content);
   const {
     register,
     handleSubmit,
@@ -41,8 +42,8 @@ const NewsletterSignup = () => {
       <Toaster />
       <div className={styles.newsletterSignupContainer}>
         <div className={styles.newsletterContent}>
-          <h2>Get top insights and news from our search experts</h2>
-          <p>Delivered to you daily, straight to your inbox.</p>
+          <h2>{content.title}</h2>
+          <p>{content.subtitle}</p>
           <div className={styles.links}>
             <Link className={styles.link} href="/terms">
               Terms

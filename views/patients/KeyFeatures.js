@@ -4,16 +4,12 @@ import FeatureCard from "../../components/FeatureCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const KeyFeatures = () => {
+const KeyFeatures = ({ data }) => {
   return (
     <div className={styles.featuresSection}>
       <div className={styles.keyFeatures}>
-        <h2 className={styles.title}>Key Features</h2>
-        <p className={styles.description}>
-          This chapter introduces the topic of error as an essential foundation
-          for an understanding of patient safety. We introduce psychological
-          classifications of error and then, using clinical examples
-        </p>
+        <h2 className={styles.title}>{data.title}</h2>
+        <p className={styles.description}>{data.description}</p>
       </div>
       <div className={styles.featuresGrid}>
         <FeatureCard />

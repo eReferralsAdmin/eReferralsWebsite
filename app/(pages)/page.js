@@ -9,28 +9,40 @@ import Faq from "../../components/faq/Faq";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import styles from "./page.module.css";
-
-async function getFaqs() {
-  const res = await fetch(`${process.env.API_URL}/api/faqs`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch faqs");
-  }
-  return res.json();
-}
+import {
+  fetchCollaboration,
+  fetchFAQs,
+  fetchForPatientsHome,
+  fetchForPractitionersHome,
+  fetchHomeHero,
+  fetchNewsletterSubscription,
+  fetchOpinionSurvey,
+} from "../../lib/fetchData";
+export const revalidate = 10;
 
 export default async function Home() {
-  const faqs = await getFaqs();
+  const faqs = await fetchFAQs();
+  const homeHero = await fetchHomeHero();
+  const forPractitionersHome = await fetchForPractitionersHome();
+  const forPatientsHome = await fetchForPatientsHome();
+  const newsletterSubscriptionContent = await fetchNewsletterSubscription();
+  const opinionSurvey = await fetchOpinionSurvey();
+  const collaborations = await fetchCollaboration();
+
   return (
     <div className="wrapper">
       <div className="container">
-        <Hero />
+        <Hero data={homeHero} />
         <DashboardView />
         <div id="learn-more">
-          <EReferrals />
+          <EReferrals
+            practitionersData={forPractitionersHome}
+            patientsData={forPatientsHome}
+          />
         </div>
-        <NewsletterSignup />
-        <SurveyInvitationCard />
-        <CollaborationFeature />
+        <NewsletterSignup content={newsletterSubscriptionContent} />
+        <SurveyInvitationCard data={opinionSurvey} />
+        <CollaborationFeature data={collaborations} />
         <div id="signup">
           <Signup />
         </div>

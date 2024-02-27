@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./GraphSection.module.css";
 
-const GraphSection = () => {
+const GraphSection = ({ data }) => {
   return (
     <div className={styles.dashboard}>
       <div className={styles.dashboardContent}>
@@ -21,13 +21,8 @@ const GraphSection = () => {
         </div>
 
         <div className={styles.infoSection}>
-          <h1>Manage your hospital inventory easily</h1>
-          <p>
-            This chapter introduces the topic of error as an essential
-            foundation for an understanding of patient safety. We introduce
-            psychological classifications of error and then, using clinical
-            examples
-          </p>
+          <h1>{data.title}</h1>
+          <p>{data.description}</p>
         </div>
       </div>
 

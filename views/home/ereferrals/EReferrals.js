@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
-const EReferrals = () => {
+const EReferrals = ({ practitionersData, patientsData }) => {
   const [activeTab, setActiveTab] = useState("practitioners");
 
   const toggleTab = (tab) => {
@@ -53,13 +53,8 @@ const EReferrals = () => {
               />
             </div>
             <div className={styles.advancedSearch}>
-              <h3>Advanced Provider Search</h3>
-              <p>
-                Easily locate pathology and radiology providers based on
-                location, services offered, or your personal favourites list,
-                allowing you to readily identify the most suitable provider for
-                your patient&apos;s needs.
-              </p>
+              <h3>{practitionersData.title}</h3>
+              <p>{practitionersData.description}</p>
               <Link href="/pratictioners" className={styles.buttonInterested}>
                 View More <ChevronRightIcon className="btn-icon" />
               </Link>
@@ -83,13 +78,8 @@ const EReferrals = () => {
               />
             </div>
             <div className={styles.advancedSearch}>
-              <h3>Advanced Provider Search</h3>
-              <p>
-                Easily locate pathology and radiology providers based on
-                location, services offered, or your personal favourites list,
-                allowing you to readily identify the most suitable provider for
-                your patient&apos;s needs.
-              </p>
+              <h3>{patientsData.title}</h3>
+              <p>{patientsData.description}</p>
               <a href="/patients" className={styles.buttonInterested}>
                 View More <ChevronRightIcon className="btn-icon" />
               </a>
