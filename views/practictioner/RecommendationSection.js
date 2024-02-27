@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import "swiper/css/navigation";
+import { urlForImage } from "../../sanity/lib/image";
 
 const recommendations = [
   {
@@ -42,7 +43,7 @@ const recommendations = [
   },
 ];
 
-const RecommendationSection = () => {
+const RecommendationSection = ({ testimonials }) => {
   return (
     <section className={styles.recommendationContainer}>
       <h2>Recommended by Medics</h2>
@@ -80,15 +81,16 @@ const RecommendationSection = () => {
             prevEl: ".swiper-button-prev",
           }}
         >
-          {recommendations.map((recommendation, index) => (
-            <SwiperSlide className={styles.slideCard}>
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide className={styles.slideCard} key={index}>
               <TestimonialCard
                 key={index}
-                quote={recommendation.quote}
-                imageSrc={recommendation.imageUrl}
-                altText={recommendation.name}
-                name={recommendation.name}
-                title={recommendation.title}
+                quote={testimonial.testimonialText}
+                imageSrc={urlForImage(testimonial.authorImage)}
+                altText={testimonial.authorName}
+                name={testimonial.authorName}
+                affiliation={testimonial.authorAffiliation}
+                role={testimonial.authorRole}
               />
             </SwiperSlide>
           ))}

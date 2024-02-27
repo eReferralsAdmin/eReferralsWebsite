@@ -4,8 +4,8 @@ export const Testimonial = {
   type: "document",
   fields: [
     {
-      name: "quote",
-      title: "Quote",
+      name: "testimonialText",
+      title: "Testimonial Text",
       type: "text",
     },
     {

@@ -3,7 +3,7 @@ import styles from "./DemoSection.module.css";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
-const DemoSection = () => {
+const DemoSection = ({ data }) => {
   return (
     <div className={styles.demoSection}>
       <div className={styles.imageWrapper}>
@@ -14,12 +14,8 @@ const DemoSection = () => {
         />
       </div>
       <div className={styles.demoInfo}>
-        <h2 className={styles.title}>Book a Free Demo Today</h2>
-        <p className={styles.description}>
-          This chapter introduces the topic of error as an essential foundation
-          for an understanding of patient safety. We introduce psychological
-          classifications of error and then, using clinical examples
-        </p>
+        <h2 className={styles.title}>{data.title}</h2>
+        <p className={styles.description}>{data.description}</p>
         <Link href={"/contact"} className={`${styles.ctaButton}`}>
           Book a free demo! <ChevronRightIcon className="btn-icon" />
         </Link>
