@@ -3,7 +3,6 @@ import { fetchFeaturedPost } from "../lib/fetchData";
 import styles from "../styles/FeaturedPost.module.css";
 import Image from "next/image";
 import { urlForImage } from "../sanity/lib/image";
-import { calculateReadingTime } from "../sanity/lib/readingTime";
 import { ChevronRightIcon, ClockIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { formatDate } from "../lib/formatDate";

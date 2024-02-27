@@ -43,11 +43,9 @@ const PostPage = async ({ params: { slug } }) => {
               </div>
 
               <PortableText
-                // value={post.body}
                 content={post.body}
                 projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                 dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                // components={RichTextComponents}
                 serializers={{
                   h1: (props) => <h1 className={styles.h1} {...props} />,
                   li: ({ children }) => (

@@ -10,7 +10,16 @@ import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import styles from "./page.module.css";
 
-export default function Home() {
+async function getFaqs() {
+  const res = await fetch(`${process.env.API_URL}/api/faqs`);
+  if (!res.ok) {
+    throw new Error("Failed to fetch faqs");
+  }
+  return res.json();
+}
+
+export default async function Home() {
+  const faqs = await getFaqs();
   return (
     <div className="wrapper">
       <div className="container">
@@ -26,7 +35,7 @@ export default function Home() {
           <Signup />
         </div>
         <div className={styles.faqContainer}>
-          <Faq />
+          <Faq faqs={faqs} />
           <Link href="/contact" className={styles.askQuestion}>
             Ask a question <ChevronRightIcon className="btn-icon" />
           </Link>

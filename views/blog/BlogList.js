@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import PostCard from "../../components/PostCard";
 import styles from "../../styles/BlogList.module.css";
 import { urlForImage } from "../../sanity/lib/image";
-import { calculateReadingTime } from "../../sanity/lib/readingTime";
 
 const BlogGrid = ({ posts }) => {
   const [blogPosts, setBlogPosts] = useState(posts);

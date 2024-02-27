@@ -2,42 +2,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Faq.module.css";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
-
-const faqs = [
-  {
-    question: "What is React?",
-    answer:
-      "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called 'components'. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called 'components'. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called 'components'. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called 'components'. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called 'components'. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called 'components'. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called 'components'. ",
-  },
-  {
-    question: "How do I create a component in React?",
-    answer:
-      "Components in React can be created as functions or classes. A simple component is created using a function that returns React elements. Components can also be created by extending the React.Component class, defining a render method that returns React elements.",
-  },
-  {
-    question: "What are hooks in React?",
-    answer:
-      "Hooks are a new addition in React 16.8 that allow you to use state and other React features without writing a class. Hooks provide a more direct API to the React concepts you already know: props, state, context, refs, and lifecycle.",
-  },
-];
+import PortableText from "react-portable-text";
 
 const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
   const [setHeight, setHeightState] = useState("0px");
   const content = useRef(null);
 
-  // useEffect hook ka istemal karenge jab bhi activeFaq update hota hai
   useEffect(() => {
     if (activeFaq === index) {
-      // Agar ye active faq hai to iska height set karenge
       setHeightState(`${content.current.scrollHeight}px`);
     } else {
-      // Warna iska height 0px karenge
       setHeightState("0px");
     }
   }, [activeFaq, index]);
 
   const toggleItem = () => {
-    toggleFaq(index); // Yahaan hum bas index bhej rahe hain, active check parent component mein hoga
+    toggleFaq(index);
   };
 
   return (
@@ -57,20 +37,29 @@ const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
         style={{ maxHeight: `${setHeight}` }}
         className={styles.answer}
       >
-        <p>{faq.answer}</p>
+        <PortableText
+          content={faq.answer}
+          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+          serializers={{
+            h1: (props) => <h1 className={styles.h1} {...props} />,
+            li: ({ children }) => (
+              <li className="special-list-item">{children}</li>
+            ),
+            normal: (props) => <p className={styles.p} {...props} />,
+          }}
+        />
       </div>
     </div>
   );
 };
 
-
-const Faq = () => {
+const Faq = ({ faqs }) => {
   const [activeFaq, setActiveFaq] = useState(null);
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
-
 
   return (
     <div className={styles.container}>
