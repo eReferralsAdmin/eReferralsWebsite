@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState, useEffect } from "react";
 import { Navigation, EffectCoverflow, Scrollbar, A11y } from "swiper/modules";
 import TestimonialCard from "../../components/TestimonialCard";
 import styles from "./RecommendationSection.module.css";
@@ -8,42 +8,10 @@ import "swiper/css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import "swiper/css/navigation";
 import { urlForImage } from "../../sanity/lib/image";
-
-const recommendations = [
-  {
-    quote:
-      "“This chapter introduces the topic of error as an essential foundation for an understanding of patient safety. We introduce...",
-    imageUrl: "/images/test1.png",
-    name: "Dr. John Doe",
-    title: "Surgeon at Sydney Clinic",
-  },
-  {
-    quote: "A thorough dive into the procedural standards of care.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Emily Doe",
-    title: "General Practitioner at Wellness Center",
-  },
-  {
-    quote: "A thorough dive into the procedural standards of care.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Emily Doe",
-    title: "General Practitioner at Wellness Center",
-  },
-  {
-    quote: "A thorough dive into the procedural standards of care.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Emily Doe",
-    title: "General Practitioner at Wellness Center",
-  },
-  {
-    quote: "A thorough dive into the procedural standards of care.",
-    imageUrl: "/images/test1.png",
-    name: "Dr. Emily Doe",
-    title: "General Practitioner at Wellness Center",
-  },
-];
+import { fetchTestimonials } from "../../lib/fetchData";
 
 const RecommendationSection = ({ testimonials }) => {
+
   return (
     <section className={styles.recommendationContainer}>
       <h2>Recommended by Medics</h2>

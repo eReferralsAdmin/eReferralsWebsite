@@ -4,7 +4,7 @@ import FeatureCard from "../../components/FeatureCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const KeyFeatures = ({ data }) => {
+const KeyFeatures = ({ data, features }) => {
   return (
     <div className={styles.featuresSection}>
       <div className={styles.keyFeatures}>
@@ -12,10 +12,9 @@ const KeyFeatures = ({ data }) => {
         <p className={styles.description}>{data.description}</p>
       </div>
       <div className={styles.featuresGrid}>
-        <FeatureCard />
-        <FeatureCard />
-        <FeatureCard />
-        <FeatureCard />
+        {features.map((feature, index) => (
+          <FeatureCard key={index} feature={feature} />
+        ))}
       </div>
       <div className={styles.featuresSlider}>
         <Swiper
@@ -37,18 +36,11 @@ const KeyFeatures = ({ data }) => {
             },
           }}
         >
-          <SwiperSlide>
-            <FeatureCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FeatureCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FeatureCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <FeatureCard />
-          </SwiperSlide>
+          {features.map((feature, index) => (
+            <SwiperSlide key={index}>
+              <FeatureCard feature={feature} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>

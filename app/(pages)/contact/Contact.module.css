@@ -169,7 +169,7 @@
   .legalLinksHeader {
     display: flex;
     text-align: left;
-    justify-content: start;
+    justify-content: flex-start;
     padding-top: 50px;
   }
 

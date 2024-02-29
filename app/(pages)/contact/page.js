@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./Contact.module.css";
 import SegmentedControl from "../../../components/ui/SegmentedControl";
 import { ChevronRightIcon, MinusIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Faq from "../../../components/faq/Faq";
+import { fetchFAQs } from "../../../lib/fetchData";
 
 const ContactUs = () => {
   const {
@@ -13,6 +14,17 @@ const ContactUs = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const [faqs, setFaqs] = useState([]);
+
+  useEffect(() => {
+    const getFAQs = async () => {
+      const fetchedFAQs = await fetchFAQs();
+      setFaqs(fetchedFAQs);
+    };
+
+    getFAQs();
+  }, []);
 
   const onSubmit = (data) => {
     // Handle the form submission
@@ -24,13 +36,6 @@ const ContactUs = () => {
   const segmentOptions = [
     { label: "Pratictioner", value: "Pratictioner" },
     { label: "Patient", value: "Patient" },
-  ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const options = [
-    { label: "Pratictioner", showIcon: true },
-    { label: "Patient", showIcon: true },
   ];
 
   return (
@@ -138,7 +143,7 @@ const ContactUs = () => {
         </div>
       </div>
       <div className={styles.faqContainer}>
-        <Faq />
+        <Faq faqs={faqs} />
       </div>
     </>
   );

@@ -1,3 +1,4 @@
+
 import React from "react";
 import HeroSection from "../../../views/patients/HeroSection";
 import FeaturesSection from "../../../views/patients/GraphSection";
@@ -9,25 +10,25 @@ import RecommendationSection from "../../../views/practictioner/RecommendationSe
 import styles from "./pratictioners.module.css";
 import {
   fetchDemoSection,
-  fetchFAQs,
   fetchInventorySection,
   fetchPractitionersFeatureContent,
   fetchTestimonials,
+  fetchPractitionersKeyFeature
 } from "../../../lib/fetchData";
 export const revalidate = 10;
 
 const page = async () => {
-  const faqs = await fetchFAQs();
   const inventorySectionContent = await fetchInventorySection();
   const practitionersFeatureContent = await fetchPractitionersFeatureContent();
   const demoSectionContent = await fetchDemoSection();
   const testimonials = await fetchTestimonials();
-  console.log(testimonials);
+  const features = await fetchPractitionersKeyFeature();
+  
   return (
     <main className={styles.main}>
       <HeroSection />
       <FeaturesSection data={inventorySectionContent} />
-      <KeyFeatures data={practitionersFeatureContent} />
+      <KeyFeatures data={practitionersFeatureContent} features={features} />
       <RecommendationSection testimonials={testimonials} />
       <CommparisonSection
         beforeImage={"/before-app-paper.png"}
@@ -35,7 +36,7 @@ const page = async () => {
       />
       <DemoSection data={demoSectionContent} />
       <div className={"faqContainer"}>
-        <Faq faqs={faqs} />
+        <Faq />
       </div>
     </main>
   );

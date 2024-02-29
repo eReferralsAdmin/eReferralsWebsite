@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Faq.module.css";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import PortableText from "react-portable-text";
+import { fetchFAQs } from "../../lib/fetchData";
 
 const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
   const [setHeight, setHeightState] = useState("0px");
@@ -54,8 +55,18 @@ const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
   );
 };
 
-const Faq = ({ faqs }) => {
+const Faq = () => {
   const [activeFaq, setActiveFaq] = useState(null);
+  const [faqs, setFaqs] = useState([]);
+
+  useEffect(() => {
+    const getFAQs = async () => {
+      const fetchedFAQs = await fetchFAQs();
+      setFaqs(fetchedFAQs);
+    };
+
+    getFAQs();
+  }, []);
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);

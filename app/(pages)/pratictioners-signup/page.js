@@ -9,18 +9,12 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
-import Faq from "../../../components/Faq";
+// import Faq from "../../../components/Faq";
+import Faq from "../../../components/faq/Faq";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
-import { useState } from "react";
-
-const faqs = [
-  {
-    title: "What is Mobile app development?",
-    description:
-      "It’s the creation of digital system that are tailored for mobile devices. Now more than ever the world needs to be mobilised with their business and systems and Mobile app development is the most relevant path to take. As per any other Application Development, the process is to gather requirements, define functionalities, design, build, deliver and support these mobile apps tailored for the business purpose.",
-  },
-];
+import toast from "react-hot-toast";
+import { useState, useEffect } from "react";
+import { fetchFAQs, fetchTestimonials } from "../../../lib/fetchData";
 
 const PratictionersPage = () => {
   const [activeTab, setActiveTab] = useState("practitioners");
@@ -30,6 +24,27 @@ const PratictionersPage = () => {
     formState: { isSubmitting },
     reset,
   } = useForm();
+
+  const [faqs, setFaqs] = useState([]);
+  const [testimonials, setTestimonials] = useState([]);
+
+  useEffect(() => {
+    const getTestimonials = async () => {
+      const fetchedTestimonials = await fetchTestimonials();
+      setTestimonials(fetchedTestimonials);
+    };
+
+    getTestimonials();
+  }, []);
+
+  useEffect(() => {
+    const getFAQs = async () => {
+      const fetchedFAQs = await fetchFAQs();
+      setFaqs(fetchedFAQs);
+    };
+
+    getFAQs();
+  }, []);
 
   const toggleTab = (tab) => {
     setActiveTab(tab);
@@ -195,7 +210,7 @@ const PratictionersPage = () => {
           </div>
         </div>
       </section>
-      <RecommendationSection />
+      <RecommendationSection testimonials={testimonials} />
 
       <Faq faqs={faqs} />
     </>

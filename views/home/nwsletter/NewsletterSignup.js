@@ -7,7 +7,6 @@ import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import styles from "./newsletter-signup.module.css";
 
 const NewsletterSignup = ({ content }) => {
-  console.log(content);
   const {
     register,
     handleSubmit,

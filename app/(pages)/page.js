@@ -11,7 +11,6 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import styles from "./page.module.css";
 import {
   fetchCollaboration,
-  fetchFAQs,
   fetchForPatientsHome,
   fetchForPractitionersHome,
   fetchHomeHero,
@@ -21,7 +20,6 @@ import {
 export const revalidate = 10;
 
 export default async function Home() {
-  const faqs = await fetchFAQs();
   const homeHero = await fetchHomeHero();
   const forPractitionersHome = await fetchForPractitionersHome();
   const forPatientsHome = await fetchForPatientsHome();
@@ -47,7 +45,7 @@ export default async function Home() {
           <Signup />
         </div>
         <div className={styles.faqContainer}>
-          <Faq faqs={faqs} />
+          <Faq />
           <Link href="/contact" className={styles.askQuestion}>
             Ask a question <ChevronRightIcon className="btn-icon" />
           </Link>

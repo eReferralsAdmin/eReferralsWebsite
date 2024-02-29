@@ -9,13 +9,14 @@ import { calculateReadingTime } from "../../../../sanity/lib/readingTime";
 import styles from "../../../../styles/PostPage.module.css";
 import PortableText from "react-portable-text";
 import NewsletterSignup from "../../../../views/home/nwsletter/NewsletterSignup";
+import { fetchNewsletterSubscription } from "../../../../lib/fetchData";
 
 export const revalidate = 10;
 
 const PostPage = async ({ params: { slug } }) => {
   const query = groq`*[_type == 'post' && slug.current == $slug][0]`;
   const post = await client.fetch(query, { slug });
-
+  const newsletterSubscriptionContent = await fetchNewsletterSubscription();
   return (
     <div className="warapper">
       <div className="container">
@@ -72,7 +73,7 @@ const PostPage = async ({ params: { slug } }) => {
             </div>
           </section>
           <div className={styles.newsletterSection}>
-            <NewsletterSignup />
+            <NewsletterSignup content={newsletterSubscriptionContent} />
           </div>
         </article>
       </div>

@@ -28,7 +28,6 @@ export async function POST(request) {
 
     return NextResponse.json({ message: "success" });
   } catch (error) {
-    console.log(error);
     return NextResponse.json({ message: "Internet sever error" });
   }
 }

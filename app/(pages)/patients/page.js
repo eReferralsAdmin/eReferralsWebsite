@@ -4,22 +4,31 @@ import KeyFeatres from "../../../views/patients/KeyFeatures";
 import ComparisonSection from "../../../views/patients/ComparisonSection";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
 import Faq from "../../../components/faq/Faq";
-import { fetchFAQs } from "../../../lib/fetchData";
+import {
+  fetchPatientsFeatureContent,
+  fetchPatientsKeyFeature,
+  fetchTestimonials,
+  fetchReferralSection,
+} from "../../../lib/fetchData";
 
 const page = async () => {
-  const faqs = await fetchFAQs();
+  const keyFeatures = await fetchPatientsKeyFeature();
+  const keyFeaturesContent = await fetchPatientsFeatureContent();
+  const testimonials = await fetchTestimonials();
+  const referralSection = await fetchReferralSection();
+
   return (
     <div>
       <HeroSection />
-      <Features />
-      <KeyFeatres />
+      <Features data={referralSection} />
+      <KeyFeatres data={keyFeaturesContent} features={keyFeatures} />
       <ComparisonSection
         beforeImage={"/before-app-paper.png"}
         afterImage={"/after-app-mobile.png"}
       />
-      <RecommendationSection />
+      <RecommendationSection testimonials={testimonials} />
       <div className={"faqContainer"}>
-        <Faq faqs={faqs} />
+        <Faq />
       </div>
     </div>
   );
