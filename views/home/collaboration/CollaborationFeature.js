@@ -10,14 +10,14 @@ const CollaborationFeature = ({ data }) => {
     {
       logoSrc: "/images/collaboration-brand-logo.svg",
       text: "Richard and his team's technical capabilities to deliver functionality on time and assist with the business execution has proven to be a great investment from an ROI perspective.",
-      productMobileSrc: "/images/collaborator-product-mobile.svg",
-      productDesktopSrc: "/images/collaborator-product-desktop.svg",
+      productMobileSrc: "/home/collaborator-product-mobile.webp",
+      productDesktopSrc: "/home/collaborator-product-desktop.webp",
     },
     {
       logoSrc: "/images/collaboration-brand-logo.svg",
       text: "2. Richard and his team's technical capabilities to deliver functionality on time and assist with the business execution has proven to be a great investment from an ROI perspective.",
-      productMobileSrc: "/images/collaborator-product-mobile.svg",
-      productDesktopSrc: "/images/collaborator-product-desktop.svg",
+      productMobileSrc: "/home/collaborator-product-mobile.webp",
+      productDesktopSrc: "/home/collaborator-product-desktop.webp",
     },
   ];
 

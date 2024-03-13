@@ -1,4 +1,3 @@
-
 import React from "react";
 import HeroSection from "../../../views/patients/HeroSection";
 import FeaturesSection from "../../../views/patients/GraphSection";
@@ -13,7 +12,7 @@ import {
   fetchInventorySection,
   fetchPractitionersFeatureContent,
   fetchTestimonials,
-  fetchPractitionersKeyFeature
+  fetchPractitionersKeyFeature,
 } from "../../../lib/fetchData";
 export const revalidate = 10;
 
@@ -23,7 +22,7 @@ const page = async () => {
   const demoSectionContent = await fetchDemoSection();
   const testimonials = await fetchTestimonials();
   const features = await fetchPractitionersKeyFeature();
-  
+
   return (
     <main className={styles.main}>
       <HeroSection />

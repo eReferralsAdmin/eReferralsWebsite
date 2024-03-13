@@ -10,7 +10,7 @@ const SurveyInvitationCard = ({ data }) => {
       <div className={styles.surveyInvitationContainer}>
         <div className={styles.imageContainer}>
           <Image
-            src="/images/survey-image.jpeg"
+            src="/home/survey-image.jpeg"
             alt="Hand holding a pen over survey forms"
             className={styles.surveyImage}
             fill

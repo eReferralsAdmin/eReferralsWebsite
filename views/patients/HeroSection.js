@@ -9,21 +9,49 @@ const HeroSection = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.imageContainer}>
-          <img
+          <Image
             src="/images/dashboard-top1.png"
             alt="Top Image"
+            sizes="100vw" // Responsive based on viewport width
+            style={{
+              width: "80%",
+              height: "auto",
+            }}
             className={styles.topImage}
+            width={608}
+            height={432}
           />
 
           <div className={styles.bottomImages}>
-            <img src="/images/dashboard-left.svg" alt="Bottom Left Image" />
-            <img src="/images/dashboard-right.svg" alt="Bottom Right Image" />
+            <Image
+              src="/images/dashboard-left.svg"
+              alt="Bottom Left Image"
+              sizes="90%" // Adjust size based on desired layout
+              style={{ width: "90%", height: "auto" }} // Adjust styles as needed
+              width={461}
+              height={328}
+            />
+            <Image
+              src="/images/dashboard-right.svg"
+              alt="Bottom Right Image"
+              sizes="90%" // Adjust size based on desired layout
+              style={{ width: "90%", height: "auto" }} // Adjust styles as needed
+              width={461}
+              height={328}
+            />
           </div>
         </div>
         <div className={styles.headerContainer}>
           <div className={styles.logoContainer}>
             <Link href="/">
-              <img src="/logo.svg" alt="Logo" />
+              <Image
+                sizes="100%"
+                style={{ width: "100%", height: "auto" }}
+                src="/logo.svg"
+                alt="Logo"
+                width={515.88}
+                height={109.61}
+              />
             </Link>
           </div>
           <div className={styles.headerContent}>

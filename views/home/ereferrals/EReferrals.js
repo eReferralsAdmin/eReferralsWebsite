@@ -40,7 +40,7 @@ const EReferrals = ({ practitionersData, patientsData }) => {
           <div className={styles.ereferralInfo}>
             <div className={styles.imageContainer}>
               <Image
-                src="/images/ereferrals-for-practioers.svg"
+                src="/home/new-referral.webp"
                 alt="eReferrals information graphic"
                 width={348}
                 height={335}
@@ -65,7 +65,7 @@ const EReferrals = ({ practitionersData, patientsData }) => {
           <div className={styles.ereferralInfo}>
             <div className={styles.imageContainer}>
               <Image
-                src="/patient-app.svg"
+                src="/home/search-provider.webp"
                 alt="eReferrals information graphic"
                 width={348}
                 height={335}

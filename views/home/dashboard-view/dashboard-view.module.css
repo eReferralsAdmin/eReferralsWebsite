@@ -4,7 +4,7 @@
 }
 
 .appView {
-  background: url("/images/dashboard-view-mobile.svg") no-repeat center center /
+  background: url("/home/dashboard-view-mobile.webp") no-repeat center center /
     contain;
   height: 400px;
   width: 100%;
@@ -15,7 +15,7 @@
     padding: 0 30px;
   }
   .appView {
-    background-image: url("/images/dashboard-view-desktop.svg");
+    background-image: url("/home/dashboard-view-desktop.webp");
     height: 450px;
   }
 }
@@ -25,7 +25,7 @@
     padding: 0 30px;
   }
   .appView {
-    background-image: url("/images/dashboard-view-desktop.svg");
+    background-image: url("/home/dashboard-view-desktop.webp");
     height: 550px;
   }
 }
@@ -36,7 +36,7 @@
     padding: 0;
   }
   .appView {
-    background-image: url("/images/dashboard-view-desktop.svg");
+    background-image: url("/home/dashboard-view-desktop.webp");
     height: 888px;
   }
 }

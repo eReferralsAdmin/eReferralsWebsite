@@ -6,7 +6,7 @@
 }
 
 .imageContainer {
-  background-image: url("/images/mobile-hero.png");
+  background-image: url("/home/mobile-hero.webp");
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -91,7 +91,7 @@
 
 @media screen and (min-width: 768px) {
   .imageContainer {
-    background-image: url("/images/desktop-hero.png");
+    background-image: url("/home/desktop-hero.webp");
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -118,46 +118,6 @@
     top: 50%;
     transform: translateY(-50%);
   }
-
-  /* .buttonLearnMore {
-    max-width: fit-content;
-    margin: 0 auto;
-    color: #17355d;
-    text-align: center;
-    font-family: Albert Sans;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 24px;
-    padding: 10px 25px;
-    border-radius: 60px;
-    border: 2px solid #17355d;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .buttonInterested {
-    color: #fff;
-    font-family: Albert Sans;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 24px;
-    padding: 10px 25px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-
-    border-radius: 60px;
-    background: linear-gradient(
-      271deg,
-      #2d6465 -11.45%,
-      #3a806b -11.45%,
-      #67de7f 123.02%
-    );
-  } */
 }
 
 @media screen and (min-width: 1024px) {
