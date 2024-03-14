@@ -7,13 +7,6 @@ import Faq from "../../../components/faq/Faq";
 import CommparisonSection from "../../../views/patients/ComparisonSection";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
 import styles from "./pratictioners.module.css";
-import {
-  fetchDemoSection,
-  fetchInventorySection,
-  fetchPractitionersFeatureContent,
-  fetchTestimonials,
-  fetchPractitionersKeyFeature,
-} from "../../../lib/fetchData";
 export const revalidate = 10;
 
 async function getData() {
@@ -26,11 +19,13 @@ async function getData() {
 }
 
 const page = async () => {
-  const inventorySectionContent = await fetchInventorySection();
-  const practitionersFeatureContent = await fetchPractitionersFeatureContent();
-  const demoSectionContent = await fetchDemoSection();
-  const testimonials = await fetchTestimonials();
-  const features = await fetchPractitionersKeyFeature();
+  const {
+    inventorySectionContent,
+    practitionersFeatureContent,
+    demoSectionContent,
+    testimonials,
+    features,
+  } = await getData();
 
   return (
     <main className={styles.main}>

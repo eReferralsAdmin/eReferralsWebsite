@@ -4,18 +4,19 @@ import KeyFeatres from "../../../views/patients/KeyFeatures";
 import ComparisonSection from "../../../views/patients/ComparisonSection";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
 import Faq from "../../../components/faq/Faq";
-import {
-  fetchPatientsFeatureContent,
-  fetchPatientsKeyFeature,
-  fetchTestimonials,
-  fetchReferralSection,
-} from "../../../lib/fetchData";
+
+async function getData() {
+  const res = await fetch(`${process.env.API_URL}/api/home`);
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
 
 const page = async () => {
-  const keyFeatures = await fetchPatientsKeyFeature();
-  const keyFeaturesContent = await fetchPatientsFeatureContent();
-  const testimonials = await fetchTestimonials();
-  const referralSection = await fetchReferralSection();
+  const { keyFeatures, keyFeaturesContent, testimonials, referralSection } =
+    await getData();
 
   return (
     <div>
