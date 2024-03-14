@@ -9,14 +9,6 @@ import Faq from "../../components/faq/Faq";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import styles from "./page.module.css";
-import {
-  fetchCollaboration,
-  fetchForPatientsHome,
-  fetchForPractitionersHome,
-  fetchHomeHero,
-  fetchNewsletterSubscription,
-  fetchOpinionSurvey,
-} from "../../lib/fetchData";
 export const revalidate = 10;
 
 async function getData() {
