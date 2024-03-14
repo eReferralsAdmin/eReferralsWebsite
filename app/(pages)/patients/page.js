@@ -6,7 +6,7 @@ import RecommendationSection from "../../../views/practictioner/RecommendationSe
 import Faq from "../../../components/faq/Faq";
 
 async function getData() {
-  const res = await fetch(`${process.env.API_URL}/api/home`);
+  const res = await fetch(`${process.env.API_URL}/api/patients`);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }

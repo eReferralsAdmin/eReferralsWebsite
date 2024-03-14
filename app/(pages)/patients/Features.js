@@ -11,7 +11,7 @@ const Features = ({ data }) => {
       </div>
       <div className={styles.imageContainer}>
         <Image
-          src={"/patient/features.svg"}
+          src={"/patient/app-features.svg"}
           fill
           alt=""
           className={styles.featuresImage}
