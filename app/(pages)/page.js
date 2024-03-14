@@ -19,21 +19,20 @@ import {
 } from "../../lib/fetchData";
 export const revalidate = 10;
 
-async function getData() {
-  const res = await fetch(`${process.env.API_URL}/api/home`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+// async function getData() {
+//   const res = await fetch(`${process.env.API_URL}/api/home`);
+//   // The return value is *not* serialized
+//   // You can return Date, Map, Set, etc.
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error("Failed to fetch data");
+//   }
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
+//   return res.json();
+// }
 
 export default async function Home() {
-  const data = await getData();
+  // const data = await getData();
   const homeHero = await fetchHomeHero();
   const forPractitionersHome = await fetchForPractitionersHome();
   const forPatientsHome = await fetchForPatientsHome();
