@@ -16,6 +16,15 @@ import {
 } from "../../../lib/fetchData";
 export const revalidate = 10;
 
+async function getData() {
+  const res = await fetch(`${process.env.API_URL}/api/practictioners`);
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
 const page = async () => {
   const inventorySectionContent = await fetchInventorySection();
   const practitionersFeatureContent = await fetchPractitionersFeatureContent();
