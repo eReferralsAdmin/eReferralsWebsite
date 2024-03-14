@@ -11,7 +11,7 @@ const Hero = ({ data }) => {
       <section className={styles.heroSection}>
         <div className={styles.imageContainer}></div>
         <div className={styles.contentContainer}>
-          <h1>{data.title} 1</h1>
+          <h1>{data.title}</h1>
           <p>{data.description}</p>
           <div className={styles.buttonsContainer}>
             <a href="#signup" className={styles.buttonInterested}>
