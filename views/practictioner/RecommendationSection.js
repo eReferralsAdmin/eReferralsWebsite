@@ -11,7 +11,6 @@ import { urlForImage } from "../../sanity/lib/image";
 import { fetchTestimonials } from "../../lib/fetchData";
 
 const RecommendationSection = ({ testimonials }) => {
-
   return (
     <section className={styles.recommendationContainer}>
       <h2>Recommended by Medics</h2>
@@ -41,8 +40,6 @@ const RecommendationSection = ({ testimonials }) => {
               spaceBetween: 10,
             },
           }}
-          // onSlideChange={() => console.log("slide change")}
-          // onSwiper={(swiper) => console.log(swiper)}
           modules={[Navigation, EffectCoverflow]}
           navigation={{
             nextEl: ".swiper-button-next",

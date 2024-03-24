@@ -14,7 +14,7 @@ import Faq from "../../../components/faq/Faq";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useState, useEffect } from "react";
-import { fetchFAQs, fetchTestimonials } from "../../../lib/fetchData";
+import { fetchHomeFAQs, fetchTestimonials } from "../../../lib/fetchData";
 
 const PratictionersPage = () => {
   const [activeTab, setActiveTab] = useState("practitioners");
@@ -39,7 +39,7 @@ const PratictionersPage = () => {
 
   useEffect(() => {
     const getFAQs = async () => {
-      const fetchedFAQs = await fetchFAQs();
+      const fetchedFAQs = await fetchHomeFAQs();
       setFaqs(fetchedFAQs);
     };
 
@@ -202,7 +202,7 @@ const PratictionersPage = () => {
                   className={`${styles.submitButton}`}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Get Starting"}
+                  {isSubmitting ? "Submitting..." : "Get Started"}
                   <ChevronRightIcon className="btn-icon" />
                 </button>
               </div>

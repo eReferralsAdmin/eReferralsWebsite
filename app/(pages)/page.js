@@ -28,6 +28,7 @@ export default async function Home() {
     newsletterSubscriptionContent,
     opinionSurvey,
     collaborations,
+    homeFaqs,
   } = await getData();
 
   return (
@@ -43,12 +44,12 @@ export default async function Home() {
         </div>
         <NewsletterSignup content={newsletterSubscriptionContent} />
         <SurveyInvitationCard data={opinionSurvey} />
-        <CollaborationFeature data={collaborations} />
+        <CollaborationFeature collaborations={collaborations} />
         <div id="signup">
           <Signup />
         </div>
         <div className={styles.faqContainer}>
-          <Faq />
+          <Faq faqs={homeFaqs} />
           <Link href="/contact" className={styles.askQuestion}>
             Ask a question <ChevronRightIcon className="btn-icon" />
           </Link>

@@ -1,5 +1,5 @@
-export const Faq = {
-  name: "faq",
+export const HomeFaq = {
+  name: "homeFaq",
   title: "FAQ",
   type: "document",
   fields: [

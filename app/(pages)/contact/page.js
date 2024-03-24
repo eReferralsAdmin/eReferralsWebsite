@@ -6,7 +6,7 @@ import SegmentedControl from "../../../components/ui/SegmentedControl";
 import { ChevronRightIcon, MinusIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Faq from "../../../components/faq/Faq";
-import { fetchFAQs } from "../../../lib/fetchData";
+import { fetchHomeFAQs } from "../../../lib/fetchData";
 
 const ContactUs = () => {
   const {
@@ -19,7 +19,7 @@ const ContactUs = () => {
 
   useEffect(() => {
     const getFAQs = async () => {
-      const fetchedFAQs = await fetchFAQs();
+      const fetchedFAQs = await fetchHomeFAQs();
       setFaqs(fetchedFAQs);
     };
 
@@ -30,11 +30,11 @@ const ContactUs = () => {
     // Handle the form submission
   };
 
-  const [segment, setSegment] = useState("Pratictioner");
+  const [segment, setSegment] = useState("Practitioners");
   const [isPaddleActive, setIsPaddleActive] = useState(true);
 
   const segmentOptions = [
-    { label: "Pratictioner", value: "Pratictioner" },
+    { label: "Practitioners", value: "Practitioners" },
     { label: "Patient", value: "Patient" },
   ];
 

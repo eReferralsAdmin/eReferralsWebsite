@@ -1,6 +1,6 @@
 export const PracticionersFeatureContent = {
-  name: "practicionersFeatureContent",
-  title: "Practicioners Feature Content",
+  name: "practitionersFeatureContent",
+  title: "Practitioners Feature Content",
   type: "document",
   fields: [
     {

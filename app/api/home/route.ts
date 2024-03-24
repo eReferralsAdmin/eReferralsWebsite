@@ -3,6 +3,7 @@ import {
   fetchCollaboration,
   fetchForPatientsHome,
   fetchForPractitionersHome,
+  fetchHomeFAQs,
   fetchHomeHero,
   fetchNewsletterSubscription,
   fetchOpinionSurvey,
@@ -17,6 +18,7 @@ export async function GET() {
     const newsletterSubscriptionContent = await fetchNewsletterSubscription();
     const opinionSurvey = await fetchOpinionSurvey();
     const collaborations = await fetchCollaboration();
+    const homeFaqs = await fetchHomeFAQs();
 
     return NextResponse.json({
       homeHero,
@@ -25,6 +27,7 @@ export async function GET() {
       newsletterSubscriptionContent,
       opinionSurvey,
       collaborations,
+      homeFaqs,
     });
   } catch (error) {
     return new NextResponse(JSON.stringify({ error: "Error fetching faqs" }), {

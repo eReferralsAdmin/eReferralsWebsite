@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
-const HeroSection = () => {
+const HeroSection = ({ hero }) => {
   return (
     <div>
       <div className={styles.container}>
@@ -55,17 +55,14 @@ const HeroSection = () => {
             </Link>
           </div>
           <div className={styles.headerContent}>
-            <p>for</p>
-            <h1>Pratictioners</h1>
+            <p>{hero.subtitle}</p>
+            <h1>{hero.title}</h1>
           </div>
         </div>
 
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
-            <p className={styles.heroDescription}>
-              Modern web application that allows referrals to be sent and
-              received seamlessly between healthcare professionals
-            </p>
+            <p className={styles.heroDescription}>{hero.description}</p>
             <Link
               href={"/pratictioners-signup"}
               className={`${styles.submitButton}`}

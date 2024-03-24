@@ -81,14 +81,18 @@ export default defineConfig({
                           .schemaType("opinionSurvey")
                           .documentId("opinionSurvey")
                       ),
-                    // S.listItem()
-                    //   .title("Collaborators")
-                    //   .schemaType("collaboration")
-                    //   .child(
-                    //     S.documentTypeList("collaboration").title(
-                    //       "Collaborators List"
-                    //     )
-                    //   ),
+                    S.listItem()
+                      .title("Collaborators")
+                      .schemaType("collaboration")
+                      .child(
+                        S.documentTypeList("collaboration").title(
+                          "Collaborators List"
+                        )
+                      ),
+                    S.listItem()
+                      .title("Faqs")
+                      .schemaType("homeFaq")
+                      .child(S.documentTypeList("homeFaq").title("Faq")),
                   ])
               ),
             S.listItem()
@@ -112,29 +116,25 @@ export default defineConfig({
                   ])
               ),
             S.listItem()
-              .title("Faqs")
-              .schemaType("faq")
-              .child(S.documentTypeList("faq").title("Faqs")),
-            S.listItem()
               .title("Products")
               .child(
                 S.list()
                   .title("Products Pages")
                   .items([
                     S.listItem()
-                      .title("For Pratictioners")
+                      .title("For Practitioners")
                       .child(
                         S.list()
-                          .title("For Practicioners Page Setting")
+                          .title("For Practitioners Page Setting")
                           .items([
-                            // S.listItem()
-                            //   .title("Practitioners Hero")
-                            //   .child(
-                            //     S.editor()
-                            //       .id("practitionersHero")
-                            //       .schemaType("practitionersHero")
-                            //       .documentId("practitionersHero")
-                            //   ),
+                            S.listItem()
+                              .title("Practitioners Hero")
+                              .child(
+                                S.editor()
+                                  .id("practitionersHero")
+                                  .schemaType("practitionersHero")
+                                  .documentId("practitionersHero")
+                              ),
                             S.listItem()
                               .title("Inventory Section")
                               .child(
@@ -142,6 +142,13 @@ export default defineConfig({
                                   .id("inventorySection")
                                   .schemaType("inventorySection")
                                   .documentId("inventorySection")
+                              ),
+                            S.listItem()
+                              .title("Benefits Section")
+                              .child(
+                                S.documentTypeList("benefits").title(
+                                  "Benefits List"
+                                )
                               ),
                             S.listItem()
                               .title("Demo Section")
@@ -158,25 +165,33 @@ export default defineConfig({
                                   .title("Feature Section")
                                   .items([
                                     S.listItem()
-                                      .title("Feature Contnet")
+                                      .title("Feature Content")
                                       .child(
                                         S.editor()
-                                          .id("practicionersFeatureContent")
+                                          .id("practitionersFeatureContent")
                                           .schemaType(
-                                            "practicionersFeatureContent"
+                                            "practitionersFeatureContent"
                                           )
                                           .documentId(
-                                            "practicionersFeatureContent"
+                                            "practitionersFeatureContent"
                                           )
                                       ),
                                     S.listItem()
                                       .title("Features")
                                       .child(
                                         S.documentTypeList(
-                                          "practicionersKeyFeature"
-                                        ).title("Practicioners Key Feature")
+                                          "practitionersKeyFeature"
+                                        ).title("Practitioners Key Feature")
                                       ),
                                   ])
+                              ),
+                            S.listItem()
+                              .title("Faqs")
+                              .schemaType("practitionersFaq")
+                              .child(
+                                S.documentTypeList("practitionersFaq").title(
+                                  "Faq"
+                                )
                               ),
                           ])
                       ),
@@ -190,9 +205,16 @@ export default defineConfig({
                               .title("Hero")
                               .child(
                                 S.editor()
-                                  .id("patiensHero")
-                                  .schemaType("patiensHero")
-                                  .documentId("patiensHero")
+                                  .id("patientsHero")
+                                  .schemaType("patientsHero")
+                                  .documentId("patientsHero")
+                              ),
+                            S.listItem()
+                              .title("Benefits Section")
+                              .child(
+                                S.documentTypeList("patientsBenefits").title(
+                                  "Benefits List"
+                                )
                               ),
                             S.listItem()
                               .title("Referral Section")
@@ -221,9 +243,23 @@ export default defineConfig({
                                       .child(
                                         S.documentTypeList(
                                           "patientsKeyFeature"
-                                        ).title("Practicioners Key Feature")
+                                        ).title("Patients Key Feature")
                                       ),
                                   ])
+                              ),
+                            S.listItem()
+                              .title("Demo Section")
+                              .child(
+                                S.editor()
+                                  .id("patientDemoSection")
+                                  .schemaType("patientDemoSection")
+                                  .documentId("patientDemoSection")
+                              ),
+                            S.listItem()
+                              .title("Faqs")
+                              .schemaType("patientsFaq")
+                              .child(
+                                S.documentTypeList("patientsFaq").title("Faq")
                               ),
                           ])
                       ),
@@ -238,6 +274,6 @@ export default defineConfig({
     }),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
-    // visionTool({ defaultApiVersion: apiVersion }),
+    visionTool({ defaultApiVersion: apiVersion }),
   ],
 });

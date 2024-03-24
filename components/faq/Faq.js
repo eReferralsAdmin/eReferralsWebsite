@@ -55,18 +55,18 @@ const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
   );
 };
 
-const Faq = () => {
+const Faq = ({ faqs }) => {
   const [activeFaq, setActiveFaq] = useState(null);
-  const [faqs, setFaqs] = useState([]);
+  // const [faqs, setFaqs] = useState([]);
 
-  useEffect(() => {
-    const getFAQs = async () => {
-      const fetchedFAQs = await fetchFAQs();
-      setFaqs(fetchedFAQs);
-    };
+  // useEffect(() => {
+  //   const getFAQs = async () => {
+  //     const fetchedFAQs = await fetchFAQs();
+  //     setFaqs(fetchedFAQs);
+  //   };
 
-    getFAQs();
-  }, []);
+  //   getFAQs();
+  // }, []);
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);

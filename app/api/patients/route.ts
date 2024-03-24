@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 import {
-  fetchDemoSection,
-  fetchInventorySection,
+  fetchPatientDemoSection,
+  fetchPatientsFAQs,
   fetchPatientsFeatureContent,
+  fetchPatientsHero,
   fetchPatientsKeyFeature,
-  fetchPractitionersFeatureContent,
-  fetchPractitionersKeyFeature,
   fetchReferralSection,
   fetchTestimonials,
+  patientsBenefits,
 } from "../../../lib/fetchData";
 export const revalidate = 10;
 
@@ -17,12 +17,20 @@ export async function GET() {
     const keyFeaturesContent = await fetchPatientsFeatureContent();
     const testimonials = await fetchTestimonials();
     const referralSection = await fetchReferralSection();
+    const patientHero = await fetchPatientsHero();
+    const patientBenefits = await patientsBenefits();
+    const faqs = await fetchPatientsFAQs();
+    const demoSectionContent = await fetchPatientDemoSection();
 
     return NextResponse.json({
       keyFeatures,
       keyFeaturesContent,
       testimonials,
       referralSection,
+      patientHero,
+      patientBenefits,
+      faqs,
+      demoSectionContent,
     });
   } catch (error) {
     return new NextResponse(JSON.stringify({ error: "Error fetching faqs" }), {

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./GraphSection.module.css";
 import Image from "next/image";
 
-const GraphSection = ({ data }) => {
+const GraphSection = ({ data, benefits }) => {
   return (
     <div className={styles.dashboard}>
       <div className={styles.dashboardContent}>
@@ -36,33 +36,18 @@ const GraphSection = ({ data }) => {
       </div>
 
       <div className={styles.featuresSection}>
-        <div className={styles.feature}>
-          <Image
-            width={30}
-            height={30}
-            src="/icons/dashboard.svg"
-            alt="Easy management"
-          />
-          <p>Easy management</p>
-        </div>
-        <div className={styles.feature}>
-          <Image
-            width={30}
-            height={30}
-            src={"/icons/energy.svg"}
-            alt="Increase Hospital Efficiency"
-          />
-          <p>Increase Hospital Efficiency</p>
-        </div>
-        <div className={styles.feature}>
-          <Image
-            height={30}
-            width={30}
-            src="/icons/support.svg"
-            alt="24/7 Live Support"
-          />
-          <p>24/7 Live Support</p>
-        </div>
+        {benefits.map((benefit, index) => (
+          <div key={index} className={styles.feature}>
+            <Image
+              width={30}
+              height={30}
+              src="/icons/dashboard.svg"
+              // src={urlForImage(benefit?.icon)}
+              alt="Easy management"
+            />
+            <p>{benefit.title}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

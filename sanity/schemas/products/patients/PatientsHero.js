@@ -1,8 +1,13 @@
 export const PatiensHero = {
-  name: "patiensHero",
-  title: "Patiens Hero",
+  name: "patientsHero",
+  title: "Patients Hero",
   type: "document",
   fields: [
+    {
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string",
+    },
     {
       name: "title",
       title: "Title",

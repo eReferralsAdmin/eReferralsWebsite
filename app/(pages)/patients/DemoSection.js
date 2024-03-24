@@ -9,7 +9,7 @@ const DemoSection = ({ data }) => {
     <div className={styles.demoSection}>
       <div className={styles.imageWrapper}>
         <Image
-          src={"/pratictioners/pratictioners-demo.webp"}
+          src={"/patient/floating-mobile.webp"}
           alt="Demo Laptop"
           sizes="100%" // Adjust size based on layout preference
           style={{ width: "100%", height: "auto" }} // Adjust style for desired width behavior

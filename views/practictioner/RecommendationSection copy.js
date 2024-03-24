@@ -61,8 +61,8 @@ const RecommendationSection = () => {
         <Swiper
           spaceBetween={10}
           slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => {}}
+          onSwiper={(swiper) => {}}
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -72,7 +72,7 @@ const RecommendationSection = () => {
           }}
         >
           {recommendations.map((recommendation, index) => (
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <TestimonialCard
                 key={index}
                 quote={recommendation.quote}

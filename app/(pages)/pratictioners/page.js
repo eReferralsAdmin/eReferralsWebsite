@@ -25,12 +25,15 @@ const page = async () => {
     demoSectionContent,
     testimonials,
     features,
+    hero,
+    benefits,
+    faqs,
   } = await getData();
 
   return (
     <main className={styles.main}>
-      <HeroSection />
-      <FeaturesSection data={inventorySectionContent} />
+      <HeroSection hero={hero} />
+      <FeaturesSection benefits={benefits} data={inventorySectionContent} />
       <KeyFeatures data={practitionersFeatureContent} features={features} />
       <RecommendationSection testimonials={testimonials} />
       <CommparisonSection
@@ -39,7 +42,7 @@ const page = async () => {
       />
       <DemoSection data={demoSectionContent} />
       <div className={"faqContainer"}>
-        <Faq />
+        <Faq faqs={faqs} />
       </div>
     </main>
   );

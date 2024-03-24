@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Features.module.css";
 import Image from "next/image";
 
-const Features = ({ data }) => {
+const Features = ({ data, benefits }) => {
   return (
     <div className={styles.featuresContainer}>
       <div className={styles.textContainer}>
@@ -18,33 +18,18 @@ const Features = ({ data }) => {
         />
       </div>
       <div className={styles.featuresSection}>
-        <div className={styles.feature}>
-          <Image
-            height={30}
-            width={30}
-            src="/icons/dashboard.svg"
-            alt="Easy management"
-          />
-          <p>Easy management</p>
-        </div>
-        <div className={styles.feature}>
-          <Image
-            width={30}
-            height={30}
-            src={"/icons/energy.svg"}
-            alt="Increase Hospital Efficiency"
-          />
-          <p>Fast prenotation</p>
-        </div>
-        <div className={styles.feature}>
-          <Image
-            width={30}
-            height={30}
-            src="/icons/support.svg"
-            alt="24/7 Live Support"
-          />
-          <p>24/7 Live Support</p>
-        </div>
+        {benefits.map((benefit, index) => (
+          <div key={index} className={styles.feature}>
+            <Image
+              width={30}
+              height={30}
+              src="/icons/dashboard.svg"
+              // src={urlForImage(benefit?.icon)}
+              alt="Easy management"
+            />
+            <p>{benefit.title}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

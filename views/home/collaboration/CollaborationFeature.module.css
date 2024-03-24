@@ -74,6 +74,11 @@
   display: none;
 }
 
+.collaboratorProductMobile {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 @media screen and (min-width: 768px) {
   .collaborationFeature {
     background: linear-gradient(

@@ -1,8 +1,11 @@
 import { NextResponse } from "next/server";
 import {
+  benefitsSection,
   fetchDemoSection,
   fetchInventorySection,
+  fetchPractitionersFAQs,
   fetchPractitionersFeatureContent,
+  fetchPractitionersHero,
   fetchPractitionersKeyFeature,
   fetchTestimonials,
 } from "../../../lib/fetchData";
@@ -16,6 +19,9 @@ export async function GET() {
     const demoSectionContent = await fetchDemoSection();
     const testimonials = await fetchTestimonials();
     const features = await fetchPractitionersKeyFeature();
+    const hero = await fetchPractitionersHero();
+    const benefits = await benefitsSection();
+    const faqs = await fetchPractitionersFAQs();
 
     return NextResponse.json({
       inventorySectionContent,
@@ -23,6 +29,9 @@ export async function GET() {
       demoSectionContent,
       testimonials,
       features,
+      hero,
+      benefits,
+      faqs,
     });
   } catch (error) {
     return new NextResponse(JSON.stringify({ error: "Error fetching faqs" }), {

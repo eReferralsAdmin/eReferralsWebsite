@@ -51,7 +51,7 @@ const Header = () => {
                 }`}
               >
                 <li className={styles.submenuItem}>
-                  <Link href="/pratictioners">For Practitioner</Link>
+                  <Link href="/pratictioners">For Practitioners</Link>
                 </li>
                 <li className={styles.submenuItem}>
                   <Link href={"/patients"}>For Patients</Link>
@@ -65,16 +65,19 @@ const Header = () => {
               <Link href="/contact">Contact us</Link>
             </li>
             <div className={styles.authLinksMobile}>
-              <a href="/pratictioners-signup" className={styles.buttonSignup}>
-                Signup <ChevronRightIcon className="btn-icon" />
-              </a>
+              <Link
+                href="/pratictioners-signup"
+                className={styles.buttonSignup}
+              >
+                Sign Up <ChevronRightIcon className="btn-icon" />
+              </Link>
             </div>
           </ul>
         </div>
         <div className={styles.authLinks}>
-          <a href="/pratictioners-signup" className={styles.buttonSignup}>
-            Signup <ChevronRightIcon className="btn-icon" />
-          </a>
+          <Link href="/pratictioners-signup" className={styles.buttonSignup}>
+            Sign Up <ChevronRightIcon className="btn-icon" />
+          </Link>
         </div>
       </nav>
     </header>

@@ -1,13 +1,8 @@
-export const PractitionersHero = {
-  name: "practitionersHero",
-  title: "PractitionersHero",
+export const PatientDemoSection = {
+  name: "patientDemoSection",
+  title: "Demo Section",
   type: "document",
   fields: [
-    {
-      name: "subtitle",
-      title: "Subtitle",
-      type: "string",
-    },
     {
       name: "title",
       title: "Title",

@@ -1,5 +1,5 @@
-export const Faq = {
-  name: "faq",
+export const PatientsFaq = {
+  name: "patientsFaq",
   title: "FAQ",
   type: "document",
   fields: [

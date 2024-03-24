@@ -1,6 +1,6 @@
-export const PracticionersKeyFeature = {
-  name: "practitionersKeyFeature",
-  title: "Practitioners Key Feature",
+export const Benefits = {
+  name: "benefits",
+  title: "Benefits",
   type: "document",
   fields: [
     {
@@ -15,11 +15,6 @@ export const PracticionersKeyFeature = {
       name: "title",
       title: "Title",
       type: "string",
-    },
-    {
-      name: "description",
-      title: "Description",
-      type: "text",
     },
   ],
 };
