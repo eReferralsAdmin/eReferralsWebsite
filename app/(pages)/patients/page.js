@@ -29,7 +29,7 @@ const page = async () => {
 
   return (
     <div>
-      <HeroSection hero={patientHero} />
+      {/* <HeroSection hero={patientHero} />
       <Features benefits={patientBenefits} data={referralSection} />
       <KeyFeatres data={keyFeaturesContent} features={keyFeatures} />
       <ComparisonSection
@@ -40,7 +40,7 @@ const page = async () => {
       <DemoSection data={demoSectionContent} />
       <div className={"faqContainer"}>
         <Faq faqs={faqs} />
-      </div>
+      </div> */}
     </div>
   );
 };

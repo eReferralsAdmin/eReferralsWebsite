@@ -33,7 +33,7 @@ export default async function Home() {
 
   return (
     <div className="wrapper">
-      <div className="container">
+      {/* <div className="container">
         <Hero data={homeHero} />
         <DashboardView />
         <div id="learn-more">
@@ -54,7 +54,7 @@ export default async function Home() {
             Ask a question <ChevronRightIcon className="btn-icon" />
           </Link>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
