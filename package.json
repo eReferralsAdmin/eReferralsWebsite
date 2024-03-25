@@ -15,7 +15,7 @@
     "@sanity/structure": "^2.36.2",
     "@sanity/vision": "^3.21.0",
     "framer-motion": "^10.16.14",
-    "next": "14.0.3",
+    "next": "^14.0.3",
     "next-sanity": "^5.5.11",
     "react": "^18",
     "react-compare-slider": "^3.0.1",
