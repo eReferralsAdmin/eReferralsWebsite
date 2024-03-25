@@ -32,7 +32,7 @@ const page = async () => {
 
   return (
     <main className={styles.main}>
-      {/* <HeroSection hero={hero} />
+      <HeroSection hero={hero} />
       <FeaturesSection benefits={benefits} data={inventorySectionContent} />
       <KeyFeatures data={practitionersFeatureContent} features={features} />
       <RecommendationSection testimonials={testimonials} />
@@ -43,7 +43,7 @@ const page = async () => {
       <DemoSection data={demoSectionContent} />
       <div className={"faqContainer"}>
         <Faq faqs={faqs} />
-      </div> */}
+      </div>
     </main>
   );
 };
