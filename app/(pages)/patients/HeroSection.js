@@ -19,7 +19,7 @@ const HeroSection = ({ hero }) => {
       <div className={styles.heroHeader}>
         <Logo />
         <div className={styles.headings}>
-          {/* <h1 className={styles.subTitle}>{hero.subtitle}</h1> */}
+          <h1 className={styles.subTitle}>{hero.subtitle}</h1>
           <h1 className={styles.mainTitle}>{hero.title}</h1>
         </div>
       </div>
