@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./GraphSection.module.css";
 import Image from "next/image";
+import { urlForImage } from "../../sanity/lib/image";
 
 const GraphSection = ({ data, benefits }) => {
   return (
@@ -41,8 +42,8 @@ const GraphSection = ({ data, benefits }) => {
             <Image
               width={30}
               height={30}
-              src="/icons/dashboard.svg"
-              // src={urlForImage(benefit?.icon)}
+              // src="/icons/dashboard.svg"
+              src={urlForImage(benefit?.icon)}
               alt="Easy management"
             />
             <p>{benefit.title}</p>

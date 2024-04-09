@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/FeatureCard.module.css";
 import Image from "next/image";
+import { urlForImage } from "../sanity/lib/image";
 
 const FeatureCard = ({ feature }) => {
   return (
@@ -8,7 +9,8 @@ const FeatureCard = ({ feature }) => {
       <Image
         width={30}
         height={30}
-        src={"/images/dashboard.svg"}
+        // src={"/images/dashboard.svg"}
+        src={urlForImage(feature?.icon)}
         alt="Key Feature"
         className={styles.icon}
       />

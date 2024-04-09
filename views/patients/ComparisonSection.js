@@ -44,7 +44,7 @@ const ComparisonSection = ({ beforeImage, afterImage }) => {
           <ChevronRightIcon className={styles.icon} />
           <h2>After</h2>
         </div>
-        <p>Digital Form- Automated and Easy</p>
+        <p>Digital Form. Automated and Easy</p>
       </div>
       <div className={styles.sliderContainer}>
         <ReactCompareSlider

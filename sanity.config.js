@@ -266,7 +266,7 @@ export default defineConfig({
                   ])
               ),
             S.listItem()
-              .title("Testimonials (Recommended by Medics)")
+              .title("Testimonials (Recommended by)")
               .child(S.documentTypeList("testimonial").title("Testimonials")),
             // .schemaType("faq")
             // .child(S.documentTypeList("faq").title("Faqs")),

@@ -13,7 +13,7 @@ import { fetchTestimonials } from "../../lib/fetchData";
 const RecommendationSection = ({ testimonials }) => {
   return (
     <section className={styles.recommendationContainer}>
-      <h2>Recommended by Medics</h2>
+      <h2>Recommended by</h2>
       <div className={styles.testimonialsContainer}>
         <Swiper
           className={styles.testimonialsContent}
