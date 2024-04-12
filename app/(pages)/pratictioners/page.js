@@ -9,7 +9,9 @@ import RecommendationSection from "../../../views/practictioner/RecommendationSe
 import styles from "./pratictioners.module.css";
 
 async function getData() {
-  const res = await fetch(`${process.env.API_URL}/api/practitioners`);
+  const res = await fetch(`${process.env.API_URL}/api/practitioners`, {
+    cache: "no-cache",
+  });
 
   if (!res.ok) {
     console.log(res);
