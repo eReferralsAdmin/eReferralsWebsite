@@ -20,22 +20,22 @@ async function getData() {
 }
 
 const page = async () => {
-  const {
-    inventorySectionContent,
-    practitionersFeature,
-    demoSectionContent,
-    testimonials,
-    features,
-    hero,
-    benefits,
-    faqs,
-  } = await getData();
+  // const {
+  //   inventorySectionContent,
+  //   practitionersFeature,
+  //   demoSectionContent,
+  //   testimonials,
+  //   features,
+  //   hero,
+  //   benefits,
+  //   faqs,
+  // } = await getData();
 
   return (
     <main className={styles.main}>
-      <HeroSection hero={hero} />
+      {/* <HeroSection hero={hero} />
       <FeaturesSection benefits={benefits} data={inventorySectionContent} />
-      {/* <KeyFeatures data={practitionersFeature} features={features} /> */}
+       <KeyFeatures data={practitionersFeature} features={features} /> 
       <RecommendationSection testimonials={testimonials} />
       <CommparisonSection
         beforeImage={"/before-app-paper.png"}
@@ -44,7 +44,7 @@ const page = async () => {
       <DemoSection data={demoSectionContent} />
       <div className={"faqContainer"}>
         <Faq faqs={faqs} />
-      </div>
+      </div> */}
     </main>
   );
 };
