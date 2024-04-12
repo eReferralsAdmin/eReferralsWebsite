@@ -11,7 +11,7 @@ import { PractitionersHero } from "./products/practicionners/PracticionersHero";
 import { InventorySection } from "./products/practicionners/InventorySection";
 import { DemoSection } from "./products/practicionners/DemoSection";
 import { PracticionersKeyFeature } from "./products/practicionners/PracticionersKeyFeature";
-import { PracticionersFeatureContent } from "./products/practicionners/PracticionersFeaturesContent";
+import { PractitionersFeatureContent } from "./products/practicionners/PracticionersFeaturesContent";
 import { Benefits } from "./products/practicionners/Benefits";
 import { PractitionersFaq } from "./products/practicionners/PractitionersFaq";
 import { Testimonial } from "./Testimonial";
@@ -41,7 +41,7 @@ export const schema = {
     DemoSection,
     Testimonial,
     PracticionersKeyFeature,
-    PracticionersFeatureContent,
+    PractitionersFeatureContent,
     PatiensHero,
     ReferralSection,
     PatientsFeatureContent,

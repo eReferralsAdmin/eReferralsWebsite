@@ -14,8 +14,7 @@ export const revalidate = 10;
 export async function GET() {
   try {
     const inventorySectionContent = await fetchInventorySection();
-    const practitionersFeatureContent =
-      await fetchPractitionersFeatureContent();
+    const practitionersFeature = await fetchPractitionersFeatureContent();
     const demoSectionContent = await fetchDemoSection();
     const testimonials = await fetchTestimonials();
     const features = await fetchPractitionersKeyFeature();
@@ -25,7 +24,7 @@ export async function GET() {
 
     return NextResponse.json({
       inventorySectionContent,
-      practitionersFeatureContent,
+      practitionersFeature,
       demoSectionContent,
       testimonials,
       features,

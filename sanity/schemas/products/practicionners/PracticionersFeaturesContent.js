@@ -1,4 +1,4 @@
-export const PracticionersFeatureContent = {
+export const PractitionersFeatureContent = {
   name: "practitionersFeatureContent",
   title: "Practitioners Feature Content",
   type: "document",

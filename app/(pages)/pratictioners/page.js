@@ -7,11 +7,12 @@ import Faq from "../../../components/faq/Faq";
 import CommparisonSection from "../../../views/patients/ComparisonSection";
 import RecommendationSection from "../../../views/practictioner/RecommendationSection";
 import styles from "./pratictioners.module.css";
-export const revalidate = 10;
 
 async function getData() {
-  const res = await fetch(`${process.env.API_URL}/api/practictioners`);
+  const res = await fetch(`${process.env.API_URL}/api/practitioners`);
+
   if (!res.ok) {
+    console.log(res);
     throw new Error("Failed to fetch data");
   }
 
@@ -21,7 +22,7 @@ async function getData() {
 const page = async () => {
   const {
     inventorySectionContent,
-    practitionersFeatureContent,
+    practitionersFeature,
     demoSectionContent,
     testimonials,
     features,
@@ -34,7 +35,7 @@ const page = async () => {
     <main className={styles.main}>
       <HeroSection hero={hero} />
       <FeaturesSection benefits={benefits} data={inventorySectionContent} />
-      <KeyFeatures data={practitionersFeatureContent} features={features} />
+      <KeyFeatures data={practitionersFeature} features={features} />
       <RecommendationSection testimonials={testimonials} />
       <CommparisonSection
         beforeImage={"/before-app-paper.png"}
