@@ -35,7 +35,7 @@ const page = async () => {
     <main className={styles.main}>
       <HeroSection hero={hero} />
       <FeaturesSection benefits={benefits} data={inventorySectionContent} />
-      <KeyFeatures data={practitionersFeature} features={features} />
+      {/* <KeyFeatures data={practitionersFeature} features={features} /> */}
       <RecommendationSection testimonials={testimonials} />
       <CommparisonSection
         beforeImage={"/before-app-paper.png"}
