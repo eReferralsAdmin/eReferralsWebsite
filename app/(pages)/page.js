@@ -12,7 +12,9 @@ import styles from "./page.module.css";
 export const revalidate = 10;
 
 async function getData() {
-  const res = await fetch(`${process.env.API_URL}/api/home`);
+  const res = await fetch(`${process.env.API_URL}/api/home`, {
+    cache: "no-cache",
+  });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
