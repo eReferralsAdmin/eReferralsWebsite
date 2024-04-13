@@ -1,5 +1,5 @@
-export const PracticionersKeyFeature = {
-  name: "practitionersKeyFeature",
+export const PractitionersKeyFeature = {
+  name: "practicionersKeyFeature",
   title: "Practitioners Key Feature",
   type: "document",
   fields: [

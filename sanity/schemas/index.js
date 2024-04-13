@@ -10,7 +10,7 @@ import { Collaboration } from "./home/Collaboration";
 import { PractitionersHero } from "./products/practicionners/PracticionersHero";
 import { InventorySection } from "./products/practicionners/InventorySection";
 import { DemoSection } from "./products/practicionners/DemoSection";
-import { PracticionersKeyFeature } from "./products/practicionners/PracticionersKeyFeature";
+import { PractitionersKeyFeature } from "./products/practicionners/PractitionersKeyFeature";
 import { PractitionersFeatureContent } from "./products/practicionners/PracticionersFeaturesContent";
 import { Benefits } from "./products/practicionners/Benefits";
 import { PractitionersFaq } from "./products/practicionners/PractitionersFaq";
@@ -40,7 +40,7 @@ export const schema = {
     InventorySection,
     DemoSection,
     Testimonial,
-    PracticionersKeyFeature,
+    PractitionersKeyFeature,
     PractitionersFeatureContent,
     PatiensHero,
     ReferralSection,

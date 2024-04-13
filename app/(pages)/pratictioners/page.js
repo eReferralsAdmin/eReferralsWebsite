@@ -32,7 +32,7 @@ const page = async () => {
     benefits,
     faqs,
   } = await getData();
-
+  console.log(features);
   return (
     <main className={styles.main}>
       <HeroSection hero={hero} />

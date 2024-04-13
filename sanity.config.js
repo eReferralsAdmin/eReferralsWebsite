@@ -180,7 +180,7 @@ export default defineConfig({
                                       .title("Features")
                                       .child(
                                         S.documentTypeList(
-                                          "practitionersKeyFeature"
+                                          "practicionersKeyFeature"
                                         ).title("Practitioners Key Feature")
                                       ),
                                   ])
