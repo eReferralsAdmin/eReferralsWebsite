@@ -2,8 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Faq.module.css";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
-import PortableText from "react-portable-text";
-import { fetchFAQs } from "../../lib/fetchData";
+// import PortableText from "react-portable-text";
+import { PortableText } from "@portabletext/react";
 
 const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
   const [setHeight, setHeightState] = useState("0px");
@@ -38,15 +38,51 @@ const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
         style={{ maxHeight: `${setHeight}` }}
         className={styles.answer}
       >
+        {/* <PortableText
+          // content={faq.answer}
+          // projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+          // dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+          // serializers={{
+          //   h1: (props) => <h1 className={styles.h1} {...props} />,
+          //   li: ({ children }) => (
+          //     <li className="special-list-item">{children}</li>
+          //   ),
+          //   normal: (props) => <p className={styles.p} {...props} />,
+          // }}
+          value={faq.answer}
+          components={{
+            // h1: ({ value }) => <h1 className={styles.h1} {...value} />,
+            // li: ({ value }) => <li className="special-list-item">{value}</li>,
+            // normal: (props) => <p className={styles.p} {...props} />,
+            h1: ({ value }) => <h1 className={styles.h1}>{...value} 1</h1>,
+            list: {
+              // Ex. 1: customizing common list types
+              bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
+              number: ({ children }) => <ol className="mt-lg">{children}</ol>,
+
+              // Ex. 2: rendering custom lists
+              checkmarks: ({ children }) => (
+                <ol className="m-auto text-lg">{children}</ol>
+              ),
+            },
+          }}
+        /> */}
         <PortableText
-          content={faq.answer}
-          projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-          dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-          serializers={{
-            h1: (props) => <h1 className={styles.h1} {...props} />,
-            li: ({ children }) => (
-              <li className="special-list-item">{children}</li>
-            ),
+          value={faq.answer}
+          components={{
+            h1: ({ value }) => <h1 className={styles.h1}>{...value}</h1>,
+            list: {
+              bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
+              number: ({ children }) => <ol className="mt-lg">{children}</ol>,
+              checkmarks: ({ children }) => (
+                <ol className="m-auto text-lg">{children}</ol>
+              ),
+            },
+            listItem: {
+              bullet: ({ children }) => (
+                <li className="special-list-item">{children}</li>
+              ),
+            },
             normal: (props) => <p className={styles.p} {...props} />,
           }}
         />
@@ -57,16 +93,6 @@ const FaqItem = ({ faq, index, toggleFaq, activeFaq }) => {
 
 const Faq = ({ faqs }) => {
   const [activeFaq, setActiveFaq] = useState(null);
-  // const [faqs, setFaqs] = useState([]);
-
-  // useEffect(() => {
-  //   const getFAQs = async () => {
-  //     const fetchedFAQs = await fetchFAQs();
-  //     setFaqs(fetchedFAQs);
-  //   };
-
-  //   getFAQs();
-  // }, []);
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);

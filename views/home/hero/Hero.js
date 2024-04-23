@@ -4,6 +4,7 @@ import {
   ChevronRightIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+import { PortableText } from "@portabletext/react";
 
 const Hero = ({ data }) => {
   return (
@@ -11,8 +12,8 @@ const Hero = ({ data }) => {
       <section className={styles.heroSection}>
         <div className={styles.imageContainer}></div>
         <div className={styles.contentContainer}>
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
+          <PortableText value={data.title} />
+          <PortableText value={data.description} />
           <div className={styles.buttonsContainer}>
             <a href="#signup" className={styles.buttonInterested}>
               I&apos;m interested! <ChevronRightIcon className="btn-icon" />

@@ -6,12 +6,12 @@ export const Hero = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "blockContent",
     },
   ],
 };
