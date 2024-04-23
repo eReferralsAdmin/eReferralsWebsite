@@ -6,12 +6,12 @@ export const Collaboration = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "blockContent",
     },
     {
       name: "collaborationLogo",
@@ -30,4 +30,9 @@ export const Collaboration = {
       },
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

@@ -6,12 +6,17 @@ export const NewsletterSubscription = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "subtitle",
       title: "Subtitle",
-      type: "string",
-    }
+      type: "blockContent",
+    },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

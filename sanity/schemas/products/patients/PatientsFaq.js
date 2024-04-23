@@ -16,4 +16,9 @@ export const PatientsFaq = {
       //   validation: (Rule) => Rule.required(),
     },
   ],
+  preview: {
+    select: {
+      title: "question",
+    },
+  },
 };

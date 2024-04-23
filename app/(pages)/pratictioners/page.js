@@ -14,7 +14,6 @@ async function getData() {
   });
 
   if (!res.ok) {
-    console.log(res);
     throw new Error("Failed to fetch data");
   }
 
@@ -32,7 +31,7 @@ const page = async () => {
     benefits,
     faqs,
   } = await getData();
-  console.log(features);
+
   return (
     <main className={styles.main}>
       <HeroSection hero={hero} />

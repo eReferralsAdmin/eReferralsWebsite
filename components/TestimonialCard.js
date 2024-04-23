@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/TestimonialCard.module.css";
 import Image from "next/image";
+import { PortableText } from "@portabletext/react";
 
 const TestimonialCard = ({
   quote,
@@ -12,7 +13,7 @@ const TestimonialCard = ({
 }) => {
   return (
     <div className={styles.testimonialCard}>
-      <p className={styles.quote}>{quote}</p>
+      <p className={styles.quote}><PortableText value={quote} /></p>
       <div className={styles.profile}>
         <Image
           src={imageSrc}
@@ -22,9 +23,9 @@ const TestimonialCard = ({
           width={55}
         />
         <div className={styles.profileText}>
-          <p className={styles.name}>{name}</p>
+          <p className={styles.name}><PortableText value={name} /></p>
           <div>
-            <p className={styles.title}>{role} at {affiliation}</p>
+            <p className={styles.title}><PortableText value={role} /> at <PortableText value={affiliation} /></p>
           </div>
         </div>
       </div>

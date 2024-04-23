@@ -16,4 +16,9 @@ export const HomeFaq = {
       //   validation: (Rule) => Rule.required(),
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

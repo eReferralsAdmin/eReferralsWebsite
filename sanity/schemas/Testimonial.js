@@ -6,22 +6,26 @@ export const Testimonial = {
     {
       name: "testimonialText",
       title: "Testimonial Text",
-      type: "text",
+      // type: "text",
+      type: "blockContent",
     },
     {
       name: "authorName",
       title: "Author Name",
-      type: "string",
+      // type: "string",
+      type: "blockContent",
     },
     {
       name: "authorRole",
       title: "Author Role",
-      type: "string",
+      // type: "string",
+      type: "blockContent",
     },
     {
       name: "authorAffiliation",
       title: "Author Affiliation",
-      type: "string",
+      // type: "string",
+      type: "blockContent",
     },
     {
       name: "authorImage",
@@ -32,4 +36,9 @@ export const Testimonial = {
       },
     },
   ],
+  preview: {
+    select: {
+      title: "testimonialText",
+    },
+  },
 };

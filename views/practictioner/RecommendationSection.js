@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import { urlForImage } from "../../sanity/lib/image";
 import { fetchTestimonials } from "../../lib/fetchData";
 
+
 const RecommendationSection = ({ testimonials }) => {
   return (
     <section className={styles.recommendationContainer}>

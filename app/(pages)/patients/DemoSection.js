@@ -3,6 +3,8 @@ import styles from "./DemoSection.module.css";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import { PortableText } from "@portabletext/react";
+
 
 const DemoSection = ({ data }) => {
   return (
@@ -19,8 +21,10 @@ const DemoSection = ({ data }) => {
         />
       </div>
       <div className={styles.demoInfo}>
-        <h2 className={styles.title}>{data.title}</h2>
-        <p className={styles.description}>{data.description}</p>
+        <h2 className={styles.title}>
+        <PortableText value={data.title} /></h2>
+        <p className={styles.description}>
+        <PortableText value={data.description} /></p>
         <Link href={"/contact"} className={`${styles.ctaButton}`}>
           Sign Up <ChevronRightIcon className="btn-icon" />
         </Link>

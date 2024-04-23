@@ -3,13 +3,20 @@ import styles from "./KeyFeatures.module.css";
 import FeatureCard from "../../components/FeatureCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { PortableText } from "@portabletext/react";
 
 const KeyFeatures = ({ data, features }) => {
   return (
     <div className={styles.featuresSection}>
       <div className={styles.keyFeatures}>
-        <h2 className={styles.title}>{data.title}</h2>
-        <p className={styles.description}>{data.description}</p>
+        <h2 className={styles.title}>
+        <PortableText value={data.title} />
+          {/* {data.title} */}
+          </h2>
+        <p className={styles.description}>
+        <PortableText value={data.description} />
+          {/* {data.description} */}
+          </p>
       </div>
       <div className={styles.featuresGrid}>
         {features.map((feature, index) => (

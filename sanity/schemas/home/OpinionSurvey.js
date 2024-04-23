@@ -6,12 +6,17 @@ export const OpinionSurvey = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "blockContent",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

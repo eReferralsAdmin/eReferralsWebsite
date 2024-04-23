@@ -3,6 +3,7 @@ import styles from "./HeroSection.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { PortableText } from "@portabletext/react";
 
 const HeroSection = ({ hero }) => {
   return (
@@ -55,14 +56,16 @@ const HeroSection = ({ hero }) => {
             </Link>
           </div>
           <div className={styles.headerContent}>
-            <p>{hero.subtitle}</p>
-            <h1>{hero.title}</h1>
+          <PortableText value={hero.subtitle} />
+          <PortableText value={hero.title} />
           </div>
         </div>
 
         <div className={styles.heroContainer}>
           <div className={styles.heroContent}>
-            <p className={styles.heroDescription}>{hero.description}</p>
+            <p className={styles.heroDescription}>
+              <PortableText value={hero.description} />
+            </p>
             <Link
               href={"/pratictioners-signup"}
               className={`${styles.submitButton}`}

@@ -3,6 +3,7 @@ import styles from "./SurveyInvitationCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { PortableText } from "@portabletext/react";
 
 const SurveyInvitationCard = ({ data }) => {
   return (
@@ -17,10 +18,10 @@ const SurveyInvitationCard = ({ data }) => {
             sizes="(max-width: 768px) 100vw, 700px"
           />
         </div>
-        <h2>{data.title}</h2>
+        <PortableText value={data.title} />
       </div>
       <div className={styles.surveyContent}>
-        <p>{data.description}</p>
+      <PortableText value={data.description} />
         <Link
           href="https://docs.google.com/forms/d/1zj72ePxRInMYBP1Npqrx_FXIOoPsYQ3vyTq3DSSc7fY/edit?ts=64fa5484."
           className={styles.surveyButton}

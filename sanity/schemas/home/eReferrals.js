@@ -6,14 +6,19 @@ export const ForPractitioners = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "blockContent",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };
 
 export const ForPatients = {
@@ -24,12 +29,17 @@ export const ForPatients = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "blockContent",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

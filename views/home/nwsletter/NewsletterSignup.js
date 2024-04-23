@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import styles from "./newsletter-signup.module.css";
+import { PortableText } from "@portabletext/react";
 
 const NewsletterSignup = ({ content }) => {
   const {
@@ -41,8 +42,8 @@ const NewsletterSignup = ({ content }) => {
       <Toaster />
       <div className={styles.newsletterSignupContainer}>
         <div className={styles.newsletterContent}>
-          <h2>{content.title}</h2>
-          <p>{content.subtitle}</p>
+          <PortableText value={content.title} />
+          <PortableText value={content.subtitle} />
           <div className={styles.links}>
             <Link className={styles.link} href="/terms">
               Terms

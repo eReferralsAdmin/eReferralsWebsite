@@ -16,4 +16,9 @@ export const Faq = {
       //   validation: (Rule) => Rule.required(),
     },
   ],
+  preview: {
+    select: {
+      title: "question",
+    },
+  },
 };

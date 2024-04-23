@@ -6,17 +6,22 @@ export const PractitionersHero = {
     {
       name: "subtitle",
       title: "Subtitle",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
     {
       name: "description",
       title: "Description",
-      type: "text",
+      type: "blockContent",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

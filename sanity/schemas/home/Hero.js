@@ -14,4 +14,9 @@ export const Hero = {
       type: "blockContent",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

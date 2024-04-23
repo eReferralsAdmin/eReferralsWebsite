@@ -14,7 +14,12 @@ export const PatientsBenefits = {
     {
       name: "title",
       title: "Title",
-      type: "string",
+      type: "blockContent",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

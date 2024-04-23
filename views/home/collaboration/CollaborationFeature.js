@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./CollaborationFeature.module.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { urlForImage } from "../../../sanity/lib/image";
+import { PortableText } from "@portabletext/react";
 
 const CollaborationFeature = ({ collaborations }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -39,7 +40,8 @@ const CollaborationFeature = ({ collaborations }) => {
                 height={137}
               />
             </div>
-            <p className={styles.collaborationText}>{description}</p>
+            <PortableText value={description} />
+            <p className={styles.collaborationText}></p>
             <div className={styles.carouselControls}>
               <div className={styles.mobileCarouselControls}>
                 <button

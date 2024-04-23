@@ -33,6 +33,7 @@ export default async function Home() {
     homeFaqs,
   } = await getData();
 
+
   return (
     <div className="wrapper">
       <div className="container">

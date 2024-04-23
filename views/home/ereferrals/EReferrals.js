@@ -4,6 +4,8 @@ import styles from "./ereferrals.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { PortableText } from "@portabletext/react";
+
 
 const EReferrals = ({ practitionersData, patientsData }) => {
   const [activeTab, setActiveTab] = useState("practitioners");
@@ -53,8 +55,8 @@ const EReferrals = ({ practitionersData, patientsData }) => {
               />
             </div>
             <div className={styles.advancedSearch}>
-              <h3>{practitionersData.title}</h3>
-              <p>{practitionersData.description}</p>
+              <PortableText value={practitionersData.title} />
+              <PortableText value={practitionersData.description} />
               <Link href="/pratictioners" className={styles.buttonInterested}>
                 View More <ChevronRightIcon className="btn-icon" />
               </Link>
@@ -78,8 +80,8 @@ const EReferrals = ({ practitionersData, patientsData }) => {
               />
             </div>
             <div className={styles.advancedSearch}>
-              <h3>{patientsData.title}</h3>
-              <p>{patientsData.description}</p>
+              <PortableText value={patientsData.title} />
+              <PortableText value={patientsData.description} />
               <a href="/patients" className={styles.buttonInterested}>
                 View More <ChevronRightIcon className="btn-icon" />
               </a>

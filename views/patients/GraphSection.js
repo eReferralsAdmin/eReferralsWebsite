@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./GraphSection.module.css";
 import Image from "next/image";
 import { urlForImage } from "../../sanity/lib/image";
+import { PortableText } from "@portabletext/react";
 
 const GraphSection = ({ data, benefits }) => {
   return (
@@ -31,8 +32,10 @@ const GraphSection = ({ data, benefits }) => {
         </div>
 
         <div className={styles.infoSection}>
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
+        <PortableText value={data.title} />
+        <PortableText value={data.description} />
+          {/* <h1>{data.title}</h1> */}
+          {/* <p>{data.description}</p> */}
         </div>
       </div>
 
@@ -46,7 +49,8 @@ const GraphSection = ({ data, benefits }) => {
               src={urlForImage(benefit?.icon)}
               alt="Easy management"
             />
-            <p>{benefit.title}</p>
+            <PortableText value={benefit.title} />
+            {/* <p>{benefit.title}</p> */}
           </div>
         ))}
       </div>
