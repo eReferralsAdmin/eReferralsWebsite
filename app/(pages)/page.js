@@ -11,27 +11,27 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import styles from "./page.module.css";
 export const revalidate = 10;
 
-// async function getData() {
-//   const res = await fetch(`${process.env.API_URL}/api/home`, {
-//     cache: "no-cache",
-//   });
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data");
-//   }
+async function getData() {
+  const res = await fetch(`${process.env.API_URL}/api/home`, {
+    cache: "no-cache",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
-//   return res.json();
-// }
+  return res.json();
+}
 
 export default async function Home() {
-  // const {
-  //   homeHero,
-  //   forPractitionersHome,
-  //   forPatientsHome,
-  //   newsletterSubscriptionContent,
-  //   opinionSurvey,
-  //   collaborations,
-  //   homeFaqs,
-  // } = await getData();
+  const {
+    homeHero,
+    forPractitionersHome,
+    forPatientsHome,
+    newsletterSubscriptionContent,
+    opinionSurvey,
+    collaborations,
+    homeFaqs,
+  } = await getData();
 
   return (
     <div className="wrapper">
