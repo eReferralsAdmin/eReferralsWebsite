@@ -32,7 +32,7 @@ const TestimonialCard = ({
           </p>
           <div>
             <p className={styles.title}>
-              <PortableText value={role} /> at{" "}
+              <PortableText value={role} />
               <PortableText value={affiliation} />
             </p>
           </div>
