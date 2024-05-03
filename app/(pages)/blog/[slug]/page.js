@@ -23,12 +23,14 @@ const PostPage = async ({ params: { slug } }) => {
         <article className={styles.articleContainer}>
           <section className={styles.sectionContainer}>
             <div className={styles.imageContainer}>
-              <Image
-                src={urlForImage(post.mainImage)}
-                width={1654}
-                height={794}
-                alt="Post image"
-              />
+              {post.mainImage && (
+                <Image
+                  src={urlForImage(post.mainImage)}
+                  width={1654}
+                  height={794}
+                  alt="Post image"
+                />
+              )}
             </div>
             <div className={styles.postContent}>
               <h1 className={styles.postTitle}>{post.title}</h1>
@@ -57,12 +59,14 @@ const PostPage = async ({ params: { slug } }) => {
                     return (
                       <div className={styles.mediaWrapper}>
                         <div className={styles.postImageWrapper}>
-                          <Image
-                            src={urlForImage(props)}
-                            alt="Picture of the author"
-                            sizes="(max-width: 768px) 100vw, 700px"
-                            fill
-                          />
+                          {props && (
+                            <Image
+                              src={urlForImage(props)}
+                              alt="Picture of the author"
+                              sizes="(max-width: 768px) 100vw, 700px"
+                              fill
+                            />
+                          )}
                         </div>
                         <p className={styles.alternativeText}>{props.alt}</p>
                       </div>

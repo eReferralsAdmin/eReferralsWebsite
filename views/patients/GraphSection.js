@@ -32,8 +32,8 @@ const GraphSection = ({ data, benefits }) => {
         </div>
 
         <div className={styles.infoSection}>
-        <PortableText value={data.title} />
-        <PortableText value={data.description} />
+          <PortableText value={data.title} />
+          <PortableText value={data.description} />
           {/* <h1>{data.title}</h1> */}
           {/* <p>{data.description}</p> */}
         </div>
@@ -42,15 +42,15 @@ const GraphSection = ({ data, benefits }) => {
       <div className={styles.featuresSection}>
         {benefits.map((benefit, index) => (
           <div key={index} className={styles.feature}>
-            <Image
-              width={30}
-              height={30}
-              // src="/icons/dashboard.svg"
-              src={urlForImage(benefit?.icon)}
-              alt="Easy management"
-            />
+            {benefit.icon && (
+              <Image
+                width={30}
+                height={30}
+                src={urlForImage(benefit?.icon)}
+                alt="Easy management"
+              />
+            )}
             <PortableText value={benefit.title} />
-            {/* <p>{benefit.title}</p> */}
           </div>
         ))}
       </div>

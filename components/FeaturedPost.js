@@ -14,13 +14,15 @@ const FeaturedPost = async () => {
   return (
     <div className={styles.featuredPostCard}>
       <div className={styles.featuredPostImageContainer}>
-        <Image
-          src={urlForImage(featuredPost.mainImage)}
-          alt="Featured Post Image"
-          className={styles.featuredImage}
-          width={500}
-          height={500}
-        />
+        {featuredPost.mainImage && (
+          <Image
+            src={urlForImage(featuredPost.mainImage)}
+            alt="Featured Post Image"
+            className={styles.featuredImage}
+            width={500}
+            height={500}
+          />
+        )}
       </div>
       <div className={styles.featuredContent}>
         <div className={styles.postInfo}>

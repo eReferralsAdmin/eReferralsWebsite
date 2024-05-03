@@ -33,12 +33,14 @@ const CollaborationFeature = ({ collaborations }) => {
         <div key={currentSlide} className={`${styles.collaborationContent}`}>
           <div className={styles.collaborationDetails}>
             <div className={styles.brandLogo}>
-              <Image
-                src={urlForImage(collaborationLogo)}
-                alt="Brand Logo"
-                width={321}
-                height={137}
-              />
+              {collaborationLogo && (
+                <Image
+                  src={urlForImage(collaborationLogo)}
+                  alt="Brand Logo"
+                  width={321}
+                  height={137}
+                />
+              )}
             </div>
             <PortableText value={description} />
             <p className={styles.collaborationText}></p>
@@ -62,20 +64,24 @@ const CollaborationFeature = ({ collaborations }) => {
             </div>
           </div>
           <div className={styles.productImage}>
-            <Image
-              src={urlForImage(productImage)}
-              alt="Product Image"
-              height={450}
-              width={249}
-              className={styles.collaboratorProductMobile}
-            />
-            <Image
-              src={urlForImage(productImage)}
-              alt="Product Image"
-              width={249}
-              height={450}
-              className={styles.collaboratorProductDesktop}
-            />
+            {productImage && (
+              <>
+                <Image
+                  src={urlForImage(productImage)}
+                  alt="Product Image"
+                  height={450}
+                  width={249}
+                  className={styles.collaboratorProductMobile}
+                />
+                <Image
+                  src={urlForImage(productImage)}
+                  alt="Product Image"
+                  width={249}
+                  height={450}
+                  className={styles.collaboratorProductDesktop}
+                />
+              </>
+            )}
           </div>
         </div>
       )}
