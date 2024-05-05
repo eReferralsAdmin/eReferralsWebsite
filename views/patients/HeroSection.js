@@ -56,8 +56,8 @@ const HeroSection = ({ hero }) => {
             </Link>
           </div>
           <div className={styles.headerContent}>
-          <PortableText value={hero.subtitle} />
-          <PortableText value={hero.title} />
+            <PortableText value={hero.subtitle} />
+            <PortableText value={hero.title} />
           </div>
         </div>
 
