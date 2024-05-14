@@ -206,3 +206,11 @@ button {
 .content {
   flex: 1;
 }
+
+.loader-wrapper {
+  width: 100%; /* Fills entire width */
+  height: 600px; /* Sets height to 400px */
+  display: flex; /* Enables centering using flexbox */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+}
