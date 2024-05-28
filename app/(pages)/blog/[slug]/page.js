@@ -1,3 +1,4 @@
+"use client";
 import groq from "groq";
 import React from "react";
 import { client } from "../../../../sanity/lib/client";
@@ -10,11 +11,16 @@ import styles from "../../../../styles/PostPage.module.css";
 import PortableText from "react-portable-text";
 import NewsletterSignup from "../../../../views/home/nwsletter/NewsletterSignup";
 import { fetchNewsletterSubscription } from "../../../../lib/fetchData";
+import { useSearchParams } from "next/navigation";
 
 export const revalidate = 10;
 
 const PostPage = async ({ params: { slug } }) => {
-  const query = groq`*[_type == 'post' && slug.current == $slug][0]`;
+  const searchParams = useSearchParams();
+  const isFeatured = searchParams.get("feature");
+
+  const contentType = isFeatured ? "featuredPost" : "post";
+  const query = groq`*[_type == '${contentType}' && slug.current == $slug][0]`;
   const post = await client.fetch(query, { slug });
   const newsletterSubscriptionContent = await fetchNewsletterSubscription();
   return (
@@ -40,8 +46,8 @@ const PostPage = async ({ params: { slug } }) => {
                 </span>
                 <div className={styles.readingTimeContainer}>
                   <ClockIcon className={styles.clockIcon} />
+                  <span>{post.readingTime}</span>
                   <span className={styles.readingTime}>min read</span>
-                  <span>{calculateReadingTime(post.body)}</span>
                 </div>
               </div>
 

@@ -38,7 +38,7 @@ const FeaturedPost = async () => {
         <div className={styles.postDetails}>
           <p className={styles.postDescription}>{featuredPost.overview}</p>
           <Link
-            href={`blog/${featuredPost.slug.current}`}
+            href={`blog/${featuredPost.slug.current}?feature=true`}
             className={styles.readMoreBtn}
           >
             <ChevronRightIcon className={styles.readMoreIcon} />
