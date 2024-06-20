@@ -12,7 +12,7 @@ export async function POST(request) {
     }
 
     const netlifyResponse = await fetch(
-      "https://main--erefferals-web-dev.netlify.app/",
+      "https://ereferrals.health/",
       {
         method: "POST",
         body: netlifyFormData,
