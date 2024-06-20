@@ -6,11 +6,11 @@ const PrivacyPage = () => {
     <div className={styles.privacyContainer}>
       <h1>Privacy Policy for eReferrals</h1>
       <p>
-        At www.electronicreferrals.com.au, accessible from
-        www.electronicreferrals.com.au, one of our main priorities is the
+        At www.ereferrals.health, accessible from
+        www.ereferrals.health, one of our main priorities is the
         privacy of our visitors. This Privacy Policy document contains types of
         information that is collected and recorded by
-        www.electronicreferrals.com.au and how we use it.
+        www.ereferrals.health and how we use it.
       </p>
       <p>
         If you have additional questions or require more information about our
@@ -19,7 +19,7 @@ const PrivacyPage = () => {
       <p>
         This Privacy Policy applies only to our online activities and is valid
         for visitors to our website with regards to the information that they
-        shared and/or collect in www.electronicreferrals.com.au. This policy is
+        shared and/or collect in www.ereferrals.health. This policy is
         not applicable to any information collected offline or via channels
         other than this website.
       </p>
@@ -56,7 +56,7 @@ const PrivacyPage = () => {
 
       <h2>Log Files</h2>
       <p>
-        www.electronicreferrals.com.au follows a standard procedure of using log
+        www.ereferrals.health follows a standard procedure of using log
         files. These files log visitors when they visit websites. All hosting
         companies do this and a part of hosting services’ analytics. The
         information collected by log files include internet protocol (IP)
@@ -69,7 +69,7 @@ const PrivacyPage = () => {
       </p>
       <h2>Cookies and Web Beacons</h2>
       <p>
-        Like any other website, www.electronicreferrals.com.au uses “cookies”.
+        Like any other website, www.ereferrals.health uses “cookies”.
         These cookies are used to store information including visitors’
         preferences, and the pages on the website that the visitor accessed or
         visited. The information is used to optimize the users’ experience by
@@ -79,24 +79,24 @@ const PrivacyPage = () => {
       <h2>Advertising Partners Privacy Policies</h2>
       <p>
         You may consult this list to find the Privacy Policy for each of the
-        advertising partners of www.electronicreferrals.com.au.
+        advertising partners of www.ereferrals.health.
       </p>
       <p>
         Third-party ad servers or ad networks uses technologies like cookies,
         JavaScript, or Web Beacons that are used in their respective
-        advertisements and links that appear on www.electronicreferrals.com.au,
+        advertisements and links that appear on www.ereferrals.health,
         which are sent directly to users’ browser. They automatically receive
         your IP address when this occurs. These technologies are used to measure
         the effectiveness of their advertising campaigns and/or to personalize
         the advertising content that you see on websites that you visit.
       </p>
       <p>
-        Note that www.electronicreferrals.com.au has no access to or control
+        Note that www.ereferrals.health has no access to or control
         over these cookies that are used by third-party advertisers.
       </p>
       <h2>Third Party Privacy Policies</h2>
       <p>
-        www.electronicreferrals.com.au’s Privacy Policy does not apply to other
+        www.ereferrals.health’s Privacy Policy does not apply to other
         advertisers or websites. Thus, we are advising you to consult the
         respective Privacy Policies of these third-party ad servers for more
         detailed information. It may include their practices and instructions
@@ -168,7 +168,7 @@ const PrivacyPage = () => {
       </p>
       <h2>Children&lsquo;s Information</h2>
       <p>
-        www.electronicreferrals.com.au does not knowingly collect any Personal
+        www.ereferrals.health does not knowingly collect any Personal
         Identifiable Information from children under the age of 13. If you think
         that your child provided this kind of information on our website, we
         strongly encourage you to contact us immediately and we will do our best

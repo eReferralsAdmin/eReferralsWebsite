@@ -5,14 +5,14 @@ const TermsPage = () => {
   return (
     <div className={styles.termsContainer}>
       <h1>Terms and Conditions</h1>
-      <p>Welcome to www.electronicreferrals.com.au!</p>
+      <p>Welcome to www.ereferrals.health!</p>
       <p>
         These terms and conditions outline the rules and regulations for the use
-        of eReferrals’s Website, located at www.electronicreferrals.com.au.
+        of eReferrals’s Website, located at www.ereferrals.health.
       </p>
       <p>
         By accessing this website we assume you accept these terms and
-        conditions. Do not continue to use www.electronicreferrals.com.au if you
+        conditions. Do not continue to use www.ereferrals.health if you
         do not agree to take all of the terms and conditions stated on this
         page.
       </p>
@@ -36,7 +36,7 @@ const TermsPage = () => {
       <h2>Cookies</h2>
       <p>
         We employ the use of cookies. By accessing
-        www.electronicreferrals.com.au, you agreed to use cookies in agreement
+        www.ereferrals.health, you agreed to use cookies in agreement
         with the eReferrals’s Privacy Policy. Most interactive websites use
         cookies to let us retrieve the user’s details for each visit. Cookies
         are used by our website to enable the functionality of certain areas to
@@ -48,11 +48,11 @@ const TermsPage = () => {
       <p>
         Unless otherwise stated, eReferrals and/or its licensors own the
         intellectual property rights for all material on
-        www.electronicreferrals.com.au. All intellectual property rights are
-        reserved. You may access this from www.electronicreferrals.com.au for
+        www.ereferrals.health. All intellectual property rights are
+        reserved. You may access this from www.ereferrals.health for
         your own personal use subjected to restrictions set in these terms and
         conditions. You must not republish, sell, rent, sub-license, reproduce,
-        duplicate or copy material from www.electronicreferrals.com.au.
+        duplicate or copy material from www.ereferrals.health.
         Redistribute content from eReferrals unless content is specifically made
         for redistribution.
       </p>
