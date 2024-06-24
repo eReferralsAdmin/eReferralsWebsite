@@ -55,6 +55,7 @@ const NewsletterSignup = ({ content }) => {
           </div>
         </div>
         <form
+          netlify
           name="newsletter-form"
           className={styles.signupForm}
           method="POST"

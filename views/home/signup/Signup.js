@@ -101,6 +101,7 @@ const Signup = () => {
         {activeTab === "practitioners" && (
           <div className={styles.container}>
             <form
+              netlify
               className={styles.signupForm}
               name="signup-for-beta-version"
               method="POST"
@@ -186,6 +187,7 @@ const Signup = () => {
         {activeTab === "patients" && (
           <div className={styles.container}>
             <form
+              netlify
               className={styles.signupForm}
               name="signup-for-beta-version"
               method="POST"
