@@ -189,15 +189,15 @@ const Signup = () => {
             <form
               netlify
               className={styles.signupForm}
-              name="signup-for-beta-version"
+              name="signup-for-beta-version-form"
               method="POST"
               data-netlify="true"
               onSubmit={handleSubmit(onSubmit)}
             >
               <input
                 type="hidden"
-                name="signup-for-beta-version"
-                value="signup-for-beta-version"
+                name="signup-for-beta-version-form"
+                value="signup-for-beta-version-form"
               />
               <input
                 type="hidden"
