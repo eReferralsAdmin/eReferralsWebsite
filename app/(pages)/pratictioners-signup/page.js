@@ -57,12 +57,12 @@ const PratictionersPage = () => {
         "signup-as": activeTab,
       };
 
-      const response = await fetch("/api/signup", {
+      const response = await fetch("/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify(data),
+        body: new URLSearchParams(data).toString(),
       });
 
       if (response.ok) {
@@ -73,7 +73,6 @@ const PratictionersPage = () => {
           email: "",
           "signup-consent": false,
         });
-        // router.push("/success");
       } else {
         toast.error("Error submitting form");
       }
