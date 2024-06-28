@@ -55,7 +55,6 @@ const NewsletterSignup = ({ content }) => {
           </div>
         </div>
         <form
-          netlify
           name="newsletter-form"
           className={styles.signupForm}
           method="POST"
@@ -63,7 +62,7 @@ const NewsletterSignup = ({ content }) => {
           netlify-honeypot="bot-field"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <input type="hidden" value="newsletter-form" name="newsletter-form" />
+          <input type="hidden" name="newsletter-form" />
           <div className={styles.inputGroup}>
             <div className={styles.inputContainer}>
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />

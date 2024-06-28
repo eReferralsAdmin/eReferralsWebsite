@@ -122,7 +122,6 @@ const PratictionersPage = () => {
           </div>
           <div className={styles.container}>
             <form
-              netlify
               className={styles.signupForm}
               name="signup-for-beta-version"
               method="POST"

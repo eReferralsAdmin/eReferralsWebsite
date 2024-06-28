@@ -56,7 +56,6 @@ const ContactUs = () => {
           onSubmit={handleSubmit(onSubmit)}
           data-netlify="true"
           name="contact"
-          netlify
         >
           <input type="hidden" name="contact-form" value="contact" />
           <div className={styles.segmentedControlContainer}>

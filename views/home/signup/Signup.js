@@ -101,7 +101,6 @@ const Signup = () => {
         {activeTab === "practitioners" && (
           <div className={styles.container}>
             <form
-              netlify
               className={styles.signupForm}
               name="signup-for-beta-version"
               method="POST"
@@ -187,17 +186,16 @@ const Signup = () => {
         {activeTab === "patients" && (
           <div className={styles.container}>
             <form
-              netlify
               className={styles.signupForm}
-              name="signup-for-beta-version-form"
+              name="signup-for-beta-version"
               method="POST"
               data-netlify="true"
               onSubmit={handleSubmit(onSubmit)}
             >
               <input
                 type="hidden"
-                name="signup-for-beta-version-form"
-                value="signup-for-beta-version-form"
+                name="signup-for-beta-version"
+                value="signup-for-beta-version"
               />
               <input
                 type="hidden"
