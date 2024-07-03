@@ -23,7 +23,7 @@ const NewsletterSignup = ({ content }) => {
       const res = await fetch("/forms/newsletter-signup.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: data,
+        body: new URLSearchParams(data).toString(),
       });
       if (res.status === 200) {
         reset();
