@@ -211,15 +211,13 @@ const Signup = () => {
           <div className={styles.container}>
             <form
               className={styles.signupForm}
-              name="signup-for-beta-version"
-              method="POST"
-              data-netlify="true"
+              name="signup-beta-form"
               onSubmit={handleSubmit(onSubmit)}
             >
               <input
                 type="hidden"
-                name="signup-for-beta-version"
-                value="signup-for-beta-version"
+                name="signup-beta-form"
+                value="signup-beta-form"
               />
               <input
                 type="hidden"
