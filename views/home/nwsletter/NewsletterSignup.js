@@ -18,28 +18,10 @@ const NewsletterSignup = ({ content }) => {
   const [status, setStatus] = useState(null);
   const [error, setError] = useState(null);
 
-  const onSubmit = async (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    // try {
-    //   const response = await fetch("/api/newsletter", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   });
-    //   if (response.ok) {
-    //     toast.success("Form successfully submitted!");
-    //     reset();
-    //     // router.push("/success");
-    //   } else {
-    //     toast.error("Error submitting form");
-    //   }
-    // } catch (error) {
-    //   toast.error("Submission failed");
-    // }
-
     try {
+      console.log("trying...");
       setStatus("pending");
       setError(null);
       const myForm = event.target;
@@ -50,17 +32,17 @@ const NewsletterSignup = ({ content }) => {
         body: new URLSearchParams(formData).toString(),
       });
       if (res.status === 200) {
-        toast.success("Form successfully submitted!");
+        toast.success("Thank you for subscribing to our newsletter!");
         setStatus("ok");
       } else {
         setStatus("error");
+        toast.error("There was an error subscribing to our newsletter");
         setError(`${res.status} ${res.statusText}`);
-        toast.error("Submission failed");
+        console.log(`${res.status} ${res.statusText}`);
       }
     } catch (e) {
       setStatus("error");
       setError(`${e}`);
-      toast.error(`Submission failed ${e}`);
     }
   };
 
@@ -84,7 +66,7 @@ const NewsletterSignup = ({ content }) => {
         <form
           name="newsletter-form"
           className={styles.signupForm}
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleFormSubmit}
         >
           <input type="hidden" name="form-name" value="newsletter-form" />
           <div className={styles.inputGroup}>
