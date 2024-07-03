@@ -290,8 +290,7 @@ const Signup = () => {
                   className={`${styles.submitButton}`}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Get Started"}
-                  <ChevronRightIcon className="btn-icon" />
+                  Get Started <ChevronRightIcon className="btn-icon" />
                 </button>
               </div>
             </form>
