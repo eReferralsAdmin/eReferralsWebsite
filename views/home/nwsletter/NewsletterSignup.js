@@ -19,6 +19,7 @@ const NewsletterSignup = ({ content }) => {
   const [error, setError] = useState(null);
 
   const onSubmit = async (event) => {
+    event.preventDefault();
     // try {
     //   const response = await fetch("/api/newsletter", {
     //     method: "POST",
@@ -38,7 +39,6 @@ const NewsletterSignup = ({ content }) => {
     //   toast.error("Submission failed");
     // }
 
-    event.preventDefault();
     try {
       setStatus("pending");
       setError(null);
