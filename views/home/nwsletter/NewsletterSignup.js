@@ -15,7 +15,7 @@ const NewsletterSignup = ({ content }) => {
     reset,
   } = useForm();
 
-  const handleFormSubmit = async (data, event) => {
+  const handleFormSubmit = async (_, event) => {
     event.preventDefault();
     try {
       const myForm = event.target;
@@ -23,7 +23,7 @@ const NewsletterSignup = ({ content }) => {
       const res = await fetch("/forms/newsletter-signup.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(data).toString(),
+        body: new URLSearchParams(formData).toString(),
       });
       if (res.status === 200) {
         reset();
