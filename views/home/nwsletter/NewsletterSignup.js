@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
@@ -33,8 +33,7 @@ const NewsletterSignup = ({ content }) => {
         toast.error("There was an error subscribing to our newsletter");
       }
     } catch (e) {
-      setStatus("error");
-      setError(`${e}`);
+      toast.error("There was an error subscribing to our newsletter");
     }
   };
 
