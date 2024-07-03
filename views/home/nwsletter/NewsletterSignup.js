@@ -15,25 +15,52 @@ const NewsletterSignup = ({ content }) => {
     reset,
   } = useForm();
 
-  const onSubmit = async (data) => {
-    try {
-      const response = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+  const [status, setStatus] = useState < any > null;
+  const [error, setError] = useState < any > null;
 
-      if (response.ok) {
+  const onSubmit = async (event) => {
+    // try {
+    //   const response = await fetch("/api/newsletter", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    //   });
+    //   if (response.ok) {
+    //     toast.success("Form successfully submitted!");
+    //     reset();
+    //     // router.push("/success");
+    //   } else {
+    //     toast.error("Error submitting form");
+    //   }
+    // } catch (error) {
+    //   toast.error("Submission failed");
+    // }
+
+    event.preventDefault();
+    try {
+      setStatus("pending");
+      setError(null);
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const res = await fetch("/forms/newsletter-signup.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      if (res.status === 200) {
         toast.success("Form successfully submitted!");
-        reset();
-        // router.push("/success");
+        setStatus("ok");
       } else {
-        toast.error("Error submitting form");
+        setStatus("error");
+        setError(`${res.status} ${res.statusText}`);
+        toast.error("Submission failed");
       }
-    } catch (error) {
-      toast.error("Submission failed");
+    } catch (e) {
+      setStatus("error");
+      setError(`${e}`);
+      toast.error(`Submission failed ${e}`);
     }
   };
 
@@ -57,12 +84,9 @@ const NewsletterSignup = ({ content }) => {
         <form
           name="newsletter-form"
           className={styles.signupForm}
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <input type="hidden" name="newsletter-form" />
+          <input type="hidden" name="form-name" value="newsletter-form" />
           <div className={styles.inputGroup}>
             <div className={styles.inputContainer}>
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />
