@@ -25,12 +25,11 @@ const NewsletterSignup = ({ content }) => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       });
-      console.log(res);
+
       if (res.status === 200) {
         reset();
         toast.success("Thank you for subscribing to our newsletter!");
       } else {
-        reset();
         toast.error("There was an error subscribing to our newsletter");
       }
     } catch (e) {
