@@ -15,30 +15,22 @@ const NewsletterSignup = ({ content }) => {
     reset,
   } = useForm();
 
-  const [status, setStatus] = useState(null);
-  const [error, setError] = useState(null);
-
-  const handleFormSubmit = async (event) => {
+  const handleFormSubmit = async (data, event) => {
     event.preventDefault();
     try {
-      console.log("trying...");
-      setStatus("pending");
-      setError(null);
       const myForm = event.target;
       const formData = new FormData(myForm);
       const res = await fetch("/forms/newsletter-signup.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        body: data,
       });
       if (res.status === 200) {
+        reset();
         toast.success("Thank you for subscribing to our newsletter!");
-        setStatus("ok");
       } else {
-        setStatus("error");
+        reset();
         toast.error("There was an error subscribing to our newsletter");
-        setError(`${res.status} ${res.statusText}`);
-        console.log(`${res.status} ${res.statusText}`);
       }
     } catch (e) {
       setStatus("error");
@@ -66,7 +58,7 @@ const NewsletterSignup = ({ content }) => {
         <form
           name="newsletter-form"
           className={styles.signupForm}
-          onSubmit={handleFormSubmit}
+          onSubmit={handleSubmit(handleFormSubmit)}
         >
           <input type="hidden" name="form-name" value="newsletter-form" />
           <div className={styles.inputGroup}>
