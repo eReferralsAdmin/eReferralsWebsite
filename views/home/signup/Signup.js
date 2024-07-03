@@ -125,8 +125,6 @@ const Signup = () => {
             <form
               className={styles.signupForm}
               name="signup-beta-form"
-              method="POST"
-              data-netlify="true"
               onSubmit={handleSubmit(onSubmit)}
             >
               <input
