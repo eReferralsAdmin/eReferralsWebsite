@@ -1,6 +1,6 @@
 "use client";
 import groq from "groq";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { client } from "../../../../sanity/lib/client";
 import Image from "next/image";
 import { urlForImage } from "../../../../sanity/lib/image";
@@ -14,14 +14,39 @@ import { useSearchParams } from "next/navigation";
 
 export const revalidate = 10;
 
-const PostPage = async ({ params: { slug } }) => {
-  const searchParams = useSearchParams();
-  const isFeatured = searchParams.get("feature");
-
+const fetchData = async (slug, isFeatured) => {
   const contentType = isFeatured ? "featuredPost" : "post";
   const query = groq`*[_type == '${contentType}' && slug.current == $slug][0]`;
   const post = await client.fetch(query, { slug });
   const newsletterSubscriptionContent = await fetchNewsletterSubscription();
+  return { post, newsletterSubscriptionContent };
+};
+
+const PostPage = ({ params: { slug } }) => {
+  const searchParams = useSearchParams();
+  const isFeatured = searchParams.get("feature");
+
+  const [data, setData] = useState({
+    post: null,
+    newsletterSubscriptionContent: null,
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getData = async () => {
+      const result = await fetchData(slug, isFeatured);
+      setData(result);
+      setLoading(false);
+    };
+    getData();
+  }, [slug, isFeatured]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  const { post, newsletterSubscriptionContent } = data;
+
   return (
     <div className="warapper">
       <div className="container">

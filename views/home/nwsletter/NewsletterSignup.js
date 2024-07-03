@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
@@ -15,8 +15,8 @@ const NewsletterSignup = ({ content }) => {
     reset,
   } = useForm();
 
-  const [status, setStatus] = useState < any > null;
-  const [error, setError] = useState < any > null;
+  const [status, setStatus] = useState(null);
+  const [error, setError] = useState(null);
 
   const onSubmit = async (event) => {
     // try {
