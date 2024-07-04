@@ -14,6 +14,7 @@ const ContactUs = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const [faqs, setFaqs] = useState([]);
