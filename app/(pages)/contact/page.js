@@ -32,7 +32,7 @@ const ContactUs = () => {
     try {
       const myForm = event.target;
       const formData = new FormData(myForm);
-      const res = await fetch("/forms/newsletter-signup.html", {
+      const res = await fetch("/forms/contact.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
@@ -40,12 +40,14 @@ const ContactUs = () => {
 
       if (res.status === 200) {
         reset();
-        toast.success("Thank you for subscribing to our newsletter!");
+        toast.success(
+          "Thank you for contacting us. We will get back to you soon!"
+        );
       } else {
-        toast.error("There was an error subscribing to our newsletter");
+        toast.error("There was an error while sending the message");
       }
     } catch (e) {
-      toast.error("There was an error subscribing to our newsletter");
+      toast.error("There was an error while sending the message");
     }
   };
 
