@@ -67,7 +67,7 @@ const Signup = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       });
-
+      console.log(res);
       if (res.status === 200) {
         reset();
         toast.success("Successfully submitted form!");
@@ -127,11 +127,7 @@ const Signup = () => {
               name="signup-beta-form"
               onSubmit={handleSubmit(onSubmit)}
             >
-              <input
-                type="hidden"
-                name="signup-beta-form"
-                value="signup-beta-form"
-              />
+              <input type="hidden" name="form-name" value="signup-beta-form" />
               <input
                 type="hidden"
                 name="signup-as"
@@ -214,11 +210,7 @@ const Signup = () => {
               name="signup-beta-form"
               onSubmit={handleSubmit(onSubmit)}
             >
-              <input
-                type="hidden"
-                name="signup-beta-form"
-                value="signup-beta-form"
-              />
+              <input type="hidden" name="form-name" value="signup-beta-form" />
               <input
                 type="hidden"
                 name="signup-as"
