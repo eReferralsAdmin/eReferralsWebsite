@@ -54,10 +54,9 @@ const ContactUs = () => {
         <form
           className={styles.form}
           onSubmit={handleSubmit(onSubmit)}
-          data-netlify="true"
           name="contact"
         >
-          <input type="hidden" name="contact-form" value="contact" />
+          <input type="hidden" name="form-name" value="contact" />
           <div className={styles.segmentedControlContainer}>
             <SegmentedControl
               options={segmentOptions}
@@ -70,7 +69,12 @@ const ContactUs = () => {
               <p className={styles.errorMessage}>{errors.role.message}</p>
             )}
           </div>
-
+          <input
+            type="hidden"
+            name="role"
+            value={segment}
+            {...register("role", { required: true })}
+          />
           <input
             type="text"
             id="name"
