@@ -50,34 +50,56 @@ const PratictionersPage = () => {
     setActiveTab(tab);
   };
 
-  const onSubmit = async (formData) => {
+  // const onSubmit = async (formData) => {
+  //   try {
+  //     const data = {
+  //       ...formData,
+  //       "signup-as": activeTab,
+  //     };
+
+  //     const response = await fetch("/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/x-www-form-urlencoded",
+  //       },
+  //       body: new URLSearchParams(data).toString(),
+  //     });
+
+  //     if (response.ok) {
+  //       toast.success("Form successfully submitted!");
+  //       reset({
+  //         name: "",
+  //         phone: "",
+  //         email: "",
+  //         "signup-consent": false,
+  //       });
+  //     } else {
+  //       toast.error("Error submitting form");
+  //     }
+  //   } catch (error) {
+  //     toast.error("Submission failed");
+  //   }
+  // };
+
+  const onSubmit = async (_, event) => {
+    event.preventDefault();
     try {
-      const data = {
-        ...formData,
-        "signup-as": activeTab,
-      };
-
-      const response = await fetch("/", {
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const res = await fetch("/forms/signup-beta-form.html", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(data).toString(),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
       });
-
-      if (response.ok) {
-        toast.success("Form successfully submitted!");
-        reset({
-          name: "",
-          phone: "",
-          email: "",
-          "signup-consent": false,
-        });
+      console.log(res);
+      if (res.status === 200) {
+        reset();
+        toast.success("Successfully submitted form!");
       } else {
-        toast.error("Error submitting form");
+        toast.error("There was an error submitting form");
       }
-    } catch (error) {
-      toast.error("Submission failed");
+    } catch (e) {
+      toast.error("There was an error submitting form");
     }
   };
 
@@ -122,16 +144,10 @@ const PratictionersPage = () => {
           <div className={styles.container}>
             <form
               className={styles.signupForm}
-              name="signup-for-beta-version"
-              method="POST"
-              data-netlify="true"
+              name="signup-beta-form"
               onSubmit={handleSubmit(onSubmit)}
             >
-              <input
-                type="hidden"
-                name="signup-for-beta-version"
-                value="signup-for-beta-version"
-              />
+              <input type="hidden" name="form-name" value="signup-beta-form" />
               <input
                 type="hidden"
                 name="signup-as"
