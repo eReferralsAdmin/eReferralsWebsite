@@ -91,11 +91,11 @@ const PratictionersPage = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       });
-      console.log(res);
       if (res.status === 200) {
         reset();
         toast.success("Successfully submitted form!");
       } else {
+        console.log("error");
         toast.error("There was an error submitting form");
       }
     } catch (e) {

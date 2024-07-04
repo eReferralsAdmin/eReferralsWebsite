@@ -67,7 +67,7 @@ const Signup = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       });
-      console.log(res);
+
       if (res.status === 200) {
         reset();
         toast.success("Successfully submitted form!");

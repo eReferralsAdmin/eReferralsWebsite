@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import styles from "./newsletter-signup.module.css";
@@ -39,7 +39,6 @@ const NewsletterSignup = ({ content }) => {
 
   return (
     <section className={`${styles.newsletterSignup} gradient-bg`}>
-      <Toaster />
       <div className={styles.newsletterSignupContainer}>
         <div className={styles.newsletterContent}>
           <PortableText value={content.title} />
