@@ -7,6 +7,7 @@ import { ChevronRightIcon, MinusIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Faq from "../../../components/faq/Faq";
 import { fetchHomeFAQs } from "../../../lib/fetchData";
+import toast from "react-hot-toast";
 
 const ContactUs = () => {
   const {
@@ -26,8 +27,26 @@ const ContactUs = () => {
     getFAQs();
   }, []);
 
-  const onSubmit = (data) => {
-    // Handle the form submission
+  const onSubmit = async (_, event) => {
+    event.preventDefault();
+    try {
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const res = await fetch("/forms/newsletter-signup.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (res.status === 200) {
+        reset();
+        toast.success("Thank you for subscribing to our newsletter!");
+      } else {
+        toast.error("There was an error subscribing to our newsletter");
+      }
+    } catch (e) {
+      toast.error("There was an error subscribing to our newsletter");
+    }
   };
 
   const [segment, setSegment] = useState("Practitioners");
