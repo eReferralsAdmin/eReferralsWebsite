@@ -77,7 +77,7 @@
 }
 
 .collaboratorProductMobile {
-  object-fit: none;
+  object-fit: scale-down;
   border-radius: 10px;
 }
 
