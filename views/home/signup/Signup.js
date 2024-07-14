@@ -25,35 +25,57 @@ const Signup = () => {
     setActiveTab(tab);
   };
 
-  const onSubmit = async (formData) => {
-    try {
-      const data = {
-        ...formData,
-        "signup-as": activeTab,
-      };
+  // const onSubmit = async (formData) => {
+  //   try {
+  //     const data = {
+  //       ...formData,
+  //       "signup-as": activeTab,
+  //     };
 
-      const response = await fetch("/api/signup", {
+  //     const response = await fetch("/api/signup", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+
+  //     if (response.ok) {
+  //       toast.success("Form successfully submitted!");
+  //       reset({
+  //         name: "",
+  //         phone: "",
+  //         email: "",
+  //         "signup-consent": false,
+  //       });
+  //       // router.push("/success");
+  //     } else {
+  //       toast.error("Error submitting form");
+  //     }
+  //   } catch (error) {
+  //     toast.error("Submission failed");
+  //   }
+  // };
+
+  const onSubmit = async (_, event) => {
+    event.preventDefault();
+    try {
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const res = await fetch("/forms/signup-beta-form.html", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
       });
 
-      if (response.ok) {
-        toast.success("Form successfully submitted!");
-        reset({
-          name: "",
-          phone: "",
-          email: "",
-          "signup-consent": false,
-        });
-        // router.push("/success");
+      if (res.status === 200) {
+        reset();
+        toast.success("Successfully submitted form!");
       } else {
-        toast.error("Error submitting form");
+        toast.error("There was an error submitting form");
       }
-    } catch (error) {
-      toast.error("Submission failed");
+    } catch (e) {
+      toast.error("There was an error submitting form");
     }
   };
 
@@ -102,16 +124,10 @@ const Signup = () => {
           <div className={styles.container}>
             <form
               className={styles.signupForm}
-              name="signup-for-beta-version"
-              method="POST"
-              data-netlify="true"
+              name="signup-beta-form"
               onSubmit={handleSubmit(onSubmit)}
             >
-              <input
-                type="hidden"
-                name="signup-for-beta-version"
-                value="signup-for-beta-version"
-              />
+              <input type="hidden" name="form-name" value="signup-beta-form" />
               <input
                 type="hidden"
                 name="signup-as"
@@ -176,7 +192,11 @@ const Signup = () => {
                     Privacy
                   </Link>
                 </div>
-                <button type="submit" className={`${styles.submitButton}`}>
+                <button
+                  disabled={isSubmitting}
+                  type="submit"
+                  className={`${styles.submitButton}`}
+                >
                   Get Started <ChevronRightIcon className="btn-icon" />
                 </button>
               </div>
@@ -187,16 +207,10 @@ const Signup = () => {
           <div className={styles.container}>
             <form
               className={styles.signupForm}
-              name="signup-for-beta-version"
-              method="POST"
-              data-netlify="true"
+              name="signup-beta-form"
               onSubmit={handleSubmit(onSubmit)}
             >
-              <input
-                type="hidden"
-                name="signup-for-beta-version"
-                value="signup-for-beta-version"
-              />
+              <input type="hidden" name="form-name" value="signup-beta-form" />
               <input
                 type="hidden"
                 name="signup-as"
@@ -266,8 +280,7 @@ const Signup = () => {
                   className={`${styles.submitButton}`}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Get Started"}
-                  <ChevronRightIcon className="btn-icon" />
+                  Get Started <ChevronRightIcon className="btn-icon" />
                 </button>
               </div>
             </form>

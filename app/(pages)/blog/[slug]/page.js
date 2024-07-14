@@ -6,14 +6,11 @@ import Image from "next/image";
 import { urlForImage } from "../../../../sanity/lib/image";
 import { formatDate } from "../../../../lib/formatDate";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import { calculateReadingTime } from "../../../../sanity/lib/readingTime";
 import styles from "../../../../styles/PostPage.module.css";
 import PortableText from "react-portable-text";
 import NewsletterSignup from "../../../../views/home/nwsletter/NewsletterSignup";
 import { fetchNewsletterSubscription } from "../../../../lib/fetchData";
 import { useSearchParams } from "next/navigation";
-
-export const revalidate = 10;
 
 const PostPage = async ({ params: { slug } }) => {
   const searchParams = useSearchParams();

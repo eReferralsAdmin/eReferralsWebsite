@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Link from "next/link";
 import { ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import styles from "./newsletter-signup.module.css";
@@ -15,31 +15,30 @@ const NewsletterSignup = ({ content }) => {
     reset,
   } = useForm();
 
-  const onSubmit = async (data) => {
+  const handleFormSubmit = async (_, event) => {
+    event.preventDefault();
     try {
-      const response = await fetch("/api/newsletter", {
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const res = await fetch("/forms/newsletter-signup.html", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
       });
 
-      if (response.ok) {
-        toast.success("Form successfully submitted!");
+      if (res.status === 200) {
         reset();
-        // router.push("/success");
+        toast.success("Thank you for subscribing to our newsletter!");
       } else {
-        toast.error("Error submitting form");
+        toast.error("There was an error subscribing to our newsletter");
       }
-    } catch (error) {
-      toast.error("Submission failed");
+    } catch (e) {
+      toast.error("There was an error subscribing to our newsletter");
     }
   };
 
   return (
     <section className={`${styles.newsletterSignup} gradient-bg`}>
-      <Toaster />
       <div className={styles.newsletterSignupContainer}>
         <div className={styles.newsletterContent}>
           <PortableText value={content.title} />
@@ -57,12 +56,9 @@ const NewsletterSignup = ({ content }) => {
         <form
           name="newsletter-form"
           className={styles.signupForm}
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(handleFormSubmit)}
         >
-          <input type="hidden" name="newsletter-form" />
+          <input type="hidden" name="form-name" value="newsletter-form" />
           <div className={styles.inputGroup}>
             <div className={styles.inputContainer}>
               <EnvelopeIcon className={`${styles.emailIcon} btn-icon`} />
